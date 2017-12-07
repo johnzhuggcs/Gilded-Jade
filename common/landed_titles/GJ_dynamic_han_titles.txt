@@ -1,0 +1,27 @@
+
+k_dynamic_dynastic_princes = {
+	color={ 180 180 180 }
+	
+	primary = yes
+	
+	allow = {
+		ai = no
+	}
+	
+	culture = han
+	religion = taoist
+}
+
+e_exiled_song = {
+	color={ 180 180 180 }
+	
+	primary = yes
+	shortname = yes
+	
+	allow = {
+		ai = no
+	}
+	
+	culture = han
+	religion = taoist
+}

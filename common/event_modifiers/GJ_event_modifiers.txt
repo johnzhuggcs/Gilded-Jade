@@ -1,0 +1,7 @@
+#Variables:
+#  is_visible: trigger, root is viewer, from is holder. Decides if the viewer can see this trait on holder, default is yes
+
+principality_income = {
+	monthly_character_wealth = 1
+	icon = 6
+}

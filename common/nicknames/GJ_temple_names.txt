@@ -1,0 +1,80 @@
+#############################################
+# CHARACTER TEMPLE NAMES
+# Independent Chinese Emperors
+#
+#
+#############################################
+
+# TRIGGERED ONLY
+################
+
+nick_wenzong = {}
+nick_wuzong = {}
+nick_zhaozong = {}	#昭宗 - 
+nick_xuanzong2 = {}	#宣宗 - the Illustrious
+nick_huanzong = {}	#桓宗
+nick_mingzong = {}	#明宗 - the Illuminated
+nick_zhangzong = {}	#章宗 - 
+nick_xingzong = {}	#兴宗 - the Prosperous
+nick_shenzong = {}	#神宗 - the Holy
+nick_gaozong = {}	#高宗 - the Supreme
+nick_zhongzong = {}	#中宗 - 
+nick_renzong = {}	#仁宗 - the Kind
+nick_xiaozong = {}	#孝宗 - the Filial
+nick_shizong = {}	#世宗
+nick_chengzong = {}	#成宗 - the Accomplished
+nick_kangzong = {}	#康宗
+nick_xianzong2 = {}	#宪宗 - the Principled
+nick_shengzong = {}	#圣宗 - the Glorious
+nick_dingzong = {}	#定宗
+nick_weizong = {}	#威宗
+nick_xingzu = {}	#兴祖
+nick_liezu = {}	#烈祖
+nick_huanzu = {}   #桓祖
+nick_shengzu = {}	#圣祖 - the Magnificent
+nick_shizu = {}	#世祖
+nick_chengzu = {}	#成祖
+nick_xuanzu = {}		#宣祖
+nick_zhenzong = {}	#真宗 - the Honest
+nick_yingzong = {}	#英宗 - 
+nick_zhezhong = {}	#哲宗 - 
+nick_suzong = {}	#肃宗 
+nick_daizong = {}	#代宗
+nick_ningzong = {}	#宁宗
+nick_duanzong = {}	#端宗
+nick_pingzong = {}	#平宗
+nick_anzong = {}		#安宗
+nick_jianzong = {}   #简宗
+nick_xiangzong = {}	#襄宗
+nick_ruizong = {}	#睿宗
+nick_taizu = {}		#太祖
+nick_gaozu = {}		#高祖
+nick_guangzong = {}	#光宗
+nick_huizong = {}	#徽宗
+nick_qinzong = {}	#钦宗
+nick_lizong = {}		#理宗
+nick_duzong = {}		#度宗
+nick_yizong = {}		#毅宗
+nick_muzong = {}		#穆宗
+nick_chongzong = {}	#崇宗
+nick_daozong = {}	#道宗 - 
+nick_xianzong = {}	#献宗
+nick_dezong	= {}	#德宗
+nick_shunzong = {}	#顺宗
+nick_jingzong = {}	#敬宗
+nick_liezong = {}	#烈宗
+nick_daozong2 = {}	#悼宗
+nick_sizong = {}	#思宗
+nick_yangdi = {}		#炀帝
+nick_zhidi = {}	#质帝
+nick_chongdi = {}	#冲帝	
+nick_shaodi = {}		#少帝
+nick_gongdi = {}		#恭帝
+nick_aizong = {}		#哀宗
+nick_daozong2 = {}	#悼宗
+nick_sizong = {}		#思宗
+nick_xuanzong = {}	#玄宗
+nick_xizong = {}		#僖宗
+nick_shangzong = {}	#殇宗
+nick_feidi = {}		#废帝
+nick_taizong = {}	#太宗

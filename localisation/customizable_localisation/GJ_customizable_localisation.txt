@@ -1,0 +1,7 @@
+defined_text = {
+	name = GetDeadChineseEmperorWithTempleName
+	text = {
+		trigger = { always = yes }
+		localisation_key = GetDeadChineseEmperorWithTempleName_string
+	}
+}

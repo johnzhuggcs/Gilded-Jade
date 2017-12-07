@@ -1,0 +1,200 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+nick_wenzong;Wenzong;;;;;;;;;x
+nick_wuzong;Wuzong;;;;;;;;;x
+nick_zhaozong;Zhaozong;;;;;;;;;x	#昭宗 - 
+nick_xuanzong2;Xuanzong the Illustrious;;;;;;;;;x	#宣宗 - the Illustrious
+nick_huanzong;Huanzong;;;;;;;;;x	#桓宗
+nick_mingzong;Mingzong;;;;;;;;;x	#明宗 - the Illuminated
+nick_zhangzong;Zhangzong;;;;;;;;;x	#章宗 - 
+nick_xingzong;Xingzong;;;;;;;;;x	#兴宗 - the Prosperous
+nick_shenzong;Shenzong;;;;;;;;;x	#神宗 - the Holy
+nick_gaozong;Gaozong;;;;;;;;;x	#高宗 - the Supreme
+nick_zhongzong;Zhongzong;;;;;;;;;x	#中宗 - 
+nick_renzong;Renzong;;;;;;;;;x	#仁宗 - the Benevolent
+nick_xiaozong;Xiaozong;;;;;;;;;x	#孝宗 - the Filial
+nick_shizong;Shizong;;;;;;;;;x	#世宗
+nick_chengzong;Chengzong;;;;;;;;;x	#成宗 - the Accomplished
+nick_kangzong;Kangzong;;;;;;;;;x	#康宗
+nick_xianzong2;Xianzong the Principled;;;;;;;;;x	#宪宗 - the Principled
+nick_shengzong;Shengzong;;;;;;;;;x	#圣宗 - the Glorious
+nick_dingzong;Dingzong;;;;;;;;;x	#定宗
+nick_weizong;Weizong;;;;;;;;;x	#威宗
+nick_taizong;Taizong;;;;;;;;;x 	#太宗
+nick_xingzu;Xingzu;;;;;;;;;x		#兴祖
+nick_liezu;Liezu;;;;;;;;;x		#烈祖
+nick_huanzu;Huanzu;;;;;;;;;x    #桓祖
+nick_shengzu;Shengzu;;;;;;;;;x	#圣祖 - the Magnificent
+nick_shizu;Shizu;;;;;;;;;x	#世祖
+nick_chengzu;Chengzu;;;;;;;;;x	#成祖
+nick_xuanzu;Xuanzu;;;;;;;;;x	#宣祖
+nick_zhenzong;Zhenzong;;;;;;;;;x	#真宗 - the Honest
+nick_yingzong;Yingzong;;;;;;;;;x	#英宗 - 
+nick_zhezhong;Zhezong;;;;;;;;;x	#哲宗 - 
+nick_suzong;Suzong;;;;;;;;;x	#肃宗 
+nick_daizong;Daizong;;;;;;;;;x	#代宗
+nick_ningzong;Ningzong;;;;;;;;;x	#宁宗
+nick_duanzong;Duanzong;;;;;;;;;x	#端宗
+nick_pingzong;Pingzong;;;;;;;;;x	#平宗
+nick_anzong;Anzong;;;;;;;;;x		#安宗
+nick_jianzong;Jianzong;;;;;;;;;x   #简宗
+nick_xiangzong;Xianzong;;;;;;;;;x	#襄宗
+nick_ruizong;Ruizong;;;;;;;;;x	#睿宗
+nick_taizu;Taizu;;;;;;;;;x		#太祖
+nick_gaozu;Gaozu;;;;;;;;;x		#高祖
+nick_guangzong;Guangzong;;;;;;;;;x	#光宗
+nick_huizong;Huizong;;;;;;;;;x	#徽宗
+nick_qinzong;Qinzong;;;;;;;;;x	#钦宗
+nick_lizong;Lizong;;;;;;;;;x		#理宗
+nick_duzong;Duzong;;;;;;;;;x		#度宗
+nick_yizong;Yizong;;;;;;;;;x	#毅宗
+nick_muzong;Muzong;;;;;;;;;x	#穆宗
+nick_chongzong;Chongzong;;;;;;;;;x	#崇宗
+nick_daozong;Daozong the "Good";;;;;;;;;x	#道宗 - 
+nick_xianzong;Xianzong the Giving;;;;;;;;;x	#献宗
+nick_dezong;Dezong;;;;;;;;;x		#德宗
+nick_shunzong;Shunzong;;;;;;;;;x	#顺宗
+nick_jingzong;Jingzong the Honoured;;;;;;;;;x	#敬宗
+nick_liezong;Liezong;;;;;;;;;x	#烈宗
+nick_daozong2;Daozong the Desired;;;;;;;;;x	#悼宗
+nick_sizong;Sizong;;;;;;;;;x		#思宗
+nick_yangdi;Yangdi;;;;;;;;;x		#炀帝
+nick_zhidi;Zhidi;;;;;;;;;x	#质帝
+nick_chongdi;Chongdo;;;;;;;;;x	#冲帝
+nick_shaodi;Shaodi;;;;;;;;;x		#少帝
+nick_gongdi;Gongdi;;;;;;;;;x		#恭帝
+nick_aizong;Aizong;;;;;;;;;x	#哀宗
+nick_xuanzong;Xuanzong the Superstitious;;;;;;;;;x	#玄宗
+nick_xizong;Xizong;;;;;;;;;x		#僖宗
+nick_shangzong;Shangzong;;;;;;;;;x	#殇宗
+nick_feidi;Feidi;;;;;;;;;x			#废帝
+
+GIVETEMPLENAME;Legacy of Your Predecessor;;;;;;;;;x
+GIVETEMPLENAMENOTSAME;Remnants of the Previous Dynasty;;;;;;;;;x
+GIVETEMPLENAMEFINISHED;The Ritual of "Tiao";;;;;;;;;x
+
+#Initial Menu
+EVT_DESC_GJ_2;Since the Former Han Dynasty, Emperors' accomplishments were evaluated based on an intricate system of Temple and Posthumous names upon their death established by the "Rites of Zhou".\nChancellor [Root.job_chancellor.GetFullName] and other Ministers beseeches you to honour your predecessor appropriately, in order to bring about an auspicious reign.;;;;;;;;;x
+EVTOPTA_GJ.2_GOODCOMPETENT;"The Late Emperor was a brilliant and competent Emperor, I shall honour them appropriately";;;;;;;;;x
+EVTOPTB_GJ.2_FOUNDER;"As the founder of this dynasty, they must be given the highest of honours";;;;;;;;;x
+EVTOPTC_GJ.2_MEH;"The Late Emperor was...relatively capabable";;;;;;;;;x
+EVTOPTD_GJ.2_NEXTPAGE;"The Late Emperor wasn't any of the above..." (page 2/2);;;;;;;;;x
+#Initial Menu - Page 2
+EVTOPTE_GJ.3_SARCASTICORBAD;"The Late Emperor's reign was riddled with chaos and strife, but...";;;;;;;;;x
+EVTOPTF_GJ.3_USURPATION_NOT_SAME_DYNASTY;"They lost the Heavenly Mandate after all...";;;;;;;;;x
+EVTOPTG_GJ.3_EARLYDEATHORBATTLE;"They were destined for greatness, yet how soon the stars fall...";;;;;;;;;x
+EVTOPTH_GJ.3_RETURNPAGE;"Allow me to reconsider";;;;;;;;;x
+
+#Chose GOODCOMPETENT Menu
+EVT_DESC_GJ_4;Posthmous names provided by the "Rites of Zhou" called for a strict evaluation of your predecessor, with names assigned specific meanings to specific accomplishments of each ruler. The Late Emperor was a competent one, their accomplishments matched only by the few in our dynasty. Yet by what aspect of their reign shall they by honoured by is a matter of debate. \n\nWere they a responsible and competent Emperor who guarded their realm? or...\n\nDid they recreate the anew after a calamity? Or... \n\nExpanded the Empire to an unmatched extent?;;;;;;;;;x
+EVTGJ_EIGHTPAGES;Eight Page Menu;;;;;;;;;x
+EVTOPTA_GJ.4_JUSTGOODCOMPETENT;"They were simply competent and responsible";;;;;;;;;x
+EVTOPTC_GJ.4_SAVIOR;"They preserved our dynasty's fortunes in times of chaos";;;;;;;;;x
+EVTOPTB_GJ.4_THEGREATMAGNIFICNET;"They were the Greatest, with unparalled glory!";;;;;;;;;x
+
+RETURNUPMENU;Returns to previous layer of menu;;;;;;;;;x
+EVTOPTD_GJ.4_RETURNUP;Chancellor [Root.job_chancellor.GetFullName], allow me to reconsider...;;;;;;;;;x
+
+
+#Chose SARCASTICORBAD Menu
+EVT_DESC_GJ_5;Previous founders of dynasties were traditionally honoured either as the "Taizu - the Great Progenitor" like the Han, or the "Gaozu - the Supreme Progenitor" like the Tang.\nYour ministers anxiously debate the qualifications of your respected predecessor among the two.;;;;;;;;;x
+EVTOPTA_GJ.5_TAIZU;"Originator of the dynasty's fortunes, Taizu - the Great Progenitor";;;;;;;;;x
+EVTOPTB_GJ.5_GAOZU;"No other ancestors matched them, Gaozu - the Supreme Progenitor";;;;;;;;;x
+
+#Chose USURPATION_NOT_SAME_DYNASTY Menu
+EVT_DESC_GJ_8;Although you have toppled the corrupt former dynasty and release the people from the shackles of their wickedness, it is customary to give them an appropriate title to cement their historical influences to come. \nDepending on their actions in the preceding wars against you, you should give them an insulting or consolating title that suits them;;;;;;;;;x
+EVTOPTA_GJ.8_ADULTUSURPED;"Their wickedness surpassed the ancient tyrants Jie and Zhou!";;;;;;;;;x
+EVTOPTB_GJ.8_YOUNG;"They were just children burdened with their ancestor's folly";;;;;;;;;x
+
+#Chose 
+
+
+GIVETEMPLENAMEBADORSAR;Ritualistic Dillema;;;;;;;;;x
+EVT_DESC_GJ_7;Your predecessor's actions were certainly questionable, but how would you honour them? If you were to follow the "Rites of Zhou" and give them a bad name, you certainly would be accused of being unfilial by your pesky ministers. On the other hand, you would desecrate your dynasty's temple if you were more lenient...;;;;;;;;;x
+EVTOPTA_GJ.7_SARCASTIC;They are my kin, I'll honour them as such;;;;;;;;;x
+EVTOPTB_GJ.7_BAD;Allowing their sprits to reside in the Temple is lenient already...;;;;;;;;;x
+
+EVT_DESC_GJ_0034;The foundation of the dynasty was laiden by your ancestor, the Progenitor. But perhaps it was your predecessor was the one who truly preserved their hardwork. \nYour Minister of Rites peeked up and said, "By the annals of the sages, the one who expanded the Empire would be a "Zu", and one who preserved the grandeur was named "Zong". And among them, the Late Emperor was the most grand."  \nThus following examples of the Han Dynasty and the Tang Dynasty, the Late Emperor will be, Taizong the Great Successor!;;;;;;;;;x
+EVTOPTA_GJ.10_TAIZONG;They preserved the achievements of the Progenitor!;;;;;;;;;x
+
+
+EVT_DESC_GJ_35;And with that, the rank and dignity of the late Emperor has been decided.\nLooking at the retreating shadows of Chancellor [Root.job_chancellor.GetFullName] and the Minister of Rites [Root.job_spiritual.GetFullName], you wonder if you've made a fair judgement of the cold corpse. But regardless, with your decision, the uncertainty of the rituals around the Mausoleum have been laid to rest. By the morning of the next day, the corpse shall be taken care of and All Under Heaven shall bow to you.\nAs customary, you have declared the next year to be the first year of the [Root.GetFirstName] Era, you trust that it will be the beginning of a glorious reign. \nSo long, [previous_title_holder.GetDeadChineseEmperorWithTempleName] and All Hail [Root.GetMediumChineseEmperorName]!;;;;;;;;;x
+EVTOPTAGJ.35;"May I reign for Ten Thousand Years!";;;;;;;;;x
+	
+#Game rules
+RULE_GROUP_GJ;Gilded Jade;;;;;;;;;x
+CHOOSE_TEMPLE_NAMES;Choose Temple Names;;;;;;;;;x
+CHOOSE_TEMPLE_NAMES_ALL_DESC;If you play as a character with Chinese Imperial government, you will be allowed to issue Temple and Posthmous names at the death, or usurpation of your predecessors;;;;;;;;;x
+CHOOSE_TEMPLE_NAMES_AI_DESC;Delegate the issuing of Temple and Posthumous Names for all Chinese Imperial governments. They will be automatically given Temple names on death or usurpation of the Empire title.;;;;;;;;;x
+
+#Retinue
+RETTYPE_CUL_HAN_CAV;Xuanjia Cavalry;;;;;;;;;x
+
+#Customized Localisation
+GetDeadChineseEmperorWithTempleName_string;[This.GetOnlyDynastyName] [This.GetBirthName], Emperor [This.GetFirstNameWithNick];
+
+#Give Dynamic Kingdom-Level Titles
+give_dynastic_prince_title;Give Imperial Principality;;;;;;;;;x
+give_dynastic_prince_title_desc;As the Emperor, you are expected to reward your kinsmen with high honours. You hereby grant a noble title of rank "Prince" of an ancient Chinese state to [Root.GetTitledName]. Yet to counteract the possibility of rebellious princes, these titles are purely honourific separate from the previous enfeoffed fiefs, each prince has a limited Feng'lu (income) along with a household guard.;;;;;;;;;x
+PRINCE;Prince;;;;;;;;;x
+PRINCESS;Princess;;;;;;;;;x
+COUNTYPRINCE;County Prince;;;;;;;;;x
+k_dynamic_dynastic_princes;Placeholder Title;;;;;;;;;x
+e_exiled_song;Song Empire;;;;;;;;;x
+
+
+#cultural titles and foa
+duchy_han;Prefecture;;;;;;;;;x
+duchy_of_han;Prefecture of;;;;;;;;;x
+vice_royalty_kingdom_of_han;Circuit of;;;;;;;;;x
+vice_royalty_king_han;Duhu;;;;;;;;;x
+duke_han;Jiedushi;;;;;;;;;x
+king_dynasty;Prince;;;;;;;;;x
+king_nondyn;County Prince;;;;;;;;;x
+emperor_title_prince_han;Imperial Prince;;;;;;;;;x
+emperor_title_prince_female_han;Gongzhu;;;;;;;;;x
+king_title_prince_han;Gongzi;;;;;;;;;x
+
+baron_han;Xianling;;;;;;;;;x
+baron_female_han;Xianling Furen;;;;;;;;;x
+count_han;Junshou;;;;;;;;;x
+count_female_han;Junshou Furen;;;;;;;;;x
+duke_female_han;Furen;;;;;;;;;x
+king_female_han;Wanghou;;;;;;;;;x
+barony_of_han;Xian of;;;;;;;;;x
+county_of_han;Jun of;;;;;;;;;x
+kingdom_of_han;Circuit of;;;;;;;;;x
+king_han;Hereditary Jiedushi;;;;;;;;;x
+city_baron_han;Elder;;;;;;;;;x
+city_count_han;Magistrate;;;;;;;;;x
+city_duke_han;Buzhenshi;;;;;;;;;x
+city_king_han;Governor;;;;;;;;;x
+city_emperor_han;Dazongtong;;;;;;;;;x
+city_barony_of_han;Township of;;;;;;;;;x
+city_county_of_han;Jun of;;;;;;;;;x
+city_duchy_of_han;Prefecture of;;;;;;;;;x
+city_kingdom_of_han;Circuit of;;;;;;;;;x
+city_empire_of_han;State of;;;;;;;;;x
+vice_royalty_count_han;Zhenshou;;;;;;;;;x
+vice_royalty_duke_han;Prefectural Governor;;;;;;;;;x
+vice_royalty_duchy_of_han;Prefecture of;;;;;;;;;x
+
+#Buildings
+ca_culture_han_cavalry_1_desc;The fundementally foreign population have the long tradition of horseback riding. Following the examples of the diverse Han and Tang dynasty, let us recruit these riders into our cavalry army.;;;;;;;;;x
+ca_culture_han_cavalry_2_desc;The Qin and Han dynasty fielded massive regiments of mounted troops agains the Huns. With the abundance of horses in the region, the local Han rulers can finally establish cavalry training grounds like the previous dynasties.;;;;;;;;;x
+ca_culture_han_cavalry_3_desc;The Tang Empire found that the ancient heavy cavalry used by the Qin and Han were ineffective against the fast moving nomadic tribes. It's time to shed the heavy armour to gain more mobility in our cavalry formations.;;;;;;;;;x
+ca_culture_han_cavalry_4_desc;A good cavalry army relies on tradition, for generations we have learned from both fighting with and against the barbarians. We have accumulated thousands of veteran cavalry soldiers, let them pass on their experiences to the fresh recruits!;;;;;;;;;x
+ca_culture_han_cavalry_1;Barbarian Recruitment Office;;;;;;;;;x
+ca_culture_han_cavalry_2;Department of Tai'bu for Horse Administration;;;;;;;;;x
+ca_culture_han_cavalry_3;Imperial Doctrined Training Grounds;;;;;;;;;x
+ca_culture_han_cavalry_4;Imperial Cavalry Training Grounds;;;;;;;;;x
+
+ca_culture_chinese_han_2_desc;The fragile nature of the crossbow troops require a disciplined rank of infantries wielding huge "Modao" to stop the incoming charge while reloading. Here they discipline themselves in tight formations.;;;;;;;;;x
+ca_culture_chinese_han_3_desc;A single massive "Chuangzi Crossbow", or Arcuballista, is operated by dozens of infantries, delivering meter long arrows that could pierce several enemy from a large distance away. Their addition can greatly supplement our infantry.;;;;;;;;;x
+ca_culture_chinese_han_4_desc;The single-operated, rapid-firing Shenbi Crossbow (Divine Arm) can fire up to 240 steps with terrifying accuracy. By firing in ordered formations, these soldiers can shred any nomadic charges. Here they steady their aim on these training grounds.;;;;;;;;;x
+ca_culture_chinese_han_2;Modao Armoury;;;;;;;;;x
+ca_culture_chinese_han_3;Arcuballista Production;;;;;;;;;x
+ca_culture_chinese_han_4;Divine Arm Distribution;;;;;;;;;x
+
+#Modifiers
+principality_income;The Feng'lu, before the Tang dynasty it was the income gathered from a fief, or Shiyi. Now it is simply a set income for the often powerless Imperial Princes;;;;;;;;;x
+opinion_granted_imperial_principality;Granted an Imperial Principality;;;;;;;;;x

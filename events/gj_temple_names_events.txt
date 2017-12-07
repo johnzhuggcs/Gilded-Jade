@@ -1,0 +1,1861 @@
+###########################################
+#                                         #
+# Gilded Jade Temple Names		 		  #
+#                                         #
+# ID GJ.1 - 			 	              #
+#                                         #
+###########################################
+
+namespace = GJ
+
+#Written by: 
+#Black Prince Ed
+
+narrative_event = {	#makes ai automatically give temple names based on traits #TODO!!!
+	id = GJ.1
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_1
+	picture = GFX_evt_china_golden_age
+	
+	trigger = {
+		has_game_rule = {
+			name = choose_temple_names
+			value = none
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA_GJ.2_GOODCOMPETENT"
+		narrative_event = {id = GJ.4}
+	}
+	
+}
+
+narrative_event = {	#allows players of pretender Chinese Empires to choose temple/posthmous names for their predecessors
+	id = GJ.2
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_2
+	picture = GFX_evt_china_golden_age
+	
+	trigger = {
+		ai = no #checks ai here after delay of 1 day, prevents the game from checking against the dead character as ai, dead characters always fails ai = no
+	}
+
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				AND = {
+					NOT = {has_title_flag = founding_emperor}
+					NOT = {has_title_flag = usurping_chinese_emperor}
+				}
+				
+			}
+		}
+		name = "EVTOPTA_GJ.2_GOODCOMPETENT"
+		narrative_event ={id = GJ.4}	#menu for good/competent, saviors of the Empire, the great and magnificent
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				AND = {
+					has_title_flag = founding_emperor
+					NOT = {
+						has_title_flag = usurping_chinese_emperor
+					}
+				}
+				
+			}
+		}
+		
+		name = "EVTOPTB_GJ.2_FOUNDER"
+		narrative_event = {id = GJ.5}	#reserved for founders: Taizu and Gaozu
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				AND = {
+					NOT = {has_title_flag = founding_emperor}
+					NOT = {has_title_flag = usurping_chinese_emperor}
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.2_MEH"
+		narrative_event ={id = GJ.6 tooltip = EVTGJ_FOURPAGES} #four-page menu of just meh rulers
+	}
+	
+
+		
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				OR = {
+					AND = {
+						NOT = {has_title_flag = founding_emperor}
+						NOT = {has_title_flag = usurping_chinese_emperor}
+					}
+					
+					has_title_flag = usurping_chinese_emperor
+				}
+				
+			}
+		}
+		name = "EVTOPTD_GJ.2_NEXTPAGE"
+		narrative_event = {id = GJ.3}
+		
+	}
+	
+}
+
+narrative_event = {	#2nd page for allows players of pretender Chinese Empires to choose temple/posthmous names for their predecessors
+	id = GJ.3
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_2
+	picture = GFX_evt_china_golden_age
+
+	
+	option = {
+		name = "EVTOPTE_GJ.3_SARCASTICORBAD"
+		narrative_event = {id = GJ.7}
+	}
+	
+	option = {
+		trigger = {
+			event_target:previous_title_holder = {
+				NOT = { 
+					dynasty = PREV 	
+				} 
+			}
+			
+		}
+		name = "EVTOPTF_GJ.3_USURPATION_NOT_SAME_DYNASTY"
+		narrative_event = {id = GJ.8}
+
+	}
+	
+	option = {
+		name = "EVTOPTG_GJ.3_EARLYDEATHORBATTLE"
+		narrative_event = {id = GJ.9}
+	}
+		
+	option = {
+		name = "EVTOPTH_GJ.3_RETURNPAGE"
+		narrative_event = {id = GJ.2}
+	}
+	
+}
+
+
+narrative_event = {	#good and competent emperors, emperors who saved the empire, the great and magnificent
+	id = GJ.4
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_4
+	picture = GFX_evt_china_golden_age
+
+	
+	option = {
+		name = "EVTOPTA_GJ.4_JUSTGOODCOMPETENT"
+		narrative_event = {
+			id = GJ.10 tooltip = EVTGJ_EIGHTPAGES
+		}
+	}
+	
+	option = {
+		name = "EVTOPTC_GJ.4_SAVIOR"
+		narrative_event = {
+			id = GJ.17			#only 3 choices, 1 page
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB_GJ.4_THEGREATMAGNIFICNET"
+		narrative_event = {
+			id = GJ.18 tooltip = EVTGJ_TWO_PAGES		# 4 choices, 2 pages
+		}
+	}
+	
+
+	option = {
+		name = "EVTOPTD_GJ.4_RETURNUP"
+		narrative_event = {id = GJ.2 tooltip = RETURNUPMENU}
+	}
+}
+
+
+narrative_event = {	#choosing each temple name menu, for founder emperors 1/1
+	id = GJ.5
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_5
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_taizu
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.5_TAIZU"
+		event_target:previous_title_holder = {
+			give_nickname = nick_taizu
+			event_target:temple_name_title = { 
+				set_title_flag= temple_name_taizu
+				clr_title_flag = founding_emperor
+			}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_gaozu
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.5_GAOZU"
+		event_target:previous_title_holder = {
+			give_nickname = nick_gaozu
+			event_target:temple_name_title = { 
+				set_title_flag= temple_name_gaozu
+				clr_title_flag = founding_emperor
+			}
+		}
+		narrative_event = {id = GJ.35}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for just meh emperors 1/4
+	id = GJ.6
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_5
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_zhenzong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.6_ZHENZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_zhenzong
+			event_target:temple_name_title = { set_title_flag= temple_name_zhenzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_yingzong
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.6_YINGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_yingzong
+			event_target:temple_name_title = { set_title_flag= temple_name_yingzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_zhezong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.6_ZHEZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_zhezong
+			event_target:temple_name_title = { set_title_flag= temple_name_zhezong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+
+	option = {
+		name = "EVTOPTD_GJ.6_NEXTPAGE_TWOFOUR"
+		narrative_event = {id = GJ.20}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for sarcastic or just bad emperors
+	id = GJ.7
+	is_triggered_only = yes
+	title = GIVETEMPLENAMEBADORSAR
+	desc = EVT_DESC_GJ_7
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		name = "EVTOPTA_GJ.7_SARCASTIC"
+		narrative_event = {
+			id = GJ.32
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB_GJ.7_BAD"
+		narrative_event = {
+			id = GJ.31
+		}
+		
+	}
+
+	option = {
+		name = "EVTOPTC_GJ.4_RETURNUP"
+		narrative_event = {id = GJ.2 tooltip = RETURNUPMENU}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for sarcastic Emperor temple names 1/5
+	id = GJ.32
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0032
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_guangzong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.7_GUANGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_guangzong
+			event_target:temple_name_title = { set_title_flag= temple_name_guangzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_huizong
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.7_HUIZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_huizong
+			event_target:temple_name_title = { set_title_flag= temple_name_huizong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_qinzong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.7_QINZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_qinzong
+			event_target:temple_name_title = { set_title_flag= temple_name_qinzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+
+	option = {
+		name = "EVTOPTD_GJ.7_NEXTPAGE_TWOFIVE"
+		narrative_event = {id = GJ.23}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for usurped adult or young rulers
+	id = GJ.8
+	is_triggered_only = yes
+	title = GIVETEMPLENAMENOTSAME
+	desc = EVT_DESC_GJ_8
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		name = "EVTOPTA_GJ.8_ADULTUSURPED"
+		narrative_event = {
+			id = GJ.27
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB_GJ.8_YOUNG"
+		narrative_event = {
+			id = GJ.28
+		}
+	}
+
+	option = {
+		name = "EVTOPTC_GJ.4_RETURNUP"
+		narrative_event = {id = GJ.2 tooltip = RETURNUPMENU}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for early death rulers
+	id = GJ.9
+	is_triggered_only = yes
+	title = GIVETEMPLENAMENOTSAME
+	desc = EVT_DESC_GJ_9
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		name = EVTOPTAGJ.9
+		narrative_event = {
+			id = GJ.29
+		}
+	}
+	
+	option = {
+		name = EVTOPTBGJ.9
+		trigger = {
+			event_target:previous_title_holder = {
+				OR = {
+					death_reason = death_battle
+					death_reason = death_dungeon
+					death_reason = death_execute
+				}
+			}
+		}
+		narrative_event = {
+			id = GJ.30
+		}
+	}
+
+	option = {
+		name = EVTOPTCGJ.9 #RETURNUP"
+		narrative_event = {id = GJ.3 tooltip = RETURNUPMENU}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for good emperors 1/8
+	id = GJ.10
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0010
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_wenzong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.10_WENZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_wenzong
+			event_target:temple_name_title = { set_title_flag= temple_name_wenzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_jingzong2
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.10_JINGZONG2"
+		event_target:previous_title_holder = {
+			give_nickname = nick_jingzong2
+			event_target:temple_name_title = { set_title_flag= temple_name_jingzong2}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_wuzong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.10_WUZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_wuzong
+			event_target:temple_name_title = { set_title_flag= temple_name_wuzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+
+	option = {
+		name = "EVTOPTD_GJ.10_NEXTPAGE_TWOEIGHT"
+		narrative_event = {id = GJ.11}
+	}
+}
+
+
+
+narrative_event = {	#choosing each temple name menu, for good emperors 2/8
+	id = GJ.11
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0010
+	picture = GFX_evt_china_golden_age
+
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_zhaozong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.10_ZHAOZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_zhaozong
+			event_target:temple_name_title = { set_title_flag= temple_name_zhaozong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_xuanzong2
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.10_XUANZONG2"
+		event_target:previous_title_holder = {
+			give_nickname = nick_xuanzong2
+			event_target:temple_name_title = { set_title_flag= temple_name_xuanzong2}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_huanzong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.10_HUANZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_huanzong
+			event_target:temple_name_title = { set_title_flag= temple_name_huanzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		name = "EVTOPTD_GJ.10_NEXTPAGE_THREEEIGHT"
+		narrative_event = {id = GJ.12}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for good emperors 3/8
+	id = GJ.12
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0010
+	picture = GFX_evt_china_golden_age
+	
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_mingzong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.10_MINGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_mingzong
+			event_target:temple_name_title = { set_title_flag= temple_name_mingzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_zhangzong
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.10_ZHANGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_zhangzong
+			event_target:temple_name_title = { set_title_flag= temple_name_zhangzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_xingzong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.10_XINGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_xingzong
+			event_target:temple_name_title = { set_title_flag= temple_name_xingzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		name = "EVTOPTD_GJ.10_NEXTPAGE_FOUREIGHT"
+		narrative_event = {id = GJ.13}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for good emperors 4/8
+	id = GJ.13
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0010
+	picture = GFX_evt_china_golden_age
+	
+
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_shenzong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.10_SHENZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_shenzong
+			event_target:temple_name_title = { set_title_flag = temple_name_shenzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_gaozong
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.10_GAOZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_gaozong
+			event_target:temple_name_title = { set_title_flag = temple_name_gaozong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_zhongzong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.10_ZHONGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_zhongzong
+			event_target:temple_name_title = { set_title_flag= temple_name_zhongzong }
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		name = "EVTOPTD_GJ.10_NEXTPAGE_FIVEEIGHT"
+		narrative_event = {id = GJ.14}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for good emperors 5/8
+	id = GJ.14
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0010
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_renzong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.10_RENZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_renzong
+			event_target:temple_name_title = { set_title_flag= temple_name_renzong }
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_xiaozong
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.10_XIAOZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_xiaozong
+			event_target:temple_name_title = { set_title_flag= temple_name_xiaozong }
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_shizong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.10_SHIZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_shizong
+			event_target:temple_name_title = { set_title_flag= temple_name_shizong }
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		name = "EVTOPTD_GJ.10_NEXTPAGE_SIXEIGHT"
+		narrative_event = {id = GJ.15}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for good emperors 6/8
+	id = GJ.15
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0010
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_chengzong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.10_CHENGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_chengzong
+			event_target:temple_name_title = { set_title_flag= temple_name_chengzong }
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_xiaozong
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.10_KANGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_kangzong
+			event_target:temple_name_title = { set_title_flag= temple_name_kangzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_xianzong2
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.10_XIANZONG2"
+		event_target:previous_title_holder = {
+			give_nickname = nick_xianzong2
+			event_target:temple_name_title = { set_title_flag= temple_name_xianzong2}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		name = "EVTOPTD_GJ.10_NEXTPAGE_SEVENEIGHT"
+		narrative_event = {id = GJ.16}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for good emperors 7/8
+	id = GJ.16
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0010
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_shengzong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.10_SHENGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_shengzong
+			event_target:temple_name_title = { set_title_flag= temple_name_shengzong }
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_dingzong
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.10_DINGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_dingzong
+			event_target:temple_name_title = { set_title_flag= temple_name_dingzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_weizong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.10_WEIZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_weizong
+			event_target:temple_name_title = { set_title_flag= temple_name_weizong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		name = "EVTOPTD_GJ.10_NEXTPAGE_EIGHTEIGHT"
+		narrative_event = {id = GJ.35 tooltip = RETURNUPMENU}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for good emperors 8/8
+	id = GJ.34
+	is_triggered_only = yes
+	title = GIVETEMPLENAMETAI
+	desc = EVT_DESC_GJ_0034
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_taizong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.10_TAIZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_shengzong
+			event_target:temple_name_title = { set_title_flag= temple_name_taizong }
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		name = "EVTOPTD_GJ.4_RETURNUP"
+		narrative_event = {id = GJ.4 tooltip = RETURNUPMENU}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for savior emperors
+	id = GJ.17
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0017	
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_xingzu
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.10_XINGZU"
+		event_target:previous_title_holder = {
+			give_nickname = nick_xingzu
+			event_target:temple_name_title = { set_title_flag= temple_name_xingzu}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_xingzu
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.10_LIEZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_liezong
+			event_target:temple_name_title = { set_title_flag= temple_name_liezong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_huanzu
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.10_HUANZU"
+		event_target:previous_title_holder = {
+			give_nickname = nick_huanzu
+			event_target:temple_name_title = { set_title_flag= temple_name_huanzu}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		name = "EVTOPTD_GJ.4_RETURNUP"
+		narrative_event = {id = GJ.4 tooltip = RETURNUPMENU}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for great and magnificent emperors 1/2
+	id = GJ.18
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0018
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		name = "EVTOPTA_GJ.18_SHENGZU"
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_shengzu
+				}
+			}
+		}
+		event_target:previous_title_holder = {
+			give_nickname = nick_shengzu
+			event_target:temple_name_title = { set_title_flag= temple_name_shengzu}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_shizu
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.18_SHIZU"
+		event_target:previous_title_holder = {
+			give_nickname = nick_shizu
+			event_target:temple_name_title = { set_title_flag= temple_name_shizu}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_chengzu
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.18_CHENGZU"
+		event_target:previous_title_holder = {
+			give_nickname = nick_chengzu
+			event_target:temple_name_title = { set_title_flag= temple_name_chengzu}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		name = "EVTOPTD_GJ.18_NEXTPAGE_TWOTWO"
+		narrative_event = {id = GJ.19 tooltip = RETURNUPMENU}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for great and magnificent emperors 2/2
+	id = GJ.19
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0018
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_xuanzu
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.18_XUANZU"
+		event_target:previous_title_holder = {
+			give_nickname = nick_xuanzu
+			event_target:temple_name_title = { set_title_flag= temple_name_xuanzu}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		name = "EVTOPTD_GJ.18_NEXTPAGE_TWOTWO"
+		narrative_event = {id = GJ.4 tooltip = RETURNUPMENU}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for just meh rulers 2/4
+	id = GJ.20
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_6
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		name = "EVTOPTA_GJ.6_SUZONG"
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_suzong
+				}
+			}
+		}
+		event_target:previous_title_holder = {
+			give_nickname = nick_suzong
+			event_target:temple_name_title = { set_title_flag= temple_name_suzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_daizong
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.6_DAIZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_daizong
+			event_target:temple_name_title = { set_title_flag= temple_name_daizong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_ningzong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.6_ningzong"
+		event_target:previous_title_holder = {
+			give_nickname = nick_ningzong
+			event_target:temple_name_title = { set_title_flag= temple_name_ningzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		name = "EVTOPTD_GJ.6_NEXTPAGE_THREEFOUR"
+		narrative_event = {id = GJ.21}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for just meh rulers 3/4
+	id = GJ.21
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_6
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		name = "EVTOPTA_GJ.6_DUANZONG"
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_duanzong
+				}
+			}
+		}
+		event_target:previous_title_holder = {
+			give_nickname = nick_duanzong
+			event_target:temple_name_title = { set_title_flag= temple_name_duanzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_pingzong
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.6_PINGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_pingzong
+			event_target:temple_name_title = { set_title_flag= temple_name_pingzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_anzong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.6_anzong"
+		event_target:previous_title_holder = {
+			give_nickname = nick_anzong
+			event_target:temple_name_title = { set_title_flag= temple_name_anzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		name = "EVTOPTD_GJ.6_NEXTPAGE_FOURFOUR"
+		narrative_event = {id = GJ.22}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for just meh rulers 4/4
+	id = GJ.22
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_6
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		name = "EVTOPTA_GJ.6_JIANZONG"
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_jianzong
+				}
+			}
+		}
+		event_target:previous_title_holder = {
+			give_nickname = nick_jianzong
+			event_target:temple_name_title = { set_title_flag= temple_name_jianzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_xiangzong
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.6_XIANGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_xiangzong
+			event_target:temple_name_title = { set_title_flag= temple_name_xiangzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_ruizong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.6_ruizong"
+		event_target:previous_title_holder = {
+			give_nickname = nick_ruizong
+			event_target:temple_name_title = { set_title_flag= temple_name_ruizong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		name = "EVTOPTD_GJ.4_RETURNUP"
+		narrative_event = {id = GJ.2 tooltip = RETURNUPMENU}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for sarcastic Emperor temple names 2/5
+	id = GJ.23
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0032
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_lizong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.7_LIZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_lizong
+			event_target:temple_name_title = { set_title_flag= temple_name_lizong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_duzong
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.7_DUZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_duzong
+			event_target:temple_name_title = { set_title_flag= temple_name_duzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_yizong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.7_YIZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_qinzong
+			event_target:temple_name_title = { set_title_flag= temple_name_yizong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+
+	option = {
+		name = "EVTOPTD_GJ.7_NEXTPAGE_THREEFIVE"
+		narrative_event = {id = GJ.24}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for sarcastic Emperor temple names 3/5
+	id = GJ.24
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0032
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_muzong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.7_MUZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_muzong
+			event_target:temple_name_title = { set_title_flag= temple_name_muzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_chongzong
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.7_CHONGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_chongzong
+			event_target:temple_name_title = { set_title_flag= temple_name_chongzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_daozong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.7_DAOZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_daozong
+			event_target:temple_name_title = { set_title_flag= temple_name_daozong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+
+	option = {
+		name = "EVTOPTD_GJ.7_NEXTPAGE_FOURFIVE"
+		narrative_event = {id = GJ.25}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for sarcastic Emperor temple names 4/5
+	id = GJ.25
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0032
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_xianzong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.7_XIANZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_xianzong
+			event_target:temple_name_title = { set_title_flag= temple_name_xianzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_dezong
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.7_DEZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_dezong
+			event_target:temple_name_title = { set_title_flag= temple_name_dezong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_shunzong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.7_SHUNZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_shunzong
+			event_target:temple_name_title = { set_title_flag= temple_name_shunzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+
+	option = {
+		name = "EVTOPTD_GJ.7_NEXTPAGE_FIVEFIVE"
+		narrative_event = {id = GJ.26}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for sarcastic Emperor temple names 5/5
+	id = GJ.26
+	is_triggered_only = yes
+	title = GIVETEMPLENAME
+	desc = EVT_DESC_GJ_0032
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_jingzong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.7_JINGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_jingzong
+			event_target:temple_name_title = { set_title_flag= temple_name_jingzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+
+	option = {
+		name = "EVTOPTD_GJ.4_RETURNUP"
+		narrative_event = {id = GJ.7 tooltip = RETURNUPMENU}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for usurped not of same dynasty adult emperors 1/2
+	id = GJ.27
+	is_triggered_only = yes
+	title = GIVETEMPLENAMENOTSAME
+	desc = EVT_DESC_GJ_8
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_yangdi
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.8_YANGDI"
+		event_target:previous_title_holder = {
+			give_nickname = nick_yangdi
+			clr_title_flag = usurping_chinese_emperor
+			#event_target:temple_name_title = { set_title_flag= temple_name_yangdi}	removed for now, makes no sense to keep it after usurpation
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_zhidi
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.8_ZHIDI"
+		event_target:previous_title_holder = {
+			give_nickname = nick_zhidi
+			clr_title_flag = usurping_chinese_emperor
+			#event_target:temple_name_title = { set_title_flag= temple_name_zhidi}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_chongdi
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.8_CHONGDI"
+		event_target:previous_title_holder = {
+			give_nickname = nick_chongdi
+			clr_title_flag = usurping_chinese_emperor
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+
+	option = {
+		name = "EVTOPTD_GJ.4_RETURNUPUSURPED"
+		narrative_event = {id = GJ.8 tooltip = RETURNUP_MENU_TO_USURPED}
+	}
+	
+	
+}
+
+narrative_event = {	#choosing each temple name menu, for usurped not of same dynasty child emperors 1/1
+	id = GJ.28
+	is_triggered_only = yes
+	title = GIVETEMPLENAMENOTSAME
+	desc = EVT_DESC_GJ_8
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			AND = {
+				event_target:temple_name_title = {					
+					NOT = {
+						has_title_flag = temple_name_shaodi
+					}
+				}
+				
+				event_target:previous_title_holder = {
+					NOT = {
+						age = 21
+					}
+				}
+			}
+			
+		}
+		name = "EVTOPTA_GJ.8_SHAODI"
+		event_target:previous_title_holder = {
+			give_nickname = nick_shaodi
+			clr_title_flag = usurping_chinese_emperor
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			AND = {
+				event_target:temple_name_title = {					
+					NOT = {
+						has_title_flag = temple_name_gongdi
+					}
+				}
+				
+				event_target:previous_title_holder = {
+					NOT = {
+						age = 21
+					}
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.8_GONGDI"
+		event_target:previous_title_holder = {
+			give_nickname = nick_gongdi
+			clr_title_flag = usurping_chinese_emperor
+		}
+		narrative_event = {id = GJ.35}
+	}
+
+	option = {
+		name = "EVTOPTD_GJ.4_RETURNUPUSURPED"
+		narrative_event = {id = GJ.8 tooltip = RETURNUP_MENU_TO_USURPED}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for early death, "the Desired" Emperors
+	id = GJ.29
+	is_triggered_only = yes
+	title = GIVETEMPLENAMENOTSAME
+	desc = EVT_DESC_GJ_9
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_aizong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.9_AIZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_aizong
+			event_target:temple_name_title = { set_title_flag= temple_name_aizong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_daozong2
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.9_DAOZONG2"
+		event_target:previous_title_holder = {
+			give_nickname = nick_daozong2
+			event_target:temple_name_title = { set_title_flag= temple_name_daozong2}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_sizong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.9_sizong"
+		event_target:previous_title_holder = {
+			give_nickname = nick_sizong
+			event_target:temple_name_title = { set_title_flag= temple_name_sizong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+
+	option = {
+		name = "EVTOPTD_GJ.4_RETURNUPMOURNFUL"
+		narrative_event = {id = GJ.9}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for death in battle
+	id = GJ.30
+	is_triggered_only = yes
+	title = GIVETEMPLENAMENOTSAME
+	desc = EVT_DESC_GJ_9
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_liezong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.9_LIEZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_liezong
+			event_target:temple_name_title = { set_title_flag= temple_name_liezong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_daozong2
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.9_DAOZONG2"
+		event_target:previous_title_holder = {
+			give_nickname = nick_daozong2
+			event_target:temple_name_title = { set_title_flag= temple_name_daozong2}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_sizong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.9_sizong"
+		event_target:previous_title_holder = {
+			give_nickname = nick_sizong
+			event_target:temple_name_title = { set_title_flag= temple_name_sizong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+
+	option = {
+		name = "EVTOPTD_GJ.4_RETURNUPMOURNFUL"
+		narrative_event = {id = GJ.9}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for bad rulers
+	id = GJ.31
+	is_triggered_only = yes
+	title = GIVETEMPLENAMENOTSAME
+	desc = EVT_DESC_GJ_9
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_xuanzong
+				}
+			}
+		}
+		name = "EVTOPTA_GJ.9_XUANZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_xuanzong
+			event_target:temple_name_title = { set_title_flag= temple_name_xuanzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_xizong
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.9_XIZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_xizong
+			event_target:temple_name_title = { set_title_flag= temple_name_xizong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_shangzong
+				}
+			}
+		}
+		name = "EVTOPTC_GJ.9_SHANGZONG"
+		event_target:previous_title_holder = {
+			give_nickname = nick_shangzong
+			event_target:temple_name_title = { set_title_flag= temple_name_shangzong}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+
+	option = {
+		name = "EVTOPTD_GJ.4_RETURNUPMOURNFUL"
+		narrative_event = {id = GJ.7}
+	}
+}
+
+narrative_event = {	#choosing each temple name menu, for usurped same dynasty, called from on_action usurpatoin
+	id = GJ.33
+	is_triggered_only = yes
+	title = GIVETEMPLENAMENOTSAME
+	desc = EVT_DESC_GJ_8
+	picture = GFX_evt_china_golden_age
+	
+	trigger = {
+		dynasty = FROMFROM
+		ai = no
+		FROM = { has_title_flag = uses_temple_names_by_script}
+	}
+	FROM = { save_global_event_target_as = temple_name_title }
+	FROMFROM = {save_global_event_target_as = previous_title_holder}
+	option = {
+		trigger = {
+			AND = {
+				event_target:temple_name_title = {
+					NOT = {
+						has_title_flag = temple_name_shaodi
+					}
+				}
+				
+				FROMFROM = {
+					NOT = {
+						age = 21
+					}
+				}
+			}
+
+		}
+		name = "EVTOPTA_GJ.8_SHAODI"
+		event_target:previous_title_holder = {
+			give_nickname = nick_shaodi
+			clr_title_flag = usurping_chinese_emperor
+			event_target:temple_name_title = { set_title_flag= temple_name_shaodi}
+		}
+		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				NOT = {
+					has_title_flag = temple_name_feidi
+				}
+			}
+		}
+		name = "EVTOPTB_GJ.8_FEIDI"
+		event_target:previous_title_holder = {
+			give_nickname = nick_feidi
+			clr_title_flag = usurping_chinese_emperor
+			event_target:temple_name_title = { set_title_flag= temple_name_feidi}
+		}
+		narrative_event = {id = GJ.35}
+	}
+}
+
+
+
+
+############################################
+# Dynamic Event for Finished Temple Naming #
+#										   #	
+############################################
+
+narrative_event = {
+	id = GJ.35
+	is_triggered_only = yes
+	title = GIVETEMPLENAMEFINISHED
+	desc = EVT_DESC_GJ_35
+	picture = GFX_evt_china_golden_age
+	
+	option = {
+		name = EVTOPTAGJ.35
+		prestige = 100
+		piety = 50
+		set_character_flag = concluded_GJ35
+	}
+}
+

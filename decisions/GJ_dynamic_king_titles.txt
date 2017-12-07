@@ -1,0 +1,1868 @@
+# Targetted decisions are possible vs _all_ other characters and shown are in the Diplomacy View, not the Intrigue View. The taker is in the FROM scope.
+#
+# filter = [self/court/home_court/vassals/sub_realm/realm/dynasty/all] ('self' MUST be set for decisions targetting only the taker, the other filter types can be set to lessen CPU load)
+# ai_target_filter = [self/court/home_court/vassals/sub_realm/realm/dynasty/all] (which characters for which the AI evaluates the decision.)
+#	court: all characters in the AI's host court, including prisoners, and characters currently away (wards, prisoners, etc)
+#	home_court: all characters in the AI's home court, including prisoners, and characters currently away (wards, prisoners, etc)
+#	vassals: direct vassal rulers of the AI's employer
+#	sub_realm: all characters below the AI's employer
+#	realm: all characters in the same top realm as the AI
+#	dynasty: all members of the same dynasty
+#	rivals: your rivals plus any character you have an opinion modifier with 'crime = yes' set (the same set of characters the 'is_foe' trigger evaluates)
+#	all: all living characters (Avoid if possible. VERY CPU-HEAVY!)
+#	
+
+targetted_decisions = {
+
+	give_dynastic_prince_title = {
+		is_high_prio = yes # Will show an alert if special action is available
+		filter = sub_realm #Filter characters targetted by the player
+		ai_target_filter = sub_realm #Filter for characters targetted by the AI
+		from_potential = {
+			OR = {
+				culture_group = chinese_group
+				culture = khitan
+				culture = tangut
+				culture = jurchen
+			}
+			has_character_flag = given_temple_name_by_script
+		}
+	
+		potential = {
+			ROOT = {dynasty = FROM}
+			ROOT = {is_female = no}
+			OR = {
+				ROOT = {is_ruler = no}
+				ROOT = {
+					primary_title = {
+						NOT = {has_title_flag = given_prince_title}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			FROM = {
+				primary_title = {
+					random_list = {
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_xiu }
+								
+							}
+							set_title_flag = prince_of_xiu
+							set_title_flag = current_xiu
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_liang }
+								NOT = { has_title_flag = china_name_Liang}
+								
+							}
+							set_title_flag = prince_of_liang
+							set_title_flag = current_liang
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_cao }
+								
+							}
+							set_title_flag = prince_of_cao
+							set_title_flag = current_cao
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_lu }
+								
+							}
+							set_title_flag = prince_of_lu
+							set_title_flag = current_lu
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_cheng }
+								
+							}
+							set_title_flag = prince_of_cheng
+							set_title_flag = current_cheng
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_zhong }
+								
+							}
+							set_title_flag = prince_of_zhong
+							set_title_flag = current_zhong
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_yong }
+								
+							}
+							set_title_flag = prince_of_yong
+							set_title_flag = current_yong
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_pu }
+								
+								
+							}
+							set_title_flag = prince_of_pu
+							set_title_flag = current_pu
+							
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_yan }
+								NOT = { has_title_flag = china_name_Yan}
+								
+							}
+							set_title_flag = prince_of_yan
+							set_title_flag = current_yan
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_yi}
+								
+							}
+							set_title_flag = prince_of_yi
+							set_title_flag = current_yi
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_ji }
+								
+							}
+							set_title_flag = prince_of_ji
+							set_title_flag = current_ji
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_su }
+								
+							}
+							set_title_flag = prince_of_su
+							set_title_flag = current_su
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_chang }
+								
+							}
+							set_title_flag = prince_of_chang
+							set_title_flag = current_chang
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_xin }
+								
+							}
+							set_title_flag = prince_of_xin
+							set_title_flag = current_xin
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_xian }
+								
+							}
+							set_title_flag = prince_of_xian
+							set_title_flag = current_xian
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_teng }
+								
+							}
+							set_title_flag = prince_of_teng
+							set_title_flag = current_teng
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_tang }
+								NOT = { has_title_flag = china_name_Tang}
+								
+							}
+							set_title_flag = prince_of_tang
+							set_title_flag = current_tang
+							
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_jin } #Not the Jurchen Jin
+								
+							}
+							set_title_flag = prince_of_Jin
+							set_title_flag = current_jin
+							
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_han }
+								NOT = { has_title_flag = china_name_Han}
+								
+							}
+							set_title_flag = prince_of_han
+							set_title_flag = current_han
+							
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_qin }
+								NOT = { has_title_flag = china_name_Qin}
+								
+							}
+							set_title_flag = prince_of_qin
+							set_title_flag = current_qin
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_zhou }
+								NOT = { has_title_flag = china_name_Zhou}
+								
+							}
+							set_title_flag = prince_of_zhou
+							set_title_flag = current_zhou
+							
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_yue }
+								NOT = { has_title_flag = china_name_Yue}
+								
+							}
+							set_title_flag = prince_of_yue
+							set_title_flag = current_yue
+							
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_wu }
+								NOT = { has_title_flag = china_name_Wu}
+								
+							}
+							set_title_flag = prince_of_wu
+							set_title_flag = current_wu
+							
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_cheng }
+								NOT = { has_title_flag = china_name_Cheng}
+								
+							}
+							set_title_flag = prince_of_cheng
+							set_title_flag = current_cheng
+							
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_zhao }
+								NOT = { has_title_flag = china_name_Zhao}
+								
+							}
+							set_title_flag = prince_of_zhao
+							set_title_flag = current_zhao
+							
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_wei }
+								NOT = { has_title_flag = china_name_Wei}
+								
+							}
+							set_title_flag = prince_of_wei
+							set_title_flag = current_wei
+							
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_qi }
+								NOT = { has_title_flag = china_name_Qi}
+								
+							}
+							set_title_flag = prince_of_qi
+							set_title_flag = current_qi
+							
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_dai }
+								NOT = { has_title_flag = china_name_Dai}
+								
+							}
+							set_title_flag = prince_of_dai
+							set_title_flag = current_dai
+							
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_chu }
+								NOT = { has_title_flag = china_name_Chu}
+								
+							}
+							set_title_flag = prince_of_chu
+							set_title_flag = current_chu
+							
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_shu }
+								NOT = { has_title_flag = china_name_Shu}
+								
+							}
+							set_title_flag = prince_of_shu
+							set_title_flag = current_shu
+							
+						}
+						10 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_song }
+								NOT = { has_title_flag = china_name_Song}
+								
+							}
+							set_title_flag = prince_of_song
+							set_title_flag = current_song
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_ning }
+								
+							}
+							set_title_flag = prince_of_ning
+							set_title_flag = current_ning
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_jing }
+								
+							}
+							set_title_flag = prince_of_jing
+							set_title_flag = current_jing
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_cai }
+								
+							}
+							set_title_flag = prince_of_cai
+							set_title_flag = current_cai
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_zheng }
+								
+							}
+							set_title_flag = prince_of_zheng
+							set_title_flag = current_zheng
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_xu }
+								
+							}
+							set_title_flag = prince_of_xu
+							set_title_flag = current_xu
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_e }
+								
+							}
+							set_title_flag = prince_of_e
+							set_title_flag = current_e
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_yu }
+								
+							}
+							set_title_flag = prince_of_yu
+							set_title_flag = current_yu
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_jiang }
+								
+							}
+							set_title_flag = prince_of_jiang
+							set_title_flag = current_jiang
+							
+						}
+						1 = { 
+							trigger = {	
+								
+								NOT = { has_title_flag = prince_of_shou }
+								
+							}
+							set_title_flag = prince_of_shou
+							set_title_flag = current_shou
+							
+						}
+						
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_xiu
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Xiu Principality"
+					holder = ROOT
+					base_title = FROM 
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+					
+				
+				}
+
+				#create_family_palace = yes
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_xiu
+					}
+				}
+				
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_liang
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Liang Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_liang
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_cao
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Cao Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+				
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_cao
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_lu
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Lu Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_lu
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_cheng
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Cheng Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes				
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_cheng
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_zhong
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Zhong Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes				
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_zhong
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_yong
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Yong Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes				
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_yong
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_pu
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Pu Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes				
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_pu
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_yan
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Yan Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes				
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_yan
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_yi
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Yi Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes				
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_yi
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_ji
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Ji Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes			
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_ji
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_su
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Su Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes				
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_su
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_chang
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Chang Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes				
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_chang
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_xin
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Xin Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes				
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_xin
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_xian
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Xian Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes		
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_xian
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_teng
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Teng Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_teng
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_tang
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Tang Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+				
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_tang
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_jin
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Jin Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_Jin
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_han
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Han Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+	
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_han
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_qin
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Qin Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_qin
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_zhou
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Zhou Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_zhou
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_yue
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Yue Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_yue
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_wu
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Wu Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_wu
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_cheng
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Cheng Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_cheng
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_zhao
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Zhao Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_zhao
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_wei
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Wei Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+				ROOT = {
+					set_defacto_liege = FROM
+					opinion = {
+						modifier = opinion_granted_imperial_principality 
+						who = FROM
+					}
+					add_character_modifier = { 
+						modifier = principality_income 
+						duration = -1 
+					}
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_wei
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_qi
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Qi Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+				ROOT = {
+					set_defacto_liege = FROM
+					opinion = {
+						modifier = opinion_granted_imperial_principality 
+						who = FROM
+					}
+					add_character_modifier = { 
+						modifier = principality_income 
+						duration = -1 
+					}
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_qi
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_dai
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Dai Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+				ROOT = {
+					set_defacto_liege = FROM
+					opinion = {
+						modifier = opinion_granted_imperial_principality 
+						who = FROM
+					}
+					add_character_modifier = { 
+						modifier = principality_income 
+						duration = -1 
+					}
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_dai
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_chu
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Chu Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+				ROOT = {
+					set_defacto_liege = FROM
+					opinion = {
+						modifier = opinion_granted_imperial_principality 
+						who = FROM
+					}
+					add_character_modifier = { 
+						modifier = principality_income 
+						duration = -1 
+					}
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_chu
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_shu
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Shu Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+				ROOT = {
+					set_defacto_liege = FROM
+					opinion = {
+						modifier = opinion_granted_imperial_principality 
+						who = FROM
+					}
+					add_character_modifier = { 
+						modifier = principality_income 
+						duration = -1 
+					}
+				}
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_shu
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_song
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Song Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_song
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_ning
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Ning Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+				
+				FROM = {
+					capital_holding = {
+						PREVPREV = {
+							spawn_unit = {
+								owner = ROOT
+								province = PREV
+						
+								earmark = principality_guard
+								troops = {
+									archers = { 200 200 }
+									heavy_infantry = { 200 200 }
+									pikemen = {100 100}
+									light_cavalry = { 100 100 }
+								}
+								reinforces = yes
+								maintenance_multiplier = 0.5
+							}
+						}
+					}
+				}
+				
+				new_title = {
+					set_title_flag = given_prince_title
+				}
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_ning
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_jing
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Jing Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+				
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_jing
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_cai
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Cai Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_cai
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_zheng
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Zheng Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_zheng
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_xu
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Xu Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_xu
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_e
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "E Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_e
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_yu
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Yu Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_yu
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_jiang
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Jiang Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+			
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_jiang
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						primary_title = {
+							has_title_flag = current_shou
+						}
+					}
+				}
+				
+				create_title = { 
+					tier = KING
+					name = "Shou Principality"
+					holder = ROOT
+					base_title = FROM
+					landless = yes
+					ruler = PRINCE
+					ruler_female = PRINCESS
+					custom_created = yes
+					culture = FROM
+					short_name = yes
+				
+				}
+				ROOT = {
+					set_defacto_liege = FROM
+					opinion = {
+						modifier = opinion_granted_imperial_principality 
+						who = FROM
+					}
+					add_character_modifier = { 
+						modifier = principality_income 
+						duration = -1 
+					}
+				}
+
+				#create_family_palace = yes
+								
+				FROM = {
+					primary_title = {
+						clr_title_flag = current_shou
+					}
+				}
+			}
+			
+			ROOT = {
+					set_defacto_liege = FROM
+					opinion = {
+						modifier = opinion_granted_imperial_principality 
+						who = FROM
+					}
+					add_character_modifier = { 
+						modifier = principality_income 
+						duration = -1 
+					}
+			}
+			
+			FROM = {
+					capital_holding = {
+						PREVPREV = {
+							spawn_unit = {
+								owner = ROOT
+								province = PREV
+						
+								earmark = principality_guard
+								troops = {
+									archers = { 200 200 }
+									heavy_infantry = { 200 200 }
+									pikemen = {100 100}
+									light_cavalry = { 100 100 }
+								}
+								reinforces = yes
+								maintenance_multiplier = 0.5
+							}
+						}
+					}
+				}
+				
+				new_title = {
+					set_title_flag = given_prince_title
+				}
+			
+		}
+		
+		ai_will_do = {
+			factor = 0.1
+		
+			modifier = {
+				factor = 0.7
+				FROM = {is_father = ROOT}
+			}
+		
+			modifier = {
+				factor = 1
+				AND = {
+					FROM = {opinion = {who = ROOT value = 65}}
+					ROOT = {opinion = {who = FROM value = 65}}
+				}
+			
+			}
+		}
+		
+	}
+	
+	
+
+}

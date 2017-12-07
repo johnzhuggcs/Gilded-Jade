@@ -1,0 +1,75 @@
+#Imperial Principalities (Princes of Blood)
+Xiu Principality			#秀王
+Liang Principality			#梁王 dynasty
+Cao Principality			#曹王
+Lu Principality				#鲁王
+Cheng Principality			#郕王
+Zhong Principality			#忠王 - the Loyal
+Yong Principality			#雍王
+Pu Principality				#濮王
+Yan Principality			#燕王 dynasty
+Yi Principality				#沂王/益王
+Ji Principality				#济王
+Su Principality				#肃王
+Chang Principality			#昌王
+Xin Principality			#信王
+Xian Principality			#贤王 - the Wise One
+Teng Principality			#滕王
+Tang Principality			#唐王 dynasty
+Jin Principality			#晋王 (不是金) dynasty
+Han Principality			#汉王 dynasty
+Qin Principality			#秦王 dynasty
+Zhou Principality			#周王 dynasty
+Yue Principality			#越王 dynasty
+Wu Principality				#吴王 dynasty
+Chen Principality			#陈王 dynasty
+Zhao Principality			#赵王 dynasty
+Wei Principality			#魏王 dynasty
+Qi Principality				#齐王 dynasty
+Dai Principality			#代王 dynasty
+Chu Principality			#楚王 dynasty
+Shu Principality			#蜀王 dynasty
+Song Principality			#宋王 dynasty
+Ning Principality			#宁王
+Jing Principality			#荆王
+Cai Principality			#蔡王
+Zheng Principality			#郑王
+Xu Principality				#徐王/许王
+E Principality				#鄂王 - Yue Fei
+Yu Principality				#裕王
+Jiang Principality			#蒋王
+Shou Principality			#寿王 - cuckolded by father
+
+County Princes: 郡王 (Not implemented for current version)
+
+Xing'yuan Principality		#兴元郡王
+Tian'shui Principality		#天水郡王
+Wu'wei Principality			#武威郡王
+Xin'cai Principality		#新蔡郡王
+Li'shui Principality		#丽水郡王
+Fu'nin Principality			#阜宁郡王
+Gao'yang Principality		#高阳郡王
+Fan'yang Principality		#范阳郡王
+Kai'yang Principality		#开阳郡王
+Yan'ping Principality		#延平郡王 - Koxinga
+Chang'pi Principality		#长邳郡王
+Hong'nong Principality		#弘农郡王
+Zhong'shan Principality		#中山郡王
+Lang'ya Principality		#琅玡郡王
+Yi'du Principality			#宜都郡王
+Kuai'ji Principality		#会稽郡王
+Dong'hai Principality		#东海郡王
+Dong'yang Principality		#东阳郡王
+Le'an Principality			#乐安郡王
+Ru'nan Principality			#汝南郡王
+Guang'ling Principality		#广陵郡王
+Guang'chang Principality	#广昌郡王
+Guang'ping Principality		#广平郡王
+Si'shui Principality		#泗水郡王
+Ping'yuan Principality		#平原郡王
+Qing'he Principality		#清河郡王
+Tai'yuan Principality		#太原郡王
+Bo'ling Principality		#博陵郡王
+Lan'ling Principality		#兰陵郡王
+Jiang'xia Principality		#江夏郡王
+Shi'xing Principality		#始兴郡王

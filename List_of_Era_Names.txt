@@ -1,0 +1,70 @@
+#Founder: 开国
+
+Hongwu  	#洪武 - Ming
+Kaiping  	#开平
+Tianyou 	#天佑
+Tianfu 		#天福
+Guangshun  	#广顺
+Qianyou 	#乾佑
+Shence 		#神册
+Jianlong 	#建隆 - Northern Song
+Jianyan 	#建炎 - Southern Song
+Shaoxing 	#绍兴 - Southern Song
+
+Successor:
+Ming:
+"Yongle"	#永乐
+"Xuande"	#宣德
+"Hongxi"	#洪熙
+"Zhengtong"	#正统
+"Jingtai"	#景泰
+"Tianshun"	#天顺
+"Chenghua"	#成化
+"Hongzhi"	#弘治
+"Zhengde"	#正德
+"Jiajing"	#嘉靖
+"Longqing"	#隆庆
+"Wanli"		#万历
+"Taichang"	#泰昌		
+"Tianqi"	#天启
+"Chongzhen"	#崇祯 - the last unified Ming Emperor
+"Hongguang"	#弘光
+"Longwu"	#隆武
+"Shaowu"	#绍武
+Others:
+
+"Jingde"	#景德
+"Mingdao"	#明道
+Song:
+"Yongxi"	#雍熙
+"Jingyou"	#景佑
+"Jiayou"	#嘉佑
+"Yuanfeng"	#元封
+"Xining"	#熙宁
+"Zhenhe"	#政和
+"Xuanhe"	#宣和
+"Jingkang"	#靖康 - Calamity, worst era
+"Longxing"	#隆兴
+"Qiandao"	#乾道
+"Chunxi"	#淳熙
+"Jingyan"	#景炎 - the last Southern Song Emperor
+
+"Shengwei"	#圣威
+"Dazhong"	#大中
+"Taishuo"	#太朔
+"Tianxian"	#天宪
+"Tonghe"	#统合
+"Qianheng"	#乾亨
+"Kaitai"	#开泰
+"Yuanhe"	#元和
+"Huichang"	#会昌
+"Qianfu"	#乾浮
+"Wusheng"	#武盛
+"Xiangshuo"	#祥朔
+"Yongtai"	#永泰
+"Changqing"	#长清
+"Longyuan"	#隆元
+"Xiantong"	#咸通
+"Zhiyuan"	#至元
+"Yantai"	#延泰
+
