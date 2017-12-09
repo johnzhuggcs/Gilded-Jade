@@ -1,0 +1,46 @@
+6000000 = { # Crown Prince Zhaojing, second son of Daizong
+	dynasty = 105819 # avoid being sent back to China
+	name = "Miao"
+	religion = taoist
+	culture = han
+	father = 217708 # Emperor Daizong
+	mother = 247995 # Consort Cui
+	trait = child_of_consort
+	trait = quick
+	trait = scholar
+	trait = gregarious
+	trait = diligent
+	trait = brilliant_strategist
+	trait = erudite
+	trait = deceitful
+	trait = patient
+	martial = 10
+	stewardship = 7
+	746.1.1 = {
+		birth = yes
+	}
+	769.1.1 = {
+		effect = {set_government_type = chinese_imperial_government}
+	}
+	776.6.11 = {
+		death = { death_reason = death_in_china_historic }
+	}
+}
+
+6000001 = { # Prince of Shu, son of Crown Prince Zhaojing, adopted by Emperor Daizong
+	dynasty = 105819 # avoid being sent back to China
+	name = "Mo"
+	religion = taoist
+	culture = han
+	father = 6000000 # Crown Prince Zhaojing
+	trait = child_of_consort
+	763.1.1 = {
+		birth = yes
+	}
+	783.1.1 = {
+		name = "Yi" #Li Xilie's rebellion, changed name and appointed Viceroy of Yang Province, Jiedushi of Three Circuits
+	}
+	805.10.28 = {
+		death = { death_reason = death_in_china_historic }
+	}
+}

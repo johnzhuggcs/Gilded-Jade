@@ -122,8 +122,8 @@ EVTOPTAGJ.35;"May I reign for Ten Thousand Years!";;;;;;;;;x
 	
 #Game rules
 RULE_GROUP_GJ;Gilded Jade;;;;;;;;;x
-CHOOSE_TEMPLE_NAMES;Choose Temple Names;;;;;;;;;x
-CHOOSE_TEMPLE_NAMES_ALL_DESC;If you play as a character with Chinese Imperial government, you will be allowed to issue Temple and Posthmous names at the death, or usurpation of your predecessors;;;;;;;;;x
+CHOOSE_TEMPLE_NAMES;Gilded Jade: Choose Temple Names;;;;;;;;;x
+CHOOSE_TEMPLE_NAMES_ALL_DESC;If you play as a character with Chinese Imperial government, you will be allowed to issue Temple and Posthmous names on the death or usurpation of your predecessors;;;;;;;;;x
 CHOOSE_TEMPLE_NAMES_AI_DESC;Delegate the issuing of Temple and Posthumous Names for all Chinese Imperial governments. They will be automatically given Temple names on death or usurpation of the Empire title.;;;;;;;;;x
 
 #Retinue
@@ -140,6 +140,7 @@ PRINCESS;Princess;;;;;;;;;x
 COUNTYPRINCE;County Prince;;;;;;;;;x
 k_dynamic_dynastic_princes;Placeholder Title;;;;;;;;;x
 e_exiled_song;Song Empire;;;;;;;;;x
+e_exiled_tang;Tang Empire;;;;;;;;;x
 
 
 #cultural titles and foa

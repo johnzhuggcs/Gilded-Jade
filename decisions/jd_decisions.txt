@@ -69,14 +69,287 @@ decisions = {
 						base_title = THIS
 						short_name = yes
 					}
+					
 					new_title = {
 						set_title_flag = uses_temple_names_by_script #Titles with this flag give their heirs a temple name via on_death event
 						set_title_flag = pretender_chinese_empire #Blocks all grace interactions
 						adjective = e_china_west_governor_adj #Use WP adj as it is "Chinese" but also gives the right one in different languages
 						set_title_flag = founding_emperor
 						set_variable = {which = "numEmperorMax4" value = 4}
-						
-						#do exiled prince here
+						add_law = {
+							law = succ_primogeniture
+							cooldown = no
+							opinion_effect = no
+						}
+					}
+					
+					
+					if = {# going to allow exiled princes to re-establish dynasties
+						limit = {
+							has_dynasty_flag = was_Chinese_emperor
+						}
+				
+						set_character_flag = passed_exile_prince
+				
+						new_title = { #Gives previous Empire name
+							clr_title_flag = founding_emperor
+							clr_title_flag = usurping_chinese_emperor
+							clr_title_flag = called_60204_instead
+							set_title_flag = succesive_emperor
+							clear_flags_with_prefix = temple_name_
+							clear_flags_with_prefix = china_name_
+							clear_flags_with_prefix = era_
+							random_list = {
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Tang
+											} 
+										}
+										set_name = "Tang Empire"
+										set_title_flag = china_name_Tang
+								
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Jin
+											} 
+										}
+									set_name = "Jin Empire"
+									set_title_flag = china_name_Jin
+									
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Wei
+											} 
+										}
+										set_name = "Wei Empire"
+										set_title_flag = china_name_Wei
+									
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Qi
+											} 
+										}
+										set_name = "Qi Empire"
+										set_title_flag = china_name_Qi
+								
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Zhou
+											} 
+										}
+										set_name = "Zhou Empire"
+										set_title_flag = china_name_Zhou
+								
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Han
+											} 
+										}
+										set_name = "Han Empire"
+										set_title_flag = china_name_Han
+								
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Qin
+											} 
+										}
+										set_name = "Qin Empire"
+										set_title_flag = china_name_Qin
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Yan
+											} 
+										}
+										set_name = "Yan Empire"
+										set_title_flag = china_name_Yan
+								
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Zhao
+											} 
+										}
+										set_name = "Zhao Empire"
+										set_title_flag = china_name_Zhao
+								
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Liao
+											} 
+										}
+										set_name = "Liao Empire"
+										set_title_flag = china_name_Liao
+								
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Yuan
+											} 
+										}
+										set_name = "Yuan Empire"
+										set_title_flag = china_name_Yuan
+								
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Xia
+											} 
+										}
+										set_name = "Xia Empire"
+										set_title_flag = china_name_Xia
+									
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Qing
+											} 
+										}
+										set_name = "Qing Empire"
+										set_title_flag = china_name_Qing
+								
+									}
+									100 = { 
+										trigger = { 
+											PREV = {
+												has_dynasty_flag = china_dynasty_Dai
+											} 
+										}
+										set_name = "Dai Empire"
+										set_title_flag = china_name_Dai
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Cheng
+											} 
+										}
+										set_name = "Cheng Empire"
+										set_title_flag = china_name_Cheng
+										
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Liang
+											} 
+										}
+										set_name = "Liang Empire"
+										set_title_flag = china_name_Liang
+										
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Song
+											} 
+										}
+										set_name = "Song Empire"
+										set_title_flag = china_name_Song
+										
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Ming
+											} 
+										}
+										set_name = "Ming Empire"
+										set_title_flag = china_name_Ming
+										
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Shu
+											} 
+										}
+										set_name = "Shu Empire"
+										set_title_flag = china_name_Shu
+								
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Wu
+											} 
+										}
+										set_name = "Wu Empire"
+										set_title_flag = china_name_Wu
+										
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Chu
+											} 
+										}
+										set_name = "Chu Empire"
+										set_title_flag = china_name_Chu
+										
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Yue
+											} 
+										}
+										set_name = "Yue Empire"
+										set_title_flag = china_name_Yue
+										
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Yin
+											} 
+										}
+										set_name = "Yin Empire"
+										set_title_flag = china_name_Yin
+										
+									}
+									100 = { 
+										trigger = { 
+											PREV = { 
+												has_dynasty_flag = china_dynasty_Shun
+											} 
+										}
+										set_name = "Shun Empire"
+										set_title_flag = china_name_Shun
+								
+									}
+								}
+				#break = yes Note: because we need to allow new Emperor to give appropriate posthmous name
+							}	
+						}
+					
+					
+				if = {# going to allow exiled princes to re-establish dynasties
+					limit = {
+						NOT = {has_dynasty_flag = was_Chinese_emperor}
+					}
+							
+					new_title = {
 						
 						
 						random_list = {
@@ -337,11 +610,7 @@ decisions = {
 										
 									}
 								}
-					}
-						add_law = {
-							law = succ_primogeniture
-							cooldown = no
-							opinion_effect = no
+							}
 						}
 					}
 				}
@@ -359,16 +628,16 @@ decisions = {
 				text = adopt_chinese_imperialism_temple_name_tt
 				hidden_effect = {
 					random_list = { #Give a temple name
-						1 = { set_name = Hongwu  	#洪武 - Ming }
-						1 = { set_name = Kaiping  	#开平 }
-						1 = { set_name = Tianyou 	#天佑 }
-						1 = { set_name = Tianfu 		#天福 }
-						1 = { set_name = Guangshun  	#广顺 }
-						1 = { set_name = Qianyou 	#乾佑}
-						1 = { set_name = Shence 		#神册}
-						1 = { set_name = Jianlong 	#建隆 - Northern Song }
-						1 = { set_name = Jianyan 	#建炎 - Southern Song }
-						1 = { set_name = Shaoxing 	#绍兴 - Southern Song }
+						1 = { set_name = Hongwu }
+						1 = { set_name = Kaiping}
+						1 = { set_name = Tianyou }
+						1 = { set_name = Tianfu }
+						1 = { set_name = Guangshun  }
+						1 = { set_name = Qianyou}
+						1 = { set_name = Shence}
+						1 = { set_name = Jianlong }
+						1 = { set_name = Jianyan }
+						1 = { set_name = Shaoxing }
 					}
 					set_character_flag = given_temple_name_by_script
 				}

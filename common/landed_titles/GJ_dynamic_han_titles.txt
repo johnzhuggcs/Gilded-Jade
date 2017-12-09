@@ -21,7 +21,15 @@ e_exiled_song = {
 	allow = {
 		ai = no
 	}
+}
+
+e_exiled_tang = {
+	color={ 180 180 180 }
 	
-	culture = han
-	religion = taoist
+	primary = yes
+	shortname = yes
+	
+	allow = {
+		ai = no
+	}
 }

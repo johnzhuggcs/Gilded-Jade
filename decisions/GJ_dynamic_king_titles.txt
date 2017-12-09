@@ -1013,7 +1013,7 @@ targetted_decisions = {
 								
 				FROM = {
 					primary_title = {
-						clr_title_flag = current_Jin
+						clr_title_flag = current_jin
 					}
 				}
 			}
