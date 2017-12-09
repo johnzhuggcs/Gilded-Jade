@@ -95,7 +95,7 @@ Usurpation:
 	Young and Bad Rulers Usurped, NOT same dynasty, not proper temple names:
 	nick_yangdi		#炀帝 - the Immoral
 	nick_zhidi		#质帝
-	nick_chongdi	#冲帝 - the Offended
+	nick_chongdi	#冲帝 - the Offending
 	
 	#Young
 	nick_shaodi		#少帝 - the Young 
