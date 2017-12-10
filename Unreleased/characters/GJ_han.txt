@@ -20,7 +20,7 @@
 		birth = yes
 	}
 	769.1.1 = {
-		effect = {set_government_type = chinese_imperial_government}
+		name = "Yuanxing"
 	}
 	776.6.11 = {
 		death = { death_reason = death_in_china_historic }

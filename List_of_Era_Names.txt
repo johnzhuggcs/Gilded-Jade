@@ -58,7 +58,7 @@ Song:
 "Kaitai"	#开泰
 "Yuanhe"	#元和
 "Huichang"	#会昌
-"Qianfu"	#乾浮
+"Qianfu"	#乾符
 "Wusheng"	#武盛
 "Xiangshuo"	#祥朔
 "Yongtai"	#永泰

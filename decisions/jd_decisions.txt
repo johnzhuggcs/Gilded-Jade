@@ -627,7 +627,7 @@ decisions = {
 			custom_tooltip = {
 				text = adopt_chinese_imperialism_temple_name_tt
 				hidden_effect = {
-					random_list = { #Give a temple name
+					random_list = { #Give an era name
 						1 = { set_name = Hongwu }
 						1 = { set_name = Kaiping}
 						1 = { set_name = Tianyou }

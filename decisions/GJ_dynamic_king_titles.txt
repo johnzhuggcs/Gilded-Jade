@@ -1840,6 +1840,7 @@ targetted_decisions = {
 				new_title = {
 					set_title_flag = given_prince_title
 					de_jure_liege = FROM
+					succession = primogeniture
 				}
 			
 		}
