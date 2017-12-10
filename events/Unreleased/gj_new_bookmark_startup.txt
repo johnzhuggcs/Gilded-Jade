@@ -1,0 +1,47 @@
+namespace = GJ
+
+
+character_event =  { # Clean up living members of the chinese dynasty
+	id = GJ.100
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+
+	trigger = { 
+		OR = {
+			e_exiled_tang = {is_title_active = yes}
+			e_exiled_song = {is_title_active = yes}
+		}
+		is_save_game = no
+	}
+	
+	immediate = {
+	
+		e_exiled_tang = {
+			succession = primogeniture
+			set_title_flag = pretender_chinese_empire
+			set_title_flag = uses_temple_names_by_script #Titles with this flag give their heirs a temple name via on_death event
+			holder_scope = {
+				set_dynasty_flag = china_dynasty_Tang
+				set_dynasty_flag = was_Chinese_emperor
+				set_character_flag = given_temple_name_by_script
+			}
+						
+		}
+		
+		e_exiled_song = {
+			succession = primogeniture
+			set_title_flag = pretender_chinese_empire
+			set_title_flag = uses_temple_names_by_script #Titles with this flag give their heirs a temple name via on_death event
+			holder_scope = {
+				set_dynasty_flag = china_dynasty_Song
+				set_dynasty_flag = was_Chinese_emperor
+				set_character_flag = given_temple_name_by_script
+			}
+						
+		}
+
+	}
+}
