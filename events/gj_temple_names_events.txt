@@ -6,6 +6,16 @@
 #                                         #
 ###########################################
 
+
+## Event targets: temple_name_title
+## Event targets: previous_title_holder
+## Variable: numEmperorMax4
+## Variable: realmSize
+## Variable: wonWars
+## Variable: lostWars
+## Variable: wonBattles
+## Variable: lostBattles
+
 namespace = GJ
 
 #Written by: 
@@ -26,8 +36,103 @@ narrative_event = {	#makes ai automatically give temple names based on traits #T
 	}
 	
 	option = {
-		name = "EVTOPTA_GJ.2_GOODCOMPETENT"
-		narrative_event = {id = GJ.4}
+		name = "EVTOPTA_GJ.1"
+		character_event = {id = GJ.37}
+	}
+	
+}
+
+character__event = {	#makes ai automatically give temple names based on traits #TODO!!!
+	id = GJ.37
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		has_game_rule = {
+			name = choose_temple_names
+			value = none
+		}
+	}
+	
+	immediate = {
+	
+	
+		if = {
+			limit = {
+				event_target:temple_name_title = {
+					set_variable = {which = tempRealmSize which = realmSize}
+					multiply_variable = {which = tempRealmSize value = 1.4}
+					check_variable = { which = realmSize value = realmx }
+				}
+			}
+		}
+		
+		
+		if = {
+			limit = {
+				event_target:temple_name_title = {
+					has_title_flag = succesive_emperor
+				}
+			}
+			
+			random_list = {
+				1 = {
+					trigger = {
+						event_target:temple_name_title = {
+							NOT = {
+								has_title_flag = temple_name_xingzu
+							}
+						}
+					}
+
+					event_target:previous_title_holder = {
+						give_nickname = nick_xingzu
+					}
+					
+					event_target:temple_name_title = { 
+						set_title_flag= temple_name_xingzu
+						clr_title_flag = succesive_emperor
+					}
+				}
+				1 = {
+					trigger = {
+						event_target:temple_name_title = {
+							NOT = {
+								has_title_flag = temple_name_liezu
+							}
+						}
+					}
+
+					event_target:previous_title_holder = {
+						give_nickname = nick_liezu
+					}
+					
+					event_target:temple_name_title = { 
+						set_title_flag= temple_name_liezu
+						clr_title_flag = succesive_emperor
+					}
+				}
+				1 = {
+					trigger = {
+						event_target:temple_name_title = {
+							NOT = {
+								has_title_flag = temple_name_huanzu
+							}
+						}
+					}
+
+					event_target:previous_title_holder = {
+						give_nickname = nick_huanzu
+					}
+					
+					event_target:temple_name_title = { 
+						set_title_flag= temple_name_huanzu
+						clr_title_flag = succesive_emperor
+					}
+				}
+			}
+			
+		}
 	}
 	
 }
@@ -167,6 +272,12 @@ narrative_event = {	#good and competent emperors, emperors who saved the empire,
 	}
 	
 	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				has_title_flag = succesive_emperor
+			}
+			
+		}	
 		name = "EVTOPTC_GJ.4_SAVIOR"
 		narrative_event = {
 			id = GJ.17			#only 3 choices, 1 page
@@ -506,7 +617,7 @@ narrative_event = {	#choosing each temple name menu, for good emperors 1/8
 	
 
 	option = {
-		name = "EVTOPTD_GJ.10_NEXTPAGE_TWOEIGHT"
+		name = "EVTOPTD_GJ.10_NEXTPAGE_TWOSEVEN"
 		narrative_event = {id = GJ.11}
 	}
 }
@@ -878,15 +989,15 @@ narrative_event = {	#choosing each temple name menu, for good emperors 7/8
 	}
 	
 	option = {
-		name = "EVTOPTD_GJ.10_NEXTPAGE_EIGHTEIGHT"
-		narrative_event = {id = GJ.35 tooltip = RETURNUPMENU}
+		name = "EVTOPTD_GJ.4_RETURNUP"
+		narrative_event = {id = GJ.4 tooltip = RETURNUPMENU}
 	}
 }
 
 narrative_event = {	#choosing each temple name menu, for good emperors 8/8
 	id = GJ.34
 	is_triggered_only = yes
-	title = GIVETEMPLENAMETAI
+	title = GIVETEMPLENAME
 	desc = EVT_DESC_GJ_0034
 	picture = GFX_evt_china_golden_age
 	
@@ -896,19 +1007,21 @@ narrative_event = {	#choosing each temple name menu, for good emperors 8/8
 				NOT = {
 					has_title_flag = temple_name_taizong
 				}
+				check_variable = {which = "numEmperorMax4" value = 1}
 			}
 		}
 		name = "EVTOPTA_GJ.10_TAIZONG"
 		event_target:previous_title_holder = {
-			give_nickname = nick_shengzong
+			give_nickname = nick_taizong
 			event_target:temple_name_title = { set_title_flag= temple_name_taizong }
+			
 		}
 		narrative_event = {id = GJ.35}
 	}
 	
 	option = {
-		name = "EVTOPTD_GJ.4_RETURNUP"
-		narrative_event = {id = GJ.4 tooltip = RETURNUPMENU}
+		name = "EVTOPTD_GJ.10_NEXTPAGE_TWOEIGHT"
+		narrative_event = {id = GJ.11}
 	}
 }
 
@@ -930,7 +1043,10 @@ narrative_event = {	#choosing each temple name menu, for savior emperors
 		name = "EVTOPTA_GJ.10_XINGZU"
 		event_target:previous_title_holder = {
 			give_nickname = nick_xingzu
-			event_target:temple_name_title = { set_title_flag= temple_name_xingzu}
+			event_target:temple_name_title = { 
+				set_title_flag= temple_name_xingzu
+				clr_title_flag = succesive_emperor
+			}
 		}
 		narrative_event = {id = GJ.35}
 	}
@@ -939,14 +1055,14 @@ narrative_event = {	#choosing each temple name menu, for savior emperors
 		trigger = {
 			event_target:temple_name_title = {
 				NOT = {
-					has_title_flag = temple_name_xingzu
+					has_title_flag = temple_name_liezu
 				}
 			}
 		}
-		name = "EVTOPTB_GJ.10_LIEZONG"
+		name = "EVTOPTB_GJ.10_LIEZU"
 		event_target:previous_title_holder = {
 			give_nickname = nick_liezong
-			event_target:temple_name_title = { set_title_flag= temple_name_liezong}
+			event_target:temple_name_title = { set_title_flag= temple_name_liezu}
 		}
 		narrative_event = {id = GJ.35}
 	}

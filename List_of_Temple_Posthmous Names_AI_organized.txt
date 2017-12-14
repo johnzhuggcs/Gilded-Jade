@@ -1,0 +1,161 @@
+Choice A:
+Good and Competent Emperors:
+
+#numEmperor4 >=1, 5% increase, 1 war lost at most
+nick_taizong    #太宗 - the Great Successor
+
+#Administrative, 0% increase at the minimum, 1 war lost at most
+nick_wenzong	#文宗 - the Cultured
+nick_jingzong2	#景宗 - the Admirable/Luminous
+nick_zhaozong	#昭宗 - the Prominent
+nick_renzong	#仁宗 - the Kind
+nick_xiaozong	#孝宗 - the Filial
+nick_chengzong	#成宗 - the Accomplished
+nick_kangzong	#康宗 - the Well
+nick_xianzong2	#宪宗 - the Principled
+
+#Both Martial AND Administrative, 10% increase, 0 wars lost
+nick_mingzong	#明宗 - the Illuminated
+nick_zhangzong	#章宗 - the Law-giver
+nick_xuanzong2	#宣宗 - the Illustrious
+nick_xingzong	#兴宗 - the Prosperous
+nick_shizong	#世宗 - the Inheritor
+
+#Martial ones, 10% increase, 2 wars lost at most
+nick_wuzong		#武宗 - the Martial
+nick_huanzong	#桓宗 - the Conquering
+nick_dingzong	#定宗 - the Decisive/the Hammer
+nick_weizong	#威宗 - the Charasmatic
+
+
+#slightly not as accomplished as the other ones
+#0% increase in realm size at least. 2 wars lost at most
+nick_shenzong	#神宗 - the Holy
+nick_gaozong	#高宗 - the Supreme
+nick_zhongzong	#中宗 - the Middle-reign
+
+#On its own criteria, beteer than everything except for "Brilliant and the Best"
+nick_shengzong	#圣宗 - the Glorious
+
+
+#Special Flags OR 40% realm increase, no wars lost, 5 wars won, 10 battles won
+	Saved the Empire OR Recreated it anew:
+	nick_xingzu		#兴祖 - the Prospering Ancestor
+	nick_liezu		#烈祖 - the Unyielding Ancestor
+	nick_huanzu     #桓祖 - the Conquering Ancestor
+
+#40% realm increase, no wars lost, 5 wars won, 10 battles won.
+	Brilliant and the Best Emperor - "the Great" "the Magnificent", awkward English translations:
+	nick_shengzu	#圣祖 - the Glorious Ancestor (the Magnificent)
+	nick_shizu		#世祖 - the Great Inheriting Ancestor
+	nick_chengzu	#成祖 - the Accomplished Ancestor
+	nick_xuanzu		#宣祖 - the Illustrious Ancestor
+	
+
+Choice B:
+Meh and Generally Alright Emperors:
+#95% realm size, 1 war lost at most
+nick_zhenzong	#真宗 - the Honest
+nick_yingzong	#英宗 - 
+nick_zhezhong	#哲宗 - the Educated
+
+nick_suzong		#肃宗 
+nick_daizong	#代宗
+nick_ningzong	#宁宗 - the Tranquil
+
+nick_duanzong	#端宗
+nick_pingzong	#平宗 - the Secured
+nick_anzong		#安宗 - the Peaceful
+nick_ruizong	#睿宗 - the Wisecrack
+
+nick_jianzong   #简宗 - the Moderate
+nick_xiangzong	#襄宗 - the Good
+
+
+Choice C:
+Founders - "Taizu", "Gaozu":
+nick_taizu		#太祖 - the Great Progenitor/Ancestor
+nick_gaozu		#高祖 - the High/Supreme Progenitor/Ancestor
+
+
+
+Choice D (Next Page) (Sarcastic, Usupation, Early Death, Bad Ruler)
+
+Choice E:
+#not same or bigger realm size (basically once you lose land you're pretty much guaranteed to get this.)
+Sarcastic Names because you are filial:
+nick_guangzong	#光宗 - the Bright
+nick_huizong	#徽宗
+nick_qinzong	#钦宗
+
+nick_lizong		#理宗 - the Logical
+nick_duzong		#度宗
+nick_yizong		#毅宗
+
+nick_muzong		#穆宗
+nick_chongzong	#崇宗
+nick_daozong	#道宗 - the Enlightener
+
+nick_xianzong	#献宗
+nick_dezong		#德宗 - the Moral
+nick_shunzong	#顺宗
+
+nick_jingzong	#敬宗 - the Courteous
+
+Choice F:
+Usurpation:
+	Young and Bad Rulers Usurped, NOT same dynasty, not proper temple names:
+	nick_yangdi		#炀帝 - the Immoral
+	nick_zhidi		#质帝
+	nick_chongdi	#冲帝 - the Offending
+	
+	#If age <=21
+	#Young
+	nick_shaodi		#少帝 - the Young 
+	nick_gongdi		#恭帝 - the Courteous
+
+Choice G
+	Early Death or "the Desired":
+	nick_aizong		#哀宗 - the Mourned
+	nick_daozong2	#悼宗 - the Desired a la Sebastian of Portugal
+	nick_sizong		#思宗 - the Longed
+
+	Bad Rulers
+	nick_xuanzong	#玄宗 - the Superstitious
+	nick_xizong		#僖宗 - the Merrymaking (bad connotation) 
+	nick_shangzong	#殇宗 - the Tyrant
+	
+	#same check as manual Temple name system
+	Died in Battle
+	nick_liezong	#烈宗 - the Unyielding
+	nick_daozong2	#悼宗 - the Desired a la Sebastian of Portugal
+	nick_sizong		#思宗 - the Longed
+	
+	
+For usurpation of same dynasty:
+
+nick_feidi			#废帝 - the Deposed
+nick_shaodi			#少帝 - the Young
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

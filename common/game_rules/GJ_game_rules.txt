@@ -9,17 +9,6 @@ choose_temple_names = {
 		desc = "CHOOSE_TEMPLE_NAMES_ALL_DESC"
 	}
 	option = {
-		name = adventurers_only
-		achievements = no
-		text = "RULE_OPTION_ADVENTURERS_ONLY"
-		desc = "RULE_ADVENTURERS_ONLY_DESC"
-	}
-	option = {
-		name = no_major_invasions
-		text = "RULE_OPTION_NO_MAJOR_INVASIONS"
-		desc = "RULE_NO_MAJOR_INVASIONS_DESC"
-	}
-	option = {
 		name = none
 		text = "RULE_OPTION_NONE"
 		desc = "CHOOSE_TEMPLE_NAMES_AI_DESC"

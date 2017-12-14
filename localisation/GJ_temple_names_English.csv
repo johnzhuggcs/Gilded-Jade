@@ -91,6 +91,9 @@ EVTOPTA_GJ.4_JUSTGOODCOMPETENT;"They were simply competent and responsible";;;;;
 EVTOPTC_GJ.4_SAVIOR;"They preserved our dynasty's fortunes in times of chaos";;;;;;;;;x
 EVTOPTB_GJ.4_THEGREATMAGNIFICNET;"They were the Greatest, with unparalled glory!";;;;;;;;;x
 
+EVT_DESC_GJ_0034;The previous Emperor was among the few of the founding ones that had fillially and diligently carried out The Progenitor's mission.\n\nLike Emperor Taizong of Tang and Taizong of Han, they alone maintained our Dynasties fortunes during the tumultuous early years, and they shall be hononured as such!;;;;;;;;;x
+EVTOPTA_GJ.10_TAIZONG;;;;;;;;;;x
+
 RETURNUPMENU;Returns to previous layer of menu;;;;;;;;;x
 EVTOPTD_GJ.4_RETURNUP;Chancellor [Root.job_chancellor.GetFullName], allow me to reconsider...;;;;;;;;;x
 
@@ -141,7 +144,12 @@ COUNTYPRINCE;County Prince;;;;;;;;;x
 k_dynamic_dynastic_princes;Placeholder Title;;;;;;;;;x
 e_exiled_song;Song Empire;;;;;;;;;x
 e_exiled_tang;Tang Empire;;;;;;;;;x
+PRINCEOFWEI;Prince of Wei;;;;;;;;;x
+PRINCEOFZHENG;Prince of Zheng;;;;;;;;;x
 
+#Connecting Great Wall
+connect_great_wall;Connect the Great Walls;;;;;;;;;x
+connect_great_wall_desc;Extend the Great Wall to the Circuit of Hexi and connect the existing fortifications together!;;;;;;;;;x
 
 #cultural titles and foa
 duchy_han;Prefecture;;;;;;;;;x
@@ -196,6 +204,22 @@ ca_culture_chinese_han_2;Modao Armoury;;;;;;;;;x
 ca_culture_chinese_han_3;Arcuballista Production;;;;;;;;;x
 ca_culture_chinese_han_4;Divine Arm Distribution;;;;;;;;;x
 
+ca_harem_court;Harem Court;;;;;;;;;x
+ca_harem_court_desc;The Imperial Court Law mandates that there could be at least one hundred and twenty-eight beautiful women serving the Emperor. A massive palace must be built to house this land of debauchery.;;;;;;;;;x 
+
+ca_great_wall_1;The Great Wall (Partitioned);;;;;;;;;x
+ca_great_wall_2;The Great Wall (Connected);;;;;;;;;x
+ca_great_wall_1_desc;Cut off from the main section of the Great Wall, we must build strong fortications to maintain protection of the local province!;;;;;;;;;x
+ca_great_wall_2_desc;It was said that the ancient Han built a Great Wall all the way to Dayuan in Ferghana. Today we've connected the Great Walls of Hexi together, perhaps one day we'll rival the Han dynasty's feats!;;;;;;;;;x
+
+ca_wall_q_1_taoist;County Walls;;;;;;;;;x
+
 #Modifiers
 principality_income;The Feng'lu, before the Tang dynasty it was the income gathered from a fief, or Shiyi. Now it is simply a set income for the often powerless Imperial Princes;;;;;;;;;x
 opinion_granted_imperial_principality;Granted an Imperial Principality;;;;;;;;;x
+
+#CB Type
+CB_NAME_TAOIST_CONQUEST;Heavenly Conquest on [Title.GetBaseName];;;;;;;;;x
+WAR_NAME_TAOIST_CONQUEST;$ORDER$$FIRST_ADJ$-$SECOND_ADJ$ Heavenly Conquest over $OTHER_TITLE$;;;;;;;;;x
+cb_taoist_duchy_desc;The Heavenly Mandate has been swayed to you. Conquer a neighbouring duchy of a foreign realm that does not follow The Way and make them submit to you. Beware that only the duchy-holder will yield his top-title to you, other local rulers will be kept as your now loyal vassals;;;;;;;;;x
+

@@ -11,10 +11,11 @@ k_dynamic_dynastic_princes = {
 }
 
 e_exiled_song = {
-	color={ 180 180 180 }
+	color={ 204 0 0 }
 	
 	shortname = yes
 	
+	title = PRINCEOFWEI
 	allow = {
 		ai = no
 	}
@@ -23,13 +24,13 @@ e_exiled_song = {
 }
 
 e_exiled_tang = {
-	color={ 180 180 180 }
+	color={ 255 255 153 }
 	
 	shortname = yes
-	
+	title = PRINCEOFZHENG
 	allow = {
 		ai = no
-	}
+	}	
 	culture = han
 	religion = taoist
 }

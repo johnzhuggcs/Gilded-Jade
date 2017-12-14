@@ -3372,6 +3372,7 @@ character_event = {
 				clr_title_flag = usurping_chinese_emperor
 				clr_title_flag = called_60204_instead
 				set_title_flag = succesive_emperor
+				set_title_flag = succesive_dynasty
 				clear_flags_with_prefix = temple_name_
 				clear_flags_with_prefix = china_name_
 				clear_flags_with_prefix = era_
@@ -3630,6 +3631,7 @@ character_event = {
 					set_title_flag = usurping_chinese_emperor
 					set_title_flag = called_60204_instead
 					set_variable = {which = "numEmperorMax4" value = 4}
+					clear_flags_with_prefix = succesive_
 					clear_flags_with_prefix = temple_name_
 					clear_flags_with_prefix = china_name_
 					clear_flags_with_prefix = era_

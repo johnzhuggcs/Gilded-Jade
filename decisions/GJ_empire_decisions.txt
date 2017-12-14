@@ -1,0 +1,66 @@
+decisions = {
+	connect_great_wall = {
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			independent = yes
+			is_nomadic = no
+			culture = han
+		}
+		
+		allow = {
+			completely_controls = d_jiuquan
+			
+			b_jiuquan = {
+				has_building = ca_great_wall_1
+			}
+			
+			b_fangpan = {
+				has_building = ca_great_wall_1
+			}
+			
+			b_anxi = {
+				has_building = ca_great_wall_1
+			}
+			
+			b_yungguan = {
+				has_building = ca_great_wall_1
+			}
+			
+			b_yumen= {
+				has_building = ca_great_wall_1
+			}
+
+			wealth = 1000
+			prestige = 1000
+		
+		}
+		
+		effect = {
+			b_jiuquan = {
+				add_building = ca_great_wall_2
+			}
+			
+			b_fangpan = {
+				add_building = ca_great_wall_2
+			}
+			
+			b_anxi = {
+				add_building = ca_great_wall_2
+			}
+			
+			b_yungguan = {
+				add_building = ca_great_wall_2
+			}
+			
+			b_yumen= {
+				add_building = ca_great_wall_2
+			}
+		}
+		wealth = -1000
+		prestige = -1000
+		piety = -250
+		
+	}
+}

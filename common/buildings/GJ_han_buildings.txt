@@ -192,4 +192,93 @@ castle = {
 		extra_tech_building_start = 0.8
 	}
 	
+	ca_great_wall_1 = { # Great Wall (Portions)
+		potential = {
+			FROMFROM = {
+				OR = {
+					title = b_jiuquan
+					title = b_yumen
+					title = b_fangpan 
+					title = b_anxi
+					title = b_yungguan
+			
+				}
+				
+			}
+			FROM = {
+				top_liege = {
+					culture = han
+				}
+			}
+		}
+		desc = ca_great_wall_1_desc
+		
+		gold_cost = 350
+		build_time = 1460 #4y
+		fort_level = 4.0
+		garrison_size = 0.2
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 5.0
+	}
+	
+	ca_great_wall_2 = { # Great Wall (Connected)
+		potential = {
+			always = no
+			FROMFROM = {
+				OR = {
+					title = b_jiuquan
+					title = b_yumen
+					title = b_fangpan
+					title = b_anxi
+					title = b_yungguan
+			
+				}
+			}
+			FROM = {
+				top_liege = {
+					culture = han
+				}
+			}
+		}
+		desc = ca_great_wall_2_desc
+		
+		upgrades_from = ca_great_wall_1
+		
+		
+		gold_cost = 450000 #never, should be triggered by decision
+		build_time = 1460 #4y
+		fort_level = 3.0
+		garrison_size = 0.2
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 5.0
+	}
+	
+	ca_harem_court = { # Harem Court
+		potential = {
+			FROMFROM = {
+				is_capital = yes
+			}
+			FROM = {
+				OR = {
+					culture = han
+					religion = taoist
+				}
+				independent = yes
+			}
+		}
+		desc = ca_harem_court_desc
+		
+		gold_cost = 350
+		build_time = 365 #1y
+		fertility = 0.1
+		fort_level = 0.1
+		garrison_size = 0.05
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 1.0
+	}
+	
+	
 }

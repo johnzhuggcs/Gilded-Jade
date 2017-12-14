@@ -5,9 +5,10 @@
 	culture = han
 	father = 217708 # Emperor Daizong
 	mother = 247995 # Consort Cui
+	historical = yes
 	trait = child_of_consort
 	trait = quick
-	trait = scholar
+	trait = poet
 	trait = gregarious
 	trait = diligent
 	trait = brilliant_strategist
@@ -32,6 +33,7 @@
 	name = "Mo"
 	religion = taoist
 	culture = han
+	historical = yes
 	father = 6000000 # Crown Prince Zhaojing
 	trait = child_of_consort
 	763.1.1 = {
