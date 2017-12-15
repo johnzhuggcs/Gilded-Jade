@@ -38,7 +38,7 @@ nick_zhongzong	#中宗 - the Middle-reign
 nick_shengzong	#圣宗 - the Glorious
 
 
-#Special Flags OR 40% realm increase, no wars lost, 5 wars won, 10 battles won
+#Special Flags OR 40% realm increase, 20% increase if realm size bigger than 325 no wars lost, 3 wars won, 10 battles won
 	Saved the Empire OR Recreated it anew:
 	nick_xingzu		#兴祖 - the Prospering Ancestor
 	nick_liezu		#烈祖 - the Unyielding Ancestor

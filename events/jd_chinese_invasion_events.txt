@@ -3369,7 +3369,6 @@ character_event = {
 				
 				event_target:temple_name_title = { #Gives previous Empire name
 				clr_title_flag = founding_emperor
-				clr_title_flag = usurping_chinese_emperor
 				clr_title_flag = called_60204_instead
 				set_title_flag = succesive_emperor
 				set_title_flag = succesive_dynasty
@@ -4350,7 +4349,10 @@ character_event = {
 					has_game_rule = {
 						name = choose_temple_names
 						value = default
-					}	
+					}
+					FROMFROM = {
+						is_alive = no
+					}
 			}
 			narrative_event = {
 				id = GJ.0002

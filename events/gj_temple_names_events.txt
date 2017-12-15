@@ -10,7 +10,8 @@
 ## Event targets: temple_name_title
 ## Event targets: previous_title_holder
 ## Variable: numEmperorMax4
-## Variable: realmSize
+## Variable: currRealmSize
+## Variable: pastRealmSize
 ## Variable: wonWars
 ## Variable: lostWars
 ## Variable: wonBattles
@@ -29,9 +30,12 @@ narrative_event = {	#makes ai automatically give temple names based on traits #T
 	picture = GFX_evt_china_golden_age
 	
 	trigger = {
-		has_game_rule = {
-			name = choose_temple_names
-			value = none
+		OR = {
+			has_game_rule = {
+				name = choose_temple_names
+				value = none
+			}
+			ai = yes
 		}
 	}
 	
@@ -56,22 +60,11 @@ character__event = {	#makes ai automatically give temple names based on traits #
 	
 	immediate = {
 	
-	
-		if = {
-			limit = {
-				event_target:temple_name_title = {
-					set_variable = {which = tempRealmSize which = realmSize}
-					multiply_variable = {which = tempRealmSize value = 1.4}
-					check_variable = { which = realmSize value = realmx }
-				}
-			}
-		}
-		
-		
 		if = {
 			limit = {
 				event_target:temple_name_title = {
 					has_title_flag = succesive_emperor
+					NOT = {has_title_flag = usurping_chinese_emperor}
 				}
 			}
 			
@@ -133,6 +126,239 @@ character__event = {	#makes ai automatically give temple names based on traits #
 			}
 			
 		}
+		
+		if = {
+			limit = {
+				event_target:temple_name_title = {
+					AND = {
+						has_title_flag = founding_emperor
+						NOT = {
+							has_title_flag = usurping_chinese_emperor
+						}
+					}
+				}
+			}
+			
+			random_list = {
+				1 = {
+					trigger = {
+						event_target:temple_name_title = {
+							NOT = {
+								has_title_flag = temple_name_taizu
+							}
+						}
+					}
+
+					event_target:previous_title_holder = {
+						give_nickname = nick_taizu
+					}
+					
+					event_target:temple_name_title = { 
+						set_title_flag= temple_name_taizu
+						
+					}
+				}
+				1 = {
+					trigger = {
+						event_target:temple_name_title = {
+							NOT = {
+								has_title_flag = temple_name_gaozu
+							}
+						}
+					}
+
+					event_target:previous_title_holder = {
+						give_nickname = nick_gaozu
+					}
+					
+					event_target:temple_name_title = { 
+						set_title_flag= temple_name_gaozu
+					}
+				}
+			}
+			
+		}
+		
+		
+		
+	
+		if = { #The non-flag based temple names
+			limit = {
+				event_target:temple_name_title = {
+					AND = {
+						NOT = {has_title_flag = founding_emperor}
+						NOT = {has_title_flag = usurping_chinese_emperor}
+					}
+				}
+			}
+			#Tightest (Best) to least (worst) names
+			
+			
+			
+			
+			
+			if = { #If realm_size bigger than 325 use 20% increase for best Emperor
+				limit = {
+					check_variable = {which = "pastRealmSize" value = 325}
+				}
+				
+				event_target:temple_name_title = {
+					set_variable = {which = "tempRealmSize" which = pastRealmSize}
+					multiply_variable = {which = "tempRealmSize" value = 1.2}
+				}
+			}
+			
+			if = { #If realm_size smaller than 325 use 40% increase for best Emperor
+				limit = {
+					NOT = {check_variable = {which = "pastRealmSize" value = 325}}
+				}
+				
+				event_target:temple_name_title = {
+					set_variable = {which = "tempRealmSize" which = pastRealmSize}
+					multiply_variable = {which = "tempRealmSize" value = 1.4}
+				}
+			}
+			
+			
+			if = {
+				limit = {
+					event_target:temple_name_title = {
+						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
+						check_variable = { which = "lostWars" which = 1}
+						check_variable = { which = "wonWars" which = 3}
+						check_variable = { which = "wonBattles" which = 11}
+					}
+				}
+				
+				random_list = {
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_shengzu
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_shengzu
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_shengzu
+						}
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_shizu
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_shizu
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_shizu
+						}
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_chengzu
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_chengzu
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_chengzu
+						}
+					}
+				}
+			}
+			
+			#Both Martial AND Administrative, 10% realm size increase, 0 wars lost
+			
+			event_target:temple_name_title = {
+					set_variable = {which = "tempRealmSize" which = pastRealmSize}
+					multiply_variable = {which = "tempRealmSize" value = 1.1}
+			}
+			
+			if = {
+				limit = {
+					event_target:temple_name_title = {
+						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
+						check_variable = { which = "lostWars" which = 1}
+					}
+				}
+				
+				random_list = {
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_mingzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_mingzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_mingzong
+						}
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_zhangzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_zhangzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_zhangzong
+						}
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_xuanzong2
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_xuanzong2
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_xuanzong2
+						}
+					}
+				}
+			}
+			
+
+			
+		}
+		
 	}
 	
 }
@@ -183,10 +409,7 @@ narrative_event = {	#allows players of pretender Chinese Empires to choose templ
 	option = {
 		trigger = {
 			event_target:temple_name_title = {
-				AND = {
-					NOT = {has_title_flag = founding_emperor}
-					NOT = {has_title_flag = usurping_chinese_emperor}
-				}
+				NOT = {has_title_flag = usurping_chinese_emperor}
 			}
 		}
 		name = "EVTOPTC_GJ.2_MEH"
@@ -225,6 +448,15 @@ narrative_event = {	#2nd page for allows players of pretender Chinese Empires to
 
 	
 	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				AND = {
+					NOT = {has_title_flag = founding_emperor}
+					NOT = {has_title_flag = usurping_chinese_emperor}
+				}
+				
+			}
+		}
 		name = "EVTOPTE_GJ.3_SARCASTICORBAD"
 		narrative_event = {id = GJ.7}
 	}
@@ -244,6 +476,15 @@ narrative_event = {	#2nd page for allows players of pretender Chinese Empires to
 	}
 	
 	option = {
+		trigger = {
+			event_target:temple_name_title = {
+				AND = {
+					NOT = {has_title_flag = founding_emperor}
+					NOT = {has_title_flag = usurping_chinese_emperor}
+				}
+				
+			}
+		}
 		name = "EVTOPTG_GJ.3_EARLYDEATHORBATTLE"
 		narrative_event = {id = GJ.9}
 	}

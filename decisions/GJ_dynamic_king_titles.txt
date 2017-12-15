@@ -41,6 +41,17 @@ targetted_decisions = {
 			}
 		}
 		
+		allow = {
+			FROM = {
+				primary_title = {
+					NOT = {
+						check_variable = {which = "Principalities" value = 11} #maximum 10 princes
+					}
+				}
+			}
+		}
+		
+		
 		effect = {
 			FROM = {
 				primary_title = {
@@ -1817,6 +1828,9 @@ targetted_decisions = {
 			}
 			
 			FROM = {
+					primary_title = {
+						change_variable = {which = "principalities" value = 1}
+					}
 					capital_holding = {
 						PREVPREV = {
 							spawn_unit = {

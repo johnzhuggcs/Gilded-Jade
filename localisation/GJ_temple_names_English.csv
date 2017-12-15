@@ -137,7 +137,7 @@ GetDeadChineseEmperorWithTempleName_string;[This.GetOnlyDynastyName] [This.GetBi
 
 #Give Dynamic Kingdom-Level Titles
 give_dynastic_prince_title;Give Imperial Principality;;;;;;;;;x
-give_dynastic_prince_title_desc;As the Emperor, you are expected to reward your kinsmen with high honours. You hereby grant a noble title of rank "Prince" of an ancient Chinese state to [Root.GetTitledName]. Yet to counteract the possibility of rebellious princes, these titles are purely honourific separate from the previous enfeoffed fiefs, each prince has a limited Feng'lu (income) along with a household guard.;;;;;;;;;x
+give_dynastic_prince_title_desc;As the Emperor, you are expected to reward your kinsmen with high honours. You hereby grant a noble title of rank "Prince" of an ancient Chinese state to [Root.GetTitledName]. Yet to counteract the possibility of rebellious princes, these titles are purely honourific separate from the previous enfeoffed fiefs, each prince has a limited Feng'lu (income) along with a household guard. But at any time an Empire will only be allowed 10 Principalities at most.;;;;;;;;;x
 PRINCE;Prince;;;;;;;;;x
 PRINCESS;Princess;;;;;;;;;x
 COUNTYPRINCE;County Prince;;;;;;;;;x

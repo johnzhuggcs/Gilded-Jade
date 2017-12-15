@@ -76,11 +76,13 @@ decisions = {
 						adjective = e_china_west_governor_adj #Use WP adj as it is "Chinese" but also gives the right one in different languages
 						set_title_flag = founding_emperor
 						set_variable = {which = "numEmperorMax4" value = 4}
-						export_to_variable = {which = "realmSize" value = realm_size who = PREV}
-						set_variable = {which = "wonWars" value = 0}
-						set_variable = {which = "wonBattles" value = 0}
-						set_variable = {which = "lostBattles" value = 0}
-						set_variable = {which = "lostWars" value = 0}
+						export_to_variable = {which = "currRealmSize" value = realm_size who = PREV}
+						export_to_variable = {which = "pastRealmSize" value = realm_size who = PREV}
+						set_variable = {which = "wonWars" value = 1} #2-based indexing to avoid 0-valued variables getting erased by game when reloading
+						set_variable = {which = "wonBattles" value = 1}
+						set_variable = {which = "lostBattles" value = 1}
+						set_variable = {which = "lostWars" value = 1}
+						set_variable = {which = "Principalities" value = 1}
 						add_law = {
 							law = succ_primogeniture
 							cooldown = no

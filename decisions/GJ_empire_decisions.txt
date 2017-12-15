@@ -16,20 +16,40 @@ decisions = {
 				has_building = ca_great_wall_1
 			}
 			
+			b_jiuquan = {
+				NOT = {has_building = ca_great_wall_2}
+			}
+			
 			b_fangpan = {
 				has_building = ca_great_wall_1
+			}
+			
+			b_fangpan = {
+				NOT = {has_building = ca_great_wall_2}
 			}
 			
 			b_anxi = {
 				has_building = ca_great_wall_1
 			}
 			
+			b_anxi= {
+				NOT = {has_building = ca_great_wall_2}
+			}
+			
 			b_yungguan = {
 				has_building = ca_great_wall_1
 			}
 			
+			b_yungguan = {
+				NOT = {has_building = ca_great_wall_2}
+			}
+			
 			b_yumen= {
 				has_building = ca_great_wall_1
+			}
+			
+			b_yumen = {
+				NOT = {has_building = ca_great_wall_2}
 			}
 
 			wealth = 1000
