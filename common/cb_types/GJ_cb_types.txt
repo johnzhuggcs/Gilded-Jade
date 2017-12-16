@@ -210,7 +210,17 @@ cb_taoist_duchy = {
 		custom_tooltip = {
 			
 			#hidden_tooltip = {
+				if = {
+					limit = {
+						is_title_active = yes
+					}
+					usurp_title = {
+						target = ROOT
+					}
+				}
+				
 				ROOT = {
+					text = religious_cb_succ_muslim_tip
 					vassalize_or_take_under_title = {
 						title = PREV
 						enemy = FROM
@@ -218,6 +228,18 @@ cb_taoist_duchy = {
 						type = invasion
 					}
 				}
+				if = {
+					limit = {
+						FROM = {
+							independent = no
+						}
+					}
+					FROM = {
+						death = { death_reason = death_execution killer = ROOT }
+					}
+				}
+				
+				
 			#}
 		}
 	}

@@ -15,7 +15,6 @@
 ## Variable: wonWars
 ## Variable: lostWars
 ## Variable: wonBattles
-## Variable: lostBattles
 
 namespace = GJ
 
@@ -86,6 +85,7 @@ character__event = {	#makes ai automatically give temple names based on traits #
 						set_title_flag= temple_name_xingzu
 						clr_title_flag = succesive_emperor
 					}
+					break = yes
 				}
 				1 = {
 					trigger = {
@@ -104,6 +104,7 @@ character__event = {	#makes ai automatically give temple names based on traits #
 						set_title_flag= temple_name_liezu
 						clr_title_flag = succesive_emperor
 					}
+					break = yes
 				}
 				1 = {
 					trigger = {
@@ -122,6 +123,7 @@ character__event = {	#makes ai automatically give temple names based on traits #
 						set_title_flag= temple_name_huanzu
 						clr_title_flag = succesive_emperor
 					}
+					break = yes
 				}
 			}
 			
@@ -157,6 +159,7 @@ character__event = {	#makes ai automatically give temple names based on traits #
 						set_title_flag= temple_name_taizu
 						
 					}
+					break = yes
 				}
 				1 = {
 					trigger = {
@@ -174,6 +177,7 @@ character__event = {	#makes ai automatically give temple names based on traits #
 					event_target:temple_name_title = { 
 						set_title_flag= temple_name_gaozu
 					}
+					break = yes
 				}
 			}
 			
@@ -192,10 +196,6 @@ character__event = {	#makes ai automatically give temple names based on traits #
 				}
 			}
 			#Tightest (Best) to least (worst) names
-			
-			
-			
-			
 			
 			if = { #If realm_size bigger than 325 use 20% increase for best Emperor
 				limit = {
@@ -224,9 +224,9 @@ character__event = {	#makes ai automatically give temple names based on traits #
 				limit = {
 					event_target:temple_name_title = {
 						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
-						check_variable = { which = "lostWars" which = 1}
-						check_variable = { which = "wonWars" which = 3}
-						check_variable = { which = "wonBattles" which = 11}
+						is_variable_equal = { which = "lostWars" value = 1}
+						check_variable = { which = "wonWars" value = 3}
+						check_variable = { which = "wonBattles" value = 11}
 					}
 				}
 				
@@ -247,6 +247,7 @@ character__event = {	#makes ai automatically give temple names based on traits #
 						event_target:temple_name_title = { 
 							set_title_flag= temple_name_shengzu
 						}
+						break = yes
 					}
 					1 = {
 						trigger = {
@@ -264,6 +265,7 @@ character__event = {	#makes ai automatically give temple names based on traits #
 						event_target:temple_name_title = { 
 							set_title_flag= temple_name_shizu
 						}
+						break = yes
 					}
 					1 = {
 						trigger = {
@@ -281,8 +283,85 @@ character__event = {	#makes ai automatically give temple names based on traits #
 						event_target:temple_name_title = { 
 							set_title_flag= temple_name_chengzu
 						}
+						break = yes
 					}
 				}
+			}
+			
+			#Good successor during early years of emperor (within first 4 emperors, usually the second), 5% increase, 0 wars lost
+			
+			event_target:temple_name_title = {
+					set_variable = {which = "tempRealmSize" which = pastRealmSize}
+					multiply_variable = {which = "tempRealmSize" value = 1.05}
+			}
+			
+			if = {
+				limit = {
+					event_target:temple_name_title = {
+						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
+						check_variable = { NOT = {which = "lostWars" value = 3}}
+						check_variable = {which = "numEmperorMax4" value = 1}
+						NOT = {
+							has_title_flag = temple_name_taizong
+						}
+					}
+				}
+				
+				event_target:previous_title_holder = {
+						give_nickname = nick_taizong
+				}
+					
+				event_target:temple_name_title = { 
+					set_title_flag= temple_name_taizong
+				}
+				break = yes
+				
+			}
+			
+			
+			# Slightly worse off than the "Best", 15% increase if realm_size >= 325, 30% increase otherwirse. No wars lost, 2 battles won
+			if = { #If realm_size bigger than 325 use 15% increase for best Emperor
+				limit = {
+					check_variable = {which = "pastRealmSize" value = 325}
+				}
+				
+				event_target:temple_name_title = {
+					set_variable = {which = "tempRealmSize" which = pastRealmSize}
+					multiply_variable = {which = "tempRealmSize" value = 1.15}
+				}
+			}
+			
+			if = { #If realm_size smaller than 325 use 30% increase for best Emperor
+				limit = {
+					NOT = {check_variable = {which = "pastRealmSize" value = 325}}
+				}
+				
+				event_target:temple_name_title = {
+					set_variable = {which = "tempRealmSize" which = pastRealmSize}
+					multiply_variable = {which = "tempRealmSize" value = 1.3}
+				}
+			}
+			
+			if = {
+				limit = {
+					event_target:temple_name_title = {
+						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
+						check_variable = { NOT = {which = "lostWars" value = 3}}
+						NOT = {
+							has_title_flag = temple_name_shengzong
+						}
+					}
+				}
+				
+				event_target:previous_title_holder = {
+						give_nickname = nick_shengzong
+				}
+					
+				event_target:temple_name_title = { 
+					set_title_flag= temple_name_shengzong
+				}
+				break = yes
+				
 			}
 			
 			#Both Martial AND Administrative, 10% realm size increase, 0 wars lost
@@ -296,8 +375,11 @@ character__event = {	#makes ai automatically give temple names based on traits #
 				limit = {
 					event_target:temple_name_title = {
 						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
-						check_variable = { which = "lostWars" which = 1}
+						is_variable_equal = { which = "lostWars" value = 1}
+						
 					}
+					
+					
 				}
 				
 				random_list = {
@@ -317,6 +399,7 @@ character__event = {	#makes ai automatically give temple names based on traits #
 						event_target:temple_name_title = { 
 							set_title_flag= temple_name_mingzong
 						}
+						break = yes
 					}
 					1 = {
 						trigger = {
@@ -334,6 +417,7 @@ character__event = {	#makes ai automatically give temple names based on traits #
 						event_target:temple_name_title = { 
 							set_title_flag= temple_name_zhangzong
 						}
+						break = yes
 					}
 					1 = {
 						trigger = {
@@ -351,11 +435,817 @@ character__event = {	#makes ai automatically give temple names based on traits #
 						event_target:temple_name_title = { 
 							set_title_flag= temple_name_xuanzong2
 						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_shizong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_shizong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_shizong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_xingzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_xingzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_xingzong
+						}
+						break = yes
 					}
 				}
 			}
 			
+			#just martial, 10% increase, 2 wars lost at most
+			
+			event_target:temple_name_title = {
+					set_variable = {which = "tempRealmSize" which = pastRealmSize}
+					multiply_variable = {which = "tempRealmSize" value = 1.1}
+			}
+			
+			if = {
+				limit = {
+					event_target:temple_name_title = {
+						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
+						check_variable = { NOT = {which = "lostWars" value = 4}}
+						
+					}
+					
+					
+				}
+				
+				random_list = {
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_wuzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_wuzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_wuzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_huanzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_huanzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_huanzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_dingzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_dingzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_dingzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_weizong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_weizong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_weizong
+						}
+						break = yes
+					}
+				}
+			}
+			
+			#just administration, 0% increase, 1 wars lost at most
+			
+			event_target:temple_name_title = {
+					set_variable = {which = "tempRealmSize" which = pastRealmSize}
+			}
+			
+			
+			if = {
+				limit = {
+					event_target:temple_name_title = {
+						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
+						check_variable = { NOT = {which = "lostWars" value = 3}}
+						
+					}
+					
+					
+				}
+				
+				random_list = {
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_wenzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_wenzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_wenzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_jingzong2
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_jingzong2
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_jingzong2
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_zhaozong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_zhaozong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_zhaozong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_renzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_renzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_renzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_xiaozong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_xiaozong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_xiaozong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_chengzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_chengzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_chengzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_kangzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_kangzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_kangzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_xianzong2
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_xianzong2
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_xianzong2
+						}
+						break = yes
+					}
+				}
+			}
+			
+			#Not as accomplished as others, 0% increase, at most 2 wars lost
 
+			if = {
+				limit = {
+					event_target:temple_name_title = {
+						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
+						check_variable = { NOT = {which = "lostWars" value = 4}}
+						
+					}
+				}
+				
+				random_list = {
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_shenzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_shenzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_shenzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_gaozong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_gaozong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_gaozong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_zhongzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_zhongzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_zhongzong
+						}
+						break = yes
+					}
+				}
+			}
+			
+			
+			#Meh and generally alright rulers, 95% realm size remaining, 1 war lost at most
+			event_target:temple_name_title = {
+					set_variable = {which = "tempRealmSize" which = pastRealmSize}
+					multiply_variable = {which = "tempRealmSize" value = 0.95}
+			}
+			
+			
+			if = {
+				limit = {
+					event_target:temple_name_title = {
+						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
+						check_variable = { NOT = {which = "lostWars" value = 3}}
+						
+					}
+					
+					
+				}
+				
+				random_list = {
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_zhenzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_zhenzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_zhenzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_zhezong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_zhezhong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_zhezhong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_suzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_suzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_suzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_daizong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_daizong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_daizong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_ningzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_ningzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_ningzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_duanzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_duanzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_duanzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_pingzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_pingzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_pingzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_anzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_anzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_anzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_ruizong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_ruizong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_ruizong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_jianzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_jianzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_jianzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_xiangzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_xiangzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_xiangzong
+						}
+						break = yes
+					}
+				}
+			}
+			
+			#Bad rulers, any decreased realm size
+			event_target:temple_name_title = {
+					set_variable = {which = "tempRealmSize" which = pastRealmSize}
+					
+			}
+			
+			
+			if = {
+				limit = {
+					event_target:temple_name_title = {
+						check_variable = { NOT = {which = "currRealmSize" which = "tempRealmSize"}}
+						check_variable = {which = "lostWars" value = 2}
+						
+					}
+					
+					
+				}
+				
+				random_list = {
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_guangzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_guangzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_guangzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_huizong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_huizhong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_huizhong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_qinzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_qinzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_qinzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_lizong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_lizong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_lizong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_duzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_duzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_duzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_yizong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_yizong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_yizong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_yizong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_yizong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_yizong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_muzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_muzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_muzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_daozong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_daozong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_daozong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_chongzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_chongzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_chongzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_xianzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_xianzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_xianzong
+						}
+						break = yes
+					}
+				}
+			}
+			
 			
 		}
 		

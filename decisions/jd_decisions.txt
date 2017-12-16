@@ -80,7 +80,6 @@ decisions = {
 						export_to_variable = {which = "pastRealmSize" value = realm_size who = PREV}
 						set_variable = {which = "wonWars" value = 1} #2-based indexing to avoid 0-valued variables getting erased by game when reloading
 						set_variable = {which = "wonBattles" value = 1}
-						set_variable = {which = "lostBattles" value = 1}
 						set_variable = {which = "lostWars" value = 1}
 						set_variable = {which = "Principalities" value = 1}
 						add_law = {

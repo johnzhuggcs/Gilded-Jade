@@ -1,6 +1,6 @@
 #CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
-nick_wenzong;Wenzong;;;;;;;;;x
-nick_wuzong;Wuzong;;;;;;;;;x
+nick_wenzong;Wenzong;;;;;;;;;x		#文宗
+nick_wuzong;Wuzong;;;;;;;;;x		#武宗
 nick_zhaozong;Zhaozong;;;;;;;;;x	#昭宗 - 
 nick_xuanzong2;Xuanzong the Illustrious;;;;;;;;;x	#宣宗 - the Illustrious
 nick_huanzong;Huanzong;;;;;;;;;x	#桓宗
@@ -49,7 +49,7 @@ nick_duzong;Duzong;;;;;;;;;x		#度宗
 nick_yizong;Yizong;;;;;;;;;x	#毅宗
 nick_muzong;Muzong;;;;;;;;;x	#穆宗
 nick_chongzong;Chongzong;;;;;;;;;x	#崇宗
-nick_daozong;Daozong the "Good";;;;;;;;;x	#道宗 - 
+nick_daozong;Daozong the Good;;;;;;;;;x	#道宗 - 
 nick_xianzong;Xianzong the Giving;;;;;;;;;x	#献宗
 nick_dezong;Dezong;;;;;;;;;x		#德宗
 nick_shunzong;Shunzong;;;;;;;;;x	#顺宗
@@ -155,7 +155,7 @@ connect_great_wall_desc;Extend the Great Wall to the Circuit of Hexi and connect
 duchy_han;Prefecture;;;;;;;;;x
 duchy_of_han;Prefecture of;;;;;;;;;x
 vice_royalty_kingdom_of_han;Circuit of;;;;;;;;;x
-vice_royalty_king_han;Duhu;;;;;;;;;x
+vice_royalty_king_han;Jinglue;;;;;;;;;x
 duke_han;Jiedushi;;;;;;;;;x
 king_dynasty;Prince;;;;;;;;;x
 king_nondyn;County Prince;;;;;;;;;x

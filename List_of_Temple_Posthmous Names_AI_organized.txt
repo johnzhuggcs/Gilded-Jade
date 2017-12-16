@@ -1,11 +1,11 @@
 Choice A:
 Good and Competent Emperors:
 
-#numEmperor4 >=1, 5% increase, 1 war lost at most
+#numEmperor4 >=1, 5% increase, 1 war lost at most, priority during early years of empire
 nick_taizong    #太宗 - the Great Successor
 
 #Administrative, 0% increase at the minimum, 1 war lost at most
-nick_wenzong	#文宗 - the Cultured
+nick_wenzong	#文宗 - the Cultured/Learned
 nick_jingzong2	#景宗 - the Admirable/Luminous
 nick_zhaozong	#昭宗 - the Prominent
 nick_renzong	#仁宗 - the Kind
@@ -34,7 +34,7 @@ nick_shenzong	#神宗 - the Holy
 nick_gaozong	#高宗 - the Supreme
 nick_zhongzong	#中宗 - the Middle-reign
 
-#On its own criteria, beteer than everything except for "Brilliant and the Best"
+#On its own criteria, beteer than everything except for "Brilliant and the Best", 30% realm increase, 15% increase if realm size bigger than 325, no wars lost, 2 wars won
 nick_shengzong	#圣宗 - the Glorious
 
 
