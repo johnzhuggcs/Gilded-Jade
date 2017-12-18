@@ -73,7 +73,7 @@ GIVETEMPLENAMENOTSAME;Remnants of the Previous Dynasty;;;;;;;;;x
 GIVETEMPLENAMEFINISHED;The Ritual of "Tiao";;;;;;;;;x
 
 #Initial Menu
-EVT_DESC_GJ_2;Since the Former Han Dynasty, Emperors' accomplishments were evaluated based on an intricate system of Temple and Posthumous names upon their death established by the "Rites of Zhou".\nChancellor [Root.job_chancellor.GetFullName] and other Ministers beseeches you to honour your predecessor appropriately, in order to bring about an auspicious reign.;;;;;;;;;x
+EVT_DESC_GJ_2;Since the Former Han Dynasty, Emperors' accomplishments were evaluated based on an intricate system of Temple and Posthumous names upon their death established by the "Rites of Zhou".\nChancellor [Root.job_chancellor.GetFullName] and other Ministers beseeches you to honour your predecessor appropriately, in order to bring about an auspicious reign.  With a [temple_name_title.tempRealmSize.GetValue] change in realm size, [temple_name_title.wonWars.GetValue] wars won and [temple_name_title.lostWars.GetValue] lost which title would you bestow upon them?;;;;;;;;;x
 EVTOPTA_GJ.2_GOODCOMPETENT;"The Late Emperor was a brilliant and competent Emperor, I shall honour them appropriately";;;;;;;;;x
 EVTOPTB_GJ.2_FOUNDER;"As the founder of this dynasty, they must be given the highest of honours";;;;;;;;;x
 EVTOPTC_GJ.2_MEH;"The Late Emperor was...relatively capabable";;;;;;;;;x
@@ -85,11 +85,41 @@ EVTOPTG_GJ.3_EARLYDEATHORBATTLE;"They were destined for greatness, yet how soon 
 EVTOPTH_GJ.3_RETURNPAGE;"Allow me to reconsider";;;;;;;;;x
 
 #Chose GOODCOMPETENT Menu
-EVT_DESC_GJ_4;Posthmous names provided by the "Rites of Zhou" called for a strict evaluation of your predecessor, with names assigned specific meanings to specific accomplishments of each ruler. The Late Emperor was a competent one, their accomplishments matched only by the few in our dynasty. Yet by what aspect of their reign shall they by honoured by is a matter of debate. \n\nWere they a responsible and competent Emperor who guarded their realm? or...\n\nDid they recreate the anew after a calamity? Or... \n\nExpanded the Empire to an unmatched extent?;;;;;;;;;x
+EVT_DESC_GJ_4;Posthmous names provided by the "Rites of Zhou" called for a strict evaluation of your predecessor, with names assigned specific meanings to specific accomplishments of each ruler. The Late Emperor was a competent one, their accomplishments matched only by the few in our dynasty. Yet by what aspect of their reign shall they by honoured by is a matter of debate. With a [temple_name_title.tempRealmSize.GetValue] change in realm size, [temple_name_title.wonWars.GetValue] wars won and [temple_name_title.lostWars.GetValue] lost... \nWere they a responsible and competent Emperor who guarded their realm? or...\nDid they recreate the anew after a calamity? Or... \nExpanded the Empire to an unmatched extent?;;;;;;;;;x
 EVTGJ_EIGHTPAGES;Eight Page Menu;;;;;;;;;x
 EVTOPTA_GJ.4_JUSTGOODCOMPETENT;"They were simply competent and responsible";;;;;;;;;x
 EVTOPTC_GJ.4_SAVIOR;"They preserved our dynasty's fortunes in times of chaos";;;;;;;;;x
-EVTOPTB_GJ.4_THEGREATMAGNIFICNET;"They were the Greatest, with unparalled glory!";;;;;;;;;x
+EVTOPTB_GJ.4_THEGREATMAGNIFICNET;"They were the Greatest, with unparalled glory!";;;;;;;;;
+
+#Chose simply good and competent Emperors
+EVT_DESC_GJ_0010;The Late Emperor was no doubt one who had administered the Empire diligently and competently. Under them, the Empire had maintained our position at the forefront of regional power, they of all ancestors deserve a well-meaning Temple Name for their descendants to offer sacrifices for;;;;;;;;;x
+EVTOPTA_GJ.10_WENZONG;"Cultured and Learned, they will be known as Wenzong";;;;;;;;;x
+EVTOPTB_GJ.10_JINGZONG2;"Admired and Beloved, they will be known as Jingzong the Luminous";;;;;;;;;x
+EVTOPTC_GJ.10_WUZONG;"Valiant and Pacifying, they will be known as Wuzong the Martial";;;;;;;;;x
+EVTOPTD_GJ.10_NEXTPAGE_TWOSEVEN;"The Late Emperor wasn't any of the above..." (page 2/7);;;;;;;;;x
+EVTOPTA_GJ.10_ZHAOZONG;"Prominent and Just, they will be known as Zhaozong";;;;;;;;;x
+EVTOPTB_GJ.10_XUANZONG2;"Well-known to the Four Lands, Xuanzong the Illustrious it is!";;;;;;;;;x
+EVTOPTC_GJ.10_HUANZONG;"Ambitious and Warlike, they will be known as Huanzong the Conquering";;;;;;;;;x
+EVTOPTD_GJ.10_NEXTPAGE_THREEEIGHT;"The Late Emperor wasn't any of the above..." (page 3/7);;;;;;;;;x
+EVTOPTA_GJ.10_MINGZONG;"Wise and Illuminated, they will be known as Mingzong";;;;;;;;;x
+EVTOPTB_GJ.10_ZHANGZONG;"Principled and competent, Zhangzong the Law-giver it is!";;;;;;;;;x
+EVTOPTC_GJ.10_XINGZONG;"The realm prospered greatly, they will be Xingzong the Prosperous";;;;;;;;;x
+EVTOPTD_GJ.10_NEXTPAGE_FOUREIGHT;"The Late Emperor wasn't any of the above..." (page 4/7);;;;;;;;;x
+EVTOPTA_GJ.10_SHENZONG;"Sagelike and Pious, they will be Shenzong the Holy";;;;;;;;;x
+EVTOPTB_GJ.10_GAOZONG;"Highest of the successors, they are Gaozong the Supreme";;;;;;;;;x
+EVTOPTC_GJ.10_ZHONGZONG;"Their reign was the "Middle-Reign", thus Zhongzong the Middle";;;;;;;;;x
+EVTOPTD_GJ.10_NEXTPAGE_FIVEEIGHT;"The Late Emperor wasn't any of the above..." (page 5/7);;;;;;;;;x
+EVTOPTA_GJ.10_RENZONG;"Kind and Lenient, they will be known as Renzong";;;;;;;;;x
+EVTOPTB_GJ.10_XIAOZONG;"Filial and Virtuous, they will be known as Xiaozong the Filial";;;;;;;;;x
+EVTOPTC_GJ.10_SHIZONG;"Their greatness defines them, as Shizong the Inheiritor";;;;;;;;;x
+EVTOPTD_GJ.10_NEXTPAGE_SIXEIGHT;"The Late Emperor wasn't any of the above..." (page 6/7);;;;;;;;;x
+EVTOPTA_GJ.10_CHENGZONG;"Accomplished and Respected, they are Chengzong";;;;;;;;;x
+EVTOPTB_GJ.10_KANGZONG;"Long-lived and well-meaning, they are Kangzong";;;;;;;;;x
+EVTOPTC_GJ.10_XIANZONG2;"Incorruptible and Unyielding, they are Xianzong the Principled";;;;;;;;;x
+EVTOPTD_GJ.10_NEXTPAGE_SEVENEIGHT;"The Late Emperor wasn't any of the above..." (page 7/7);;;;;;;;;x
+EVTOPTA_GJ.10_SHENGZONG;"Glorious and Righteous, they will be known as Shengzong";;;;;;;;;x
+EVTOPTB_GJ.10_DINGZONG;"Decisive like the lightning, they are Dingzong the Hammer";;;;;;;;;x
+EVTOPTC_GJ.10_WEIZONG;"Their fury feared as the raging fire, they are Weizong the Feared";;;;;;;;;x
 
 EVT_DESC_GJ_0034;The previous Emperor was among the few of the founding ones that had fillially and diligently carried out The Progenitor's mission.\n\nLike Emperor Taizong of Tang and Taizong of Han, they alone maintained our Dynasties fortunes during the tumultuous early years, and they shall be hononured as such!;;;;;;;;;x
 EVTOPTA_GJ.10_TAIZONG;;;;;;;;;;x
@@ -97,11 +127,50 @@ EVTOPTA_GJ.10_TAIZONG;;;;;;;;;;x
 RETURNUPMENU;Returns to previous layer of menu;;;;;;;;;x
 EVTOPTD_GJ.4_RETURNUP;Chancellor [Root.job_chancellor.GetFullName], allow me to reconsider...;;;;;;;;;x
 
+#Saviours of the Empire
+EVT_DESC_GJ_0017;The previous ancestors' follies had caused our demise and lead to our exodus. \nBut here! Our glorious predecessor rose up during the times of strife, and with the blessings of the Great and Supreme Progenitor, recreated the glory of our dynasty. Under them, the glory and name of the [temple_name_title.GetFullName] spread across from Ireland to Cathay!";;;;;;;;;x
+EVTOPTA_GJ.10_XINGZU;"The prosperity was up twenty-fold during their reign, they are Xingzu!";;;;;;;;;x
+EVTOPTB_GJ.10_LIEZU;"Even during worst of times they persevered, they are Liezu the Unyielding!";;;;;;;;;x
+EVTOPTC_GJ.10_HUANZU;"Warlike to the end, they vanquished our enemies: Huanzu the Conquering!";;;;;;;;;x
+
+#Best and Greatest of Emperors
+EVT_DESC_GJ_0018;"Their reign was a prosperous and fruitful one. Under them the empire grew by [temple_name_title.tempRealmSize.GetValue], a considerable feat that goes unmatched! They truly deserve the title of a "Zu" or "Ancestor" instead of the run-of-the-mill "Zong" or "Successor", for their accomplishments alone have no predecessor to succeed off of. They shall be reverred in history unrivaled!";;;;;;;;;x
+EVTOPTA_GJ.18_SHENGZU;"Glorious and Exalted, the greatest of all: Shengzu the Magnificent!";;;;;;;;;x
+EVTOPTB_GJ.18_SHIZU;"Great and respected, they must be known as Shizu the Great!";;;;;;;;;x
+EVTOPTC_GJ.18_CHENGZU;"Accomplished beyond all, Chengzu the Brilliant!";;;;;;;;;x
+EVTOPTD_GJ.18_NEXTPAGE_TWOTWO;"The Late Emperor wasn't any of the above..." (page 2/2);;;;;;;;;x
+EVTOPTA_GJ.18_XUANZU;"Their name carried over the Four Seas, Xuanzu the Illustrious!";;;;;;;;;x
+
+#Meh Rulers
+EVT_DESC_GJ_6;Your predecessor was...generally an able administrator. The Empire neither suffered nor prospered greatly, nothing revolutionary was introduced, the Emperor was passive to everything, content to allow everything to run its course...;;;;;;;;;x
+EVTOPTA_GJ.6_ZHENZONG;"True and transparent, they will be Zhenzong the Honest";;;;;;;;;x
+EVTOPTB_GJ.6_YINGZONG;"Exceptional and Wise, they will be Yingzong";;;;;;;;;x
+EVTOPTC_GJ.6_ZHEZONG;"Intelligent and Educated, they will be Zhezong";;;;;;;;;x
+EVTOPTD_GJ.6_NEXTPAGE_TWOFOUR;"The Late Emperor wasn't any of the above..." (page 2/4);;;;;;;;;x
+EVTOPTA_GJ.6_SUZONG;"Courteous and Moderate, they will be Suzong";;;;;;;;;x
+EVTOPTB_GJ.6_DAIZONG;"A good moderate and good descendant, Daizong";;;;;;;;;x
+EVTOPTC_GJ.6_NINGZONG;"Tranquil and Peaceful, Ningzong";;;;;;;;;x
+EVTOPTD_GJ.6_NEXTPAGE_THREEFOUR;"The Late Emperor wasn't any of the above..." (page 3/4);;;;;;;;;x
+EVTOPTA_GJ.6_DUANZONG;"Upright and Proper, they are Duanzong the Dutiful";;;;;;;;;x
+EVTOPTB_GJ.6_PINGZONG;"Nothing of importance happened, Pingzong the Secured";;;;;;;;;x
+EVTOPTC_GJ.6_ANZONG;"Peace reigns across the lands, Anzong the Peaceful";;;;;;;;;x
+EVTOPTD_GJ.6_NEXTPAGE_FOURFOUR;"The Late Emperor wasn't any of the above..." (page 4/4);;;;;;;;;x
+EVTOPTA_GJ.6_JIANZONG;"Wise and Competent, they are Jianzong the Moderate";;;;;;;;;x
+EVTOPTB_GJ.6_XIANGZONG;"Moderately Accomplished, they are Xiangzong the Good";;;;;;;;;x
+EVTOPTC_GJ.6_RUIZONG;"Gifted but disappointing, they are Ruizong the Wisecrack";;;;;;;;;x
 
 #Chose SARCASTICORBAD Menu
 EVT_DESC_GJ_5;Previous founders of dynasties were traditionally honoured either as the "Taizu - the Great Progenitor" like the Han, or the "Gaozu - the Supreme Progenitor" like the Tang.\nYour ministers anxiously debate the qualifications of your respected predecessor among the two.;;;;;;;;;x
 EVTOPTA_GJ.5_TAIZU;"Originator of the dynasty's fortunes, Taizu - the Great Progenitor";;;;;;;;;x
 EVTOPTB_GJ.5_GAOZU;"No other ancestors matched them, Gaozu - the Supreme Progenitor";;;;;;;;;x
+
+#Bad Rulers
+EVT_DESC_GJ_7;Your predecessor was by all means...not the best of Emperors. Yet as your close relation, it is Your Majesty's duty to bestow upon them a name in the end. Despite their wicked deeds they still need offerings from their descendants in the Grand Mausoleum of the Imperial Family.;;;;;;;;;x
+EVTOPTA_GJ.7_SARCASTIC;They were...my family after all;;;;;;;;;x
+EVTOPTB_GJ.7_BAD;It pains me to even call them Emperors...;;;;;;;;;x
+
+#Bad Rulers chose sarcastic names
+
 
 #Chose USURPATION_NOT_SAME_DYNASTY Menu
 EVT_DESC_GJ_8;Although you have toppled the corrupt former dynasty and release the people from the shackles of their wickedness, it is customary to give them an appropriate title to cement their historical influences to come. \nDepending on their actions in the preceding wars against you, you should give them an insulting or consolating title that suits them;;;;;;;;;x
@@ -137,7 +206,7 @@ GetDeadChineseEmperorWithTempleName_string;[This.GetOnlyDynastyName] [This.GetBi
 
 #Give Dynamic Kingdom-Level Titles
 give_dynastic_prince_title;Give Imperial Principality;;;;;;;;;x
-give_dynastic_prince_title_desc;As the Emperor, you are expected to reward your kinsmen with high honours. You hereby grant a noble title of rank "Prince" of an ancient Chinese state to [Root.GetTitledName]. Yet to counteract the possibility of rebellious princes, these titles are purely honourific separate from the previous enfeoffed fiefs, each prince has a limited Feng'lu (income) along with a household guard. But at any time an Empire will only be allowed 10 Principalities at most.;;;;;;;;;x
+give_dynastic_prince_title_desc;As the Emperor, you are expected to reward your kinsmen with high honours. You hereby grant a noble title of rank "Prince" of an ancient Chinese state to [Root.GetTitledName]. Yet to counteract the possibility of rebellious princes, these titles are purely honourific separate from the previous enfeoffed fiefs, each prince has a limited Feng'lu (income) along with a household guard. Unless you have unlimited vassal size, an Empire will only be allowed 10 Principalities at most, and then halved and quartered depending on the game rules.;;;;;;;;;x
 PRINCE;Prince;;;;;;;;;x
 PRINCESS;Princess;;;;;;;;;x
 COUNTYPRINCE;County Prince;;;;;;;;;x

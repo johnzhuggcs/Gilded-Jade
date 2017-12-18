@@ -2,7 +2,7 @@
 #                                         #
 # Gilded Jade Temple Names		 		  #
 #                                         #
-# ID GJ.1 - 			 	              #
+# ID GJ.1 - 37			 	              #
 #                                         #
 ###########################################
 
@@ -45,7 +45,7 @@ narrative_event = {	#makes ai automatically give temple names based on traits #T
 	
 }
 
-character__event = {	#makes ai automatically give temple names based on traits #TODO!!!
+character_event = {	#makes ai automatically give temple names based on traits #TODO!!!
 	id = GJ.37
 	is_triggered_only = yes
 	hide_window = yes
@@ -58,7 +58,127 @@ character__event = {	#makes ai automatically give temple names based on traits #
 	}
 	
 	immediate = {
+		event_target:temple_name_title = {
+			export_to_variable = {which = "currRealmSize" value = realm_size who = ROOT}
+		}
+		#if dynasty is not the same go with this immediately
+		
+		if = {
+			limit = {
+				event_target:previous_title_holder = {
+					NOT = { 
+						dynasty = PREV 	
+					}
+				}	
+			}
+			
+			if = {
+				limit = {
+					event_target:previous_title_holder = {
+						NOT = { 
+							age = 22
+						} 
+					}
+				}
+				
+				random_list = {
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_shaodi
+								}
+							}
+						}
 	
+						event_target:previous_title_holder = {
+							give_nickname = nick_shaodi
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_shaodi
+						}
+						break = yes
+					}
+					
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_gongdi
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_gongdi
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_gongdi
+						}
+						break = yes
+					}
+				}
+			}
+			
+			random_list = {
+				1 = {
+					trigger = {
+						event_target:temple_name_title = {
+							NOT = {
+								has_title_flag = temple_name_yangdi
+							}
+						}
+					}
+					event_target:previous_title_holder = {
+						give_nickname = nick_yangdi
+					}
+					
+					event_target:temple_name_title = { 
+						set_title_flag= temple_name_yangdi
+					}
+					break = yes
+				}
+				
+				1 = {
+					trigger = {
+						event_target:temple_name_title = {
+							NOT = {
+								has_title_flag = temple_name_zhidi
+							}
+						}
+					}
+					event_target:previous_title_holder = {
+						give_nickname = nick_zhidi
+					}
+					
+					event_target:temple_name_title = { 
+						set_title_flag= temple_name_zhidi
+					}
+					break = yes
+				}
+				1 = {
+					trigger = {
+						event_target:temple_name_title = {
+							NOT = {
+								has_title_flag = temple_name_chongdi
+							}
+						}
+					}
+					event_target:previous_title_holder = {
+						give_nickname = nick_chongdi
+					}
+					
+					event_target:temple_name_title = { 
+						set_title_flag= temple_name_chongdi
+					}
+					break = yes
+				}
+			}
+			
+		}
+		
 		if = {
 			limit = {
 				event_target:temple_name_title = {
@@ -736,6 +856,151 @@ character__event = {	#makes ai automatically give temple names based on traits #
 				}
 			}
 			
+			#edied in battle, 0% at least, 1 war lost at max, must die in battle or executed
+			
+			if = {
+				limit = {
+					event_target:temple_name_title = {
+						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
+						check_variable = { NOT = {which = "lostWars" value = 3}}
+						event_target:previous_title_holder = {
+							OR = {
+								death_reason = death_battle
+								death_reason = death_dungeon
+								death_reason = death_execute
+							}
+						}
+						
+						
+					}
+				}
+				
+				random_list = {
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_daozong2
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_daozong2
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_daozong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_liezong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_liezong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_liezong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_sizong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_sizong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_sizong
+						}
+						break = yes
+					}
+				}
+			}
+			
+			#early death, 0% decrease, 1 war lost at max
+			
+			if = {
+				limit = {
+					event_target:temple_name_title = {
+						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
+						check_variable = { NOT = {which = "lostWars" value = 3}}		
+					}
+				}
+				
+				random_list = {
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_daozong2
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_daozong2
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_daozong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_aizong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_aizong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_aizong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_sizong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_sizong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_sizong
+						}
+						break = yes
+					}
+				}
+			}
+			
 			#Not as accomplished as others, 0% increase, at most 2 wars lost
 
 			if = {
@@ -1026,6 +1291,78 @@ character__event = {	#makes ai automatically give temple names based on traits #
 				}
 			}
 			
+			#Worst rulers, 65% realm size remaining at most
+			event_target:temple_name_title = {
+					set_variable = {which = "tempRealmSize" which = pastRealmSize}
+					multiply_variable = {which = "tempRealmSize" value = 0.65}
+					
+			}
+			
+			if = {
+				limit = {
+					event_target:temple_name_title = {
+						check_variable = { NOT = {which = "currRealmSize" which = "tempRealmSize"}}
+						check_variable = {which = "lostWars" value = 2}
+					}
+				}
+				random_list = {
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_xuanzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_xuanzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_xuanzong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_xizong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_xizong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_xizong
+						}
+						break = yes
+					}
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_shangzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_shangzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_shangzong
+						}
+						break = yes
+					}
+				}
+			}
+			
 			#Bad rulers, any decreased realm size
 			event_target:temple_name_title = {
 					set_variable = {which = "tempRealmSize" which = pastRealmSize}
@@ -1243,6 +1580,63 @@ character__event = {	#makes ai automatically give temple names based on traits #
 						}
 						break = yes
 					}
+					
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_shunzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_shunzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_shunzong
+						}
+						break = yes
+					}
+					
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_dezong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_dezong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_dezong
+						}
+						break = yes
+					}
+					
+					1 = {
+						trigger = {
+							event_target:temple_name_title = {
+								NOT = {
+									has_title_flag = temple_name_jingzong
+								}
+							}
+						}
+	
+						event_target:previous_title_holder = {
+							give_nickname = nick_jingzong
+						}
+						
+						event_target:temple_name_title = { 
+							set_title_flag= temple_name_jingzong
+						}
+						break = yes
+					}
 				}
 			}
 			
@@ -1262,6 +1656,21 @@ narrative_event = {	#allows players of pretender Chinese Empires to choose templ
 	
 	trigger = {
 		ai = no #checks ai here after delay of 1 day, prevents the game from checking against the dead character as ai, dead characters always fails ai = no
+		event_target:previous_title_holder = {
+			is_alive = no
+		}
+	}
+	
+	immediate = {
+		event_target:temple_name_title = {
+			export_to_variable = {which = "currRealmSize" value = realm_size who = ROOT}
+		}
+		
+		event_target:temple_name_title = {
+			set_variable = {which = "tempRealmSize" which = "pastRealmSize"}
+			subtract_variable = {which = "tempRealmSize" which="currRealmSize" }
+			multiply_variable = {which = "tempRealmSize" value = -1}
+		}
 	}
 
 	
@@ -1299,7 +1708,10 @@ narrative_event = {	#allows players of pretender Chinese Empires to choose templ
 	option = {
 		trigger = {
 			event_target:temple_name_title = {
-				NOT = {has_title_flag = usurping_chinese_emperor}
+				AND = {
+					NOT = {has_title_flag = founding_emperor}
+					NOT = {has_title_flag = usurping_chinese_emperor}
+				}
 			}
 		}
 		name = "EVTOPTC_GJ.2_MEH"
@@ -1380,6 +1792,12 @@ narrative_event = {	#2nd page for allows players of pretender Chinese Empires to
 	}
 		
 	option = {
+		trigger = {
+			ai = no #checks ai here after delay of 1 day, prevents the game from checking against the dead character as ai, dead characters always fails ai = no
+			event_target:previous_title_holder = {
+				is_alive = no
+			}
+		}
 		name = "EVTOPTH_GJ.3_RETURNPAGE"
 		narrative_event = {id = GJ.2}
 	}
@@ -1480,7 +1898,7 @@ narrative_event = {	#choosing each temple name menu, for just meh emperors 1/4
 	id = GJ.6
 	is_triggered_only = yes
 	title = GIVETEMPLENAME
-	desc = EVT_DESC_GJ_5
+	desc = EVT_DESC_GJ_0018
 	picture = GFX_evt_china_golden_age
 	
 	option = {
@@ -1643,15 +2061,15 @@ narrative_event = {	#choosing each temple name menu, for usurped adult or young 
 	}
 	
 	option = {
+		trigger = {
+			event_target:previous_title_holder = {
+				NOT = {age = 22}
+			}
+		}
 		name = "EVTOPTB_GJ.8_YOUNG"
 		narrative_event = {
 			id = GJ.28
 		}
-	}
-
-	option = {
-		name = "EVTOPTC_GJ.4_RETURNUP"
-		narrative_event = {id = GJ.2 tooltip = RETURNUPMENU}
 	}
 }
 
@@ -2030,7 +2448,7 @@ narrative_event = {	#choosing each temple name menu, for good emperors 6/8
 		trigger = {
 			event_target:temple_name_title = {
 				NOT = {
-					has_title_flag = temple_name_xiaozong
+					has_title_flag = temple_name_kangzong
 				}
 			}
 		}
@@ -2305,7 +2723,7 @@ narrative_event = {	#choosing each temple name menu, for great and magnificent e
 	}
 	
 	option = {
-		name = "EVTOPTD_GJ.18_NEXTPAGE_TWOTWO"
+		name = "EVTOPTD_GJ.4_RETURNUP
 		narrative_event = {id = GJ.4 tooltip = RETURNUPMENU}
 	}
 }
@@ -2357,7 +2775,7 @@ narrative_event = {	#choosing each temple name menu, for just meh rulers 2/4
 				}
 			}
 		}
-		name = "EVTOPTC_GJ.6_ningzong"
+		name = "EVTOPTC_GJ.6_NINGZONG"
 		event_target:previous_title_holder = {
 			give_nickname = nick_ningzong
 			event_target:temple_name_title = { set_title_flag= temple_name_ningzong}
@@ -2418,7 +2836,7 @@ narrative_event = {	#choosing each temple name menu, for just meh rulers 3/4
 				}
 			}
 		}
-		name = "EVTOPTC_GJ.6_anzong"
+		name = "EVTOPTC_GJ.6_ANZONG"
 		event_target:previous_title_holder = {
 			give_nickname = nick_anzong
 			event_target:temple_name_title = { set_title_flag= temple_name_anzong}
@@ -2479,7 +2897,7 @@ narrative_event = {	#choosing each temple name menu, for just meh rulers 4/4
 				}
 			}
 		}
-		name = "EVTOPTC_GJ.6_ruizong"
+		name = "EVTOPTC_GJ.6_RUIZONG"
 		event_target:previous_title_holder = {
 			give_nickname = nick_ruizong
 			event_target:temple_name_title = { set_title_flag= temple_name_ruizong}
@@ -2793,7 +3211,7 @@ narrative_event = {	#choosing each temple name menu, for usurped not of same dyn
 				
 				event_target:previous_title_holder = {
 					NOT = {
-						age = 21
+						age = 22
 					}
 				}
 			}
@@ -3033,7 +3451,6 @@ narrative_event = {	#choosing each temple name menu, for usurped same dynasty, c
 	picture = GFX_evt_china_golden_age
 	
 	trigger = {
-		dynasty = FROMFROM
 		ai = no
 		FROM = { has_title_flag = uses_temple_names_by_script}
 	}
@@ -3042,13 +3459,14 @@ narrative_event = {	#choosing each temple name menu, for usurped same dynasty, c
 	option = {
 		trigger = {
 			AND = {
+				dynasty = event_target:previous_title_holder
 				event_target:temple_name_title = {
 					NOT = {
 						has_title_flag = temple_name_shaodi
 					}
 				}
 				
-				FROMFROM = {
+				event_target:previous_title_holder = {
 					NOT = {
 						age = 21
 					}
@@ -3059,14 +3477,18 @@ narrative_event = {	#choosing each temple name menu, for usurped same dynasty, c
 		name = "EVTOPTA_GJ.8_SHAODI"
 		event_target:previous_title_holder = {
 			give_nickname = nick_shaodi
-			clr_title_flag = usurping_chinese_emperor
-			event_target:temple_name_title = { set_title_flag= temple_name_shaodi}
+			
+			event_target:temple_name_title = { 
+				clr_title_flag = usurping_chinese_emperor
+				set_title_flag= temple_name_shaodi
+			}
 		}
 		narrative_event = {id = GJ.35}
 	}
 	
 	option = {
 		trigger = {
+			dynasty = event_target:previous_title_holder
 			event_target:temple_name_title = {
 				NOT = {
 					has_title_flag = temple_name_feidi
@@ -3076,10 +3498,26 @@ narrative_event = {	#choosing each temple name menu, for usurped same dynasty, c
 		name = "EVTOPTB_GJ.8_FEIDI"
 		event_target:previous_title_holder = {
 			give_nickname = nick_feidi
-			clr_title_flag = usurping_chinese_emperor
-			event_target:temple_name_title = { set_title_flag= temple_name_feidi}
+			
+			event_target:temple_name_title = {
+				set_title_flag= temple_name_feidi
+				clr_title_flag = usurping_chinese_emperor
+			}
 		}
 		narrative_event = {id = GJ.35}
+	}
+	
+	option = {
+		trigger = {
+			event_target:previous_title_holder = {
+				NOT = { 
+					dynasty = PREV 	
+				} 
+			}
+			
+		}
+		name = "EVTOPTF_GJ.3_USURPATION_NOT_SAME_DYNASTY"
+		narrative_event = {id = GJ.8}
 	}
 }
 
@@ -3102,7 +3540,21 @@ narrative_event = {
 		name = EVTOPTAGJ.35
 		prestige = 100
 		piety = 50
-		set_character_flag = concluded_GJ35
+		event_target:temple_name_title = {
+			set_variable = {which = "tempRealmSize" which = "pastRealmSize"}
+			subtract_variable = {which = "tempRealmSize" which="currRealmSize" }
+			multiply_variable = {which = "tempRealmSize" value = -1}
+		}
+	}
+	
+	after = {
+		event_target:temple_name_title = {
+			set_variable = {which = "tempRealmSize" value = 0}
+			set_variable = {which = "pastRealmSize" which = "currRealmSize"}
+			set_variable = {which = "wonWars" value = 1}
+			set_variable = {which = "wonBattles" value = 1}
+			set_variable = {which = "lostWars" value = 1}
+		}
 	}
 }
 

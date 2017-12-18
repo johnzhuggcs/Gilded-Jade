@@ -1,4 +1,4 @@
-Choice A:
+"EVTOPTC_GJ.10_WUZONGChoice A:
 Good and Competent Emperors:
 
 nick_taizong    #太宗 - the Great Successor
@@ -29,7 +29,7 @@ nick_xianzong2	#宪宗 - the Principled
 
 nick_shengzong	#圣宗 - the Glorious
 nick_dingzong	#定宗 - the Decisive/the Hammer
-nick_weizong	#威宗 - the Charasmatic
+nick_weizong	#威宗 - the Charasmatic/Feared
 
 	Saved the Empire OR Recreated it anew:
 	nick_xingzu		#兴祖 - the Prospering Ancestor
@@ -46,11 +46,11 @@ nick_weizong	#威宗 - the Charasmatic
 Choice B:
 Meh and Generally Alright Emperors:
 nick_zhenzong	#真宗 - the Honest
-nick_yingzong	#英宗 - 
+nick_yingzong	#英宗 - the "Flowering"?
 nick_zhezhong	#哲宗 - the Educated
 
-nick_suzong		#肃宗 
-nick_daizong	#代宗
+nick_suzong		#肃宗 -
+nick_daizong	#代宗 - 
 nick_ningzong	#宁宗 - the Tranquil
 
 nick_duanzong	#端宗

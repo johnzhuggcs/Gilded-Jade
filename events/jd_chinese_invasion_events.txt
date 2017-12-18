@@ -3337,6 +3337,7 @@ character_event = {
 		}
 		FROM = { save_global_event_target_as = temple_name_title }
 		FROMFROM = {save_global_event_target_as = previous_title_holder}
+		
 		if = { #New Chinese dynasty = new founder name
 			limit = {
 				NOT = { 
@@ -3907,9 +3908,14 @@ character_event = {
 					}
 				}
 				narrative_event = {
-					id = GJ.0001
+					id = GJ.1
 					days = 1
-				} # goto gj_temple_names_events.txt,
+				} # goto gj_temple_names_events.txt
+				
+				narrative_event = {
+					id = GJ.35 #conclusion of event chain
+					days = 3
+				}
 			}
 	
 			if = {	#giving out temple names for predecessors by player
@@ -3920,7 +3926,7 @@ character_event = {
 						}	
 				}
 				narrative_event = {
-					id = GJ.0002
+					id = GJ.2
 					days = 1		
 				} # goto gj_temple_names_events.txt
 			}
@@ -3995,18 +4001,18 @@ character_event = {
 		}
 			if = {
 				limit = {
-					OR = {
-						event_target:temple_name_title {
-							check_variable = {which = "numEmperorMax4" value = 2}
-						}
-						
+					event_target:temple_name_title {
+						check_variable = {which = "numEmperorMax4" value = 2}
 					}
-					NOT = {
-						event_target:temple_name_title = {
-							has_title_flag = founding_emperor
-							has_title_flag = temple_name_taizong
-						}
+								
+					event_target:temple_name_title = {
+						NOT = {has_title_flag = founding_emperor}		
 					}
+					
+					event_target:temple_name_title = {
+						NOT = {has_title_flag = possible_taizong}		
+					}
+					
 										
 				}
 				
@@ -4339,9 +4345,14 @@ character_event = {
 				}
 			}
 			narrative_event = {
-				id = GJ.0001
+				id = GJ.1
 				days = 1
 			} # goto gj_temple_names_events.txt,
+			
+			narrative_event = {
+				id = GJ.35
+				days = 3
+			}
 		}
 	
 		if = {	#giving out temple names for predecessors by player
@@ -4350,12 +4361,10 @@ character_event = {
 						name = choose_temple_names
 						value = default
 					}
-					FROMFROM = {
-						is_alive = no
-					}
 			}
+			set_character_flag = preparing_for_temple_name
 			narrative_event = {
-				id = GJ.0002
+				id = GJ.2
 				days = 1		
 			} # goto gj_temple_names_events.txt
 		}

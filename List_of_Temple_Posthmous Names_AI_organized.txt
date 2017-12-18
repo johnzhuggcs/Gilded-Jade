@@ -120,7 +120,7 @@ Choice G
 	nick_daozong2	#悼宗 - the Desired a la Sebastian of Portugal
 	nick_sizong		#思宗 - the Longed
 
-	Bad Rulers
+	Bad Rulers, 65% realm size remaining, 1 war lost
 	nick_xuanzong	#玄宗 - the Superstitious
 	nick_xizong		#僖宗 - the Merrymaking (bad connotation) 
 	nick_shangzong	#殇宗 - the Tyrant

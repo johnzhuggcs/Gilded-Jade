@@ -1115,6 +1115,7 @@ on_major_battle_won_leader = {
 on_battle_won_owner = {
 	events = {
 		RIP.15115 #EoD prophet loses
+		GJ.202    #Update won/lost battles for Pretender Chinese Empire
 	}
 }
 
@@ -2362,6 +2363,7 @@ on_new_holder = {
 		JD.60204 # Rebel General's Empire continues temple names, triggers for any title with the uses_temple_names_by_script title flag
 		
 		539 # Fix adventurers turning Tribal land Feudal
+		GJ.250	# Removes duplicate Principality titles in pretender_chinese_empire
 	}
 }
 
@@ -2380,6 +2382,7 @@ on_new_holder_inheritance = {
 		MNM.1216 # The Hermetics Scrying Power result (for old holder)
 		JD.60204 # Rebel General's Empire continues temple names, triggers for any title with the uses_temple_names_by_script title flag
 		JD.9000 # Reapply Scholar Bureaucrat bonus on death/inheritance
+		GJ.250	# Removes duplicate Principality titles in pretender_chinese_empire
 	}
 }
 
@@ -2403,6 +2406,7 @@ on_new_holder_usurpation = {
 		JD.60204 # Rebel General's Empire continues temple names, triggers for any title with the uses_temple_names_by_script title flag
 		GJ.33  # Same dynasty usurpation for Rebel General's Empire
 		539 # Fix adventurers turning Tribal land Feudal
+		GJ.250	# Removes duplicate Principality titles in pretender_chinese_empire
 	}
 }
 
@@ -2502,15 +2506,18 @@ on_war_started = {
 }
 
 # From = Attacker, Root = Defender
+# Offensive War Victory
 on_war_ended_victory = {
 	events = {
 		CM.10038
 		729
 		JD.30051 # Offmap China end of war clean-up
+		GJ.200	 # Update Variable Won/Lost War Offensive
 	}
 }
 
 # From = Attacker, Root = Defender
+# Offensive War Whitepeace
 on_war_ended_whitepeace = {
 	events = {
 		CM.10040
@@ -2519,11 +2526,13 @@ on_war_ended_whitepeace = {
 }
 
 # From = Attacker, Root = Defender
+# Offensive War Defeat
 on_war_ended_defeat = {
 	events = {
 		CM.10041
 		730
 		JD.30052 # Offmap China end of war clean-up
+		GJ.201	 # Update Variable Won/Lost War Defensive
 	}
 }
 

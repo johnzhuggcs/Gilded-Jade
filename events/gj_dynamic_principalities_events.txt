@@ -1,0 +1,907 @@
+#################################################
+#                                         		#
+# Gilded Jade Variable Update for Temple Names  #
+#                                               #
+# ID GJ.250				 	              		#
+#                                         		#
+#################################################
+
+
+namespace = GJ
+
+#Written by: 
+#Black Prince Ed
+
+# Remove duplicate Principalities (FROM is title, ROOT is character, FROMFROM is old holder)
+character_event = {
+	id = GJ.250
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				FROM = {
+					has_title_flag = given_prince_title
+				}
+				ROOT = {
+					any_demesne_title = {
+						has_title_flag = pretender_chinese_empire
+					}
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_title_flag = given_prince_title
+				}
+				ROOT = {
+					any_demesne_title = {
+						AND = {
+							NOT = {title = FROM}	# ensures it checks for a separate principality title
+							has_title_flag = given_prince_title
+						}
+					}
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_title_flag = pretender_chinese_empire
+				}
+				ROOT = {
+					any_demesne_title = {
+						has_title_flag = given_prince_title
+					}
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		ROOT = {
+			set_character_flag = called_GJ_250
+		}
+		ROOT = {
+			disband_event_forces = principality_guard
+		}
+		
+		if = {
+			limit = {
+				FROM = {
+					has_title_flag = given_prince_title
+				}
+			}
+			if = { #Refractor using switch statements later
+				limit = {
+					FROM = {
+						has_title_flag = prince_xiu
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_xiu}
+				}
+			}	
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_cao
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_cao}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_liang
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_liang}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_lu
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_lu}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_cheng
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_cheng}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_zhong
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_zhong}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_yong
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_yong}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_pu
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_pu}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_yan
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_yan}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_yi
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_yi}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_ji
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_ji}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_su
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_su}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_chang
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_chang}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_xin
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_xin}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_xian
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_xian}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_teng
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_teng}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_tang
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_tang}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_jin
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_jin}
+				}
+			}else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_han
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_han}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_qin
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_qin}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_zhou
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_zhou}
+				}
+			}else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_yue
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_yue}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_wu
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_wu}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_chen
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_chen}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_zhao
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_zhao}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_wei
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_wei}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_qi
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_qi}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_dai
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_dai}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_chu
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_chu}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_shu
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_shu}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_song
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_song}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_ning
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_ning}
+				}
+			}else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_jing
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_jing}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_cai
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_cai}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_zheng
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_zheng}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_xu
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_xu}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_e
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_e}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_yu
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_yu}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_jiang
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_jiang}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						has_title_flag = prince_shou
+					}
+				}
+				top_liege = {
+					primary_title = {clr_title_flag = prince_of_shou}
+				}
+			}
+			
+			unsafe_destroy_landed_title = FROM
+			
+			break = yes
+		}
+		
+		else_if = {
+			limit = {
+				FROM = {
+					has_title_flag = pretender_chinese_empire
+				}
+			}
+			
+			any_demesne_title = { #Refractor using switch statements later
+							
+				if = {
+					limit = {
+						THIS = {
+							has_title_flag = given_prince_title
+						}
+					}
+					if = {
+						limit = {
+							THIS = {
+								has_title_flag = prince_xiu
+							}
+						}
+				
+						FROM = {clr_title_flag = prince_of_xiu}
+					
+					}	
+					else_if = {
+						limit = {
+							THIS = {
+								has_title_flag = prince_cao
+							}
+						}
+					
+						FROM = {clr_title_flag = prince_of_cao}
+					
+					}
+					else_if = {
+						limit = {
+							THIS = {
+								has_title_flag = prince_liang
+							}
+						}
+					
+						FROM = {clr_title_flag = prince_of_liang}
+					
+					}
+					else_if = {
+						limit = {
+							THIS = {
+								has_title_flag = prince_lu
+							}
+						}
+				
+						FROM = {clr_title_flag = prince_of_lu}
+					
+					}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_cheng
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_cheng}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_zhong
+						}
+					}
+				
+						FROM = {clr_title_flag = prince_of_zhong}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_yong
+						}
+					}
+				
+						FROM = {clr_title_flag = prince_of_yong}
+					
+				}
+				else_if ={
+					limit = {
+						THIS = {
+							has_title_flag = prince_pu		
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_pu}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_yan
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_yan}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_yi
+						}
+					}
+						
+						FROM = {clr_title_flag = prince_of_yi}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_ji
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_ji}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_su
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_su}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_chang
+						}
+					}
+					
+							FROM = {clr_title_flag = prince_of_chang}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_xin
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_xin}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_xian
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_xian}
+					
+				}
+				else_if = {
+				limit = {
+						THIS = {
+							has_title_flag = prince_teng
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_teng}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_tang
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_tang}
+					
+				}
+				else_if = {
+				limit = {
+						THIS = {
+							has_title_flag = prince_jin
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_jin}
+					
+				}else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_han
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_han}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_qin
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_qin}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_zhou
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_zhou}
+					
+				}else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_yue
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_yue}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_wu
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_wu}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_chen
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_chen}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_zhao
+						}
+					}
+				
+						FROM = {clr_title_flag = prince_of_zhao}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_wei
+						}
+					}
+				
+						FROM = {clr_title_flag = prince_of_wei}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_qi
+						}
+					}
+					
+						FROM = {clr_title_flag = prince_of_qi}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_dai
+						}
+					}
+					
+					FROM = {clr_title_flag = prince_of_dai}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_chu
+						}
+					}
+					
+					FROM = {clr_title_flag = prince_of_chu}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_shu
+						}
+					}
+					
+					FROM = {clr_title_flag = prince_of_shu}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_song
+						}
+					}
+					
+					FROM = {clr_title_flag = prince_of_song}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_ning
+						}
+					}
+					
+					FROM = {clr_title_flag = prince_of_ning}
+					
+				}else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_jing
+						}
+					}
+					
+					FROM = {clr_title_flag = prince_of_jing}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_cai
+						}
+					}
+					
+					FROM = {clr_title_flag = prince_of_cai}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_zheng
+						}
+					}
+					
+					FROM = {clr_title_flag = prince_of_zheng}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_xu
+						}
+					}
+					
+					FROM = {clr_title_flag = prince_of_xu}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_e
+						}
+					}
+					
+					FROM = {clr_title_flag = prince_of_e}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_yu
+						}
+					}
+					
+					FROM = {clr_title_flag = prince_of_yu}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_jiang
+						}
+					}
+					
+					FROM = {clr_title_flag = prince_of_jiang}
+					
+				}
+				else_if = {
+					limit = {
+						THIS = {
+							has_title_flag = prince_shou
+						}
+					}
+					
+					FROM = {clr_title_flag = prince_of_shou}	
+				}	
+			}	
+		}
+		FROM = {
+				change_variable = {which = "principalities" value = -1}
+				
+		}
+		any_demesne_title = {
+			if = {
+				limit = {
+					has_title_flag = given_prince_title
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		
+	}
+	
+	
+}

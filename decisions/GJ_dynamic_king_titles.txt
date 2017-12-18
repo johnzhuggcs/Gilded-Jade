@@ -44,8 +44,43 @@ targetted_decisions = {
 		allow = {
 			FROM = {
 				primary_title = {
-					NOT = {
-						check_variable = {which = "Principalities" value = 11} #maximum 10 princes
+					OR = {
+						AND = {
+							has_game_rule = {
+								name = vassal_limit
+								value = default
+							}
+							NOT = {
+								check_variable = {which = "Principalities" value = 11} #maximum 10 princes
+							}
+						}
+						
+						AND = {
+							has_game_rule = {
+								name = vassal_limit
+								value = half
+							}
+							NOT = {
+								check_variable = {which = "Principalities" value = 6} #maximum 5 princes
+							}
+						}
+						
+						AND = {
+							has_game_rule = {
+								name = vassal_limit
+								value = quartered
+							}
+							NOT = {
+								check_variable = {which = "Principalities" value = 4} #maximum 4 princes
+							}
+						}
+						
+						AND = {
+							has_game_rule = {
+								name = vassal_limit
+								value = unlimited
+							}
+						}
 					}
 				}
 			}
@@ -496,11 +531,11 @@ targetted_decisions = {
 					ruler_female = PRINCESS
 					custom_created = yes
 					culture = FROM
-					short_name = yes
-					
-				
+					short_name = yes			
 				}
-
+				new_title = {
+					set_title_flag = prince_xiu
+				}
 				#create_family_palace = yes
 				FROM = {
 					primary_title = {
@@ -532,7 +567,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_liang
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -563,7 +600,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-				
+				new_title = {
+					set_title_flag = prince_cao
+				}				
 				#create_family_palace = yes
 								
 				FROM = {
@@ -595,7 +634,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_lu
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -626,7 +667,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_cheng
+				}
 				#create_family_palace = yes				
 				FROM = {
 					primary_title = {
@@ -656,7 +699,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_zhong
+				}
 				#create_family_palace = yes				
 				FROM = {
 					primary_title = {
@@ -686,7 +731,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_yong
+				}
 				#create_family_palace = yes				
 				FROM = {
 					primary_title = {
@@ -716,7 +763,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_pu
+				}
 				#create_family_palace = yes				
 				FROM = {
 					primary_title = {
@@ -746,7 +795,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_yan
+				}
 				#create_family_palace = yes				
 				FROM = {
 					primary_title = {
@@ -776,7 +827,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_yi
+				}
 				#create_family_palace = yes				
 				FROM = {
 					primary_title = {
@@ -806,7 +859,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_ji
+				}
 				#create_family_palace = yes			
 				FROM = {
 					primary_title = {
@@ -836,7 +891,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_su
+				}
 				#create_family_palace = yes				
 				FROM = {
 					primary_title = {
@@ -866,7 +923,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_chang
+				}
 				#create_family_palace = yes				
 				FROM = {
 					primary_title = {
@@ -896,7 +955,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_xin
+				}
 				#create_family_palace = yes				
 				FROM = {
 					primary_title = {
@@ -926,7 +987,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_xian
+				}
 				#create_family_palace = yes		
 				FROM = {
 					primary_title = {
@@ -956,7 +1019,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_teng
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -988,7 +1053,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-				
+				new_title = {
+					set_title_flag = prince_tang
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1019,7 +1086,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_jin
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1050,7 +1119,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-	
+				new_title = {
+					set_title_flag = prince_han
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1081,7 +1152,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_qin
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1112,7 +1185,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_zhou
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1143,7 +1218,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_yue
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1174,7 +1251,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_wu
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1206,7 +1285,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_cheng
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1238,7 +1319,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_zhao
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1281,7 +1364,9 @@ targetted_decisions = {
 					}
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_wei
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1324,7 +1409,9 @@ targetted_decisions = {
 						duration = -1 
 					}
 				}
-
+				new_title = {
+					set_title_flag = prince_qi
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1366,7 +1453,9 @@ targetted_decisions = {
 						duration = -1 
 					}
 				}
-
+				new_title = {
+					set_title_flag = prince_dai
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1409,7 +1498,9 @@ targetted_decisions = {
 						duration = -1 
 					}
 				}
-
+				new_title = {
+					set_title_flag = prince_chu
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1452,6 +1543,9 @@ targetted_decisions = {
 						duration = -1 
 					}
 				}
+				new_title = {
+					set_title_flag = prince_shu
+				}				
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1483,6 +1577,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
+				new_title = {
+					set_title_flag = prince_song
+				}				
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1537,7 +1634,7 @@ targetted_decisions = {
 				}
 				
 				new_title = {
-					set_title_flag = given_prince_title
+					set_title_flag = prince_ning
 				}
 				#create_family_palace = yes
 								
@@ -1571,7 +1668,9 @@ targetted_decisions = {
 				
 				}
 				
-
+				new_title = {
+					set_title_flag = prince_jing
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1603,7 +1702,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_cai
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1635,7 +1736,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_zheng
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1666,7 +1769,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_xu
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1698,7 +1803,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_e
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1730,7 +1837,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-
+				new_title = {
+					set_title_flag = prince_yu
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1762,7 +1871,9 @@ targetted_decisions = {
 					short_name = yes
 				
 				}
-			
+				new_title = {
+					set_title_flag = prince_jiang
+				}
 				#create_family_palace = yes
 								
 				FROM = {
@@ -1793,6 +1904,9 @@ targetted_decisions = {
 					culture = FROM
 					short_name = yes
 				
+				}
+				new_title = {
+					set_title_flag = prince_shou
 				}
 				ROOT = {
 					set_defacto_liege = FROM

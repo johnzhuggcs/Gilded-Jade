@@ -1,0 +1,169 @@
+#################################################
+#                                         		#
+# Gilded Jade Variable Update for Temple Names  #
+#                                               #
+# ID GJ.200 - 202		 	              		#
+#                                         		#
+#################################################
+
+
+namespace = GJ
+
+#Written by: 
+#Black Prince Ed
+
+# Update variable wars offensive (FROM is winner, ROOT is loser)
+character_event = {
+	id = GJ.200
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			FROM = {
+				primary_title = {
+					has_title_flag = pretender_chinese_empire
+				}
+			}
+			
+			ROOT = {
+				primary_title = {
+					has_title_flag = pretender_chinese_empire
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit ={
+				FROM = {
+					primary_title = {
+						has_title_flag = pretender_chinese_empire
+					}
+				}
+			}
+			
+			FROM = {
+				primary_title = {
+					change_variable = {which = "wonWars" value = 1}
+				}
+			}
+		}
+		
+		if = {
+			limit ={
+				ROOT = {
+					primary_title = {
+						has_title_flag = pretender_chinese_empire
+					}
+				}
+			}
+			
+			FROM = {
+				primary_title = {
+					change_variable = {which = "lostWars" value = 1}
+				}
+			}
+		}
+	}
+}
+
+# Update variable wars defensive (FROM is loser, ROOT is winner)
+character_event = {
+	id = GJ.201
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			FROM = {
+				primary_title = {
+					has_title_flag = pretender_chinese_empire
+				}
+			}
+			
+			ROOT = {
+				primary_title = {
+					has_title_flag = pretender_chinese_empire
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit ={
+				FROM = {
+					primary_title = {
+						has_title_flag = pretender_chinese_empire
+					}
+				}
+			}
+			
+			FROM = {
+				primary_title = {
+					change_variable = {which = "lostWars" value = 1}
+				}
+			}
+		}
+		
+		if = {
+			limit ={
+				ROOT = {
+					primary_title = {
+						has_title_flag = pretender_chinese_empire
+					}
+				}
+			}
+			
+			FROM = {
+				primary_title = {
+					change_variable = {which = "wonWars" value = 1}
+				}
+			}
+		}
+	}
+}
+
+# Update variable wars defensive (FROM is loser, ROOT is winner)
+character_event = {
+	id = GJ.202
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			FROM = {
+				primary_title = {
+					has_title_flag = pretender_chinese_empire
+				}
+			}
+			
+			ROOT = {
+				primary_title = {
+					has_title_flag = pretender_chinese_empire
+				}
+			}
+		}
+	}
+	
+	immediate = {
+			
+		if = {
+			limit ={
+				ROOT = {
+					primary_title = {
+						has_title_flag = pretender_chinese_empire
+					}
+				}
+			}
+			
+			FROM = {
+				primary_title = {
+					change_variable = {which = "wonBattles" value = 1}
+				}
+			}
+		}
+	}
+}
