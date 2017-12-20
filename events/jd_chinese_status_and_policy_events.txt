@@ -3382,14 +3382,21 @@ character_event =  { # Clean up living members of the chinese dynasty
 			offmap_ruler = {
 				any_dynasty_member = {
 					limit = {
-						NOT = {
-							is_offmap_ruler = yes
+					
+						AND= { 
+							NOT = {
+								is_offmap_ruler = yes
+							}
+							NOT = {
+								is_landed = yes
+							}
+							father = {
+								is_offmap_ruler = yes
+							}
+							
 						}
-						NOT = {
-							is_landed = yes
-						}
-						father = prev
-						sibiling = prev
+							
+						
 					}
 					death = { death_reason = death_went_back_to_china }
 				}
@@ -3397,14 +3404,19 @@ character_event =  { # Clean up living members of the chinese dynasty
 			offmap_prev_ruler = {
 				any_dynasty_member = {
 					limit = {
-						NOT = {
-							is_offmap_ruler = yes
+						AND= { 
+							NOT = {
+								is_offmap_ruler = yes
+							}
+							NOT = {
+								is_landed = yes
+							}
+							father_even_if_dead = {
+								is_or_was_offmap_power_ruler = yes
+							}
+							
 						}
-						NOT = {
-							is_landed = yes
-						}
-						father = prev
-						sibiling = prev
+						
 					}
 					death = { death_reason = death_went_back_to_china }
 				}

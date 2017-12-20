@@ -219,7 +219,7 @@ castle = {
 		garrison_size = 0.2
 		ai_creation_factor = 86
 
-		extra_tech_building_start = 5.0
+		extra_tech_building_start = 100
 	}
 	
 	ca_great_wall_2 = { # Great Wall (Connected)
@@ -252,7 +252,7 @@ castle = {
 		garrison_size = 0.2
 		ai_creation_factor = 86
 
-		extra_tech_building_start = 5.0
+		extra_tech_building_start = 100 #never
 	}
 	
 	ca_harem_court = { # Harem Court
@@ -277,7 +277,7 @@ castle = {
 		garrison_size = 0.05
 		ai_creation_factor = 86
 
-		extra_tech_building_start = 1.0
+		extra_tech_building_start = 100 #never
 	}
 	
 	

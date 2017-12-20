@@ -889,8 +889,11 @@ character_event = {
 			}	
 		}
 		FROM = {
-				change_variable = {which = "principalities" value = -1}
-				
+			change_variable = {which = "principalities" value = -1}
+			
+		}
+		ROOT = {
+			remove_character_modifier = principality_income
 		}
 		any_demesne_title = {
 			if = {

@@ -1,0 +1,26 @@
+###########################################
+#                                         #
+# Gilded Jade Off Map Temple Names 		  #
+#                                         #
+# ID GJ.50 - 			 	              #
+#                                         #
+###########################################
+namespace = GJ
+
+#Written by: 
+#Black Prince Ed
+
+character_event = {	
+	id = GJ.50
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		is_or_was_offmap_power_ruler = yes
+	}	
+	
+	immediate = {
+		
+	}
+	
+}

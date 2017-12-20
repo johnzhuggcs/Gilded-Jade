@@ -25,7 +25,7 @@ narrative_event = {	#makes ai automatically give temple names based on traits #T
 	id = GJ.1
 	is_triggered_only = yes
 	title = GIVETEMPLENAME
-	desc = EVT_DESC_GJ_1
+	desc = EVT_DESC_GJ_2
 	picture = GFX_evt_china_golden_age
 	
 	trigger = {
@@ -97,6 +97,7 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 						
 						event_target:temple_name_title = { 
 							set_title_flag= temple_name_shaodi
+							clr_title_flag = usurping_chinese_emperor
 						}
 						break = yes
 					}
@@ -112,10 +113,12 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 	
 						event_target:previous_title_holder = {
 							give_nickname = nick_gongdi
+							
 						}
 						
 						event_target:temple_name_title = { 
 							set_title_flag= temple_name_gongdi
+							clr_title_flag = usurping_chinese_emperor
 						}
 						break = yes
 					}
@@ -137,6 +140,7 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 					
 					event_target:temple_name_title = { 
 						set_title_flag= temple_name_yangdi
+						clr_title_flag = usurping_chinese_emperor
 					}
 					break = yes
 				}
@@ -155,6 +159,7 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 					
 					event_target:temple_name_title = { 
 						set_title_flag= temple_name_zhidi
+						clr_title_flag = usurping_chinese_emperor
 					}
 					break = yes
 				}
@@ -172,6 +177,7 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 					
 					event_target:temple_name_title = { 
 						set_title_flag= temple_name_chongdi
+						clr_title_flag = usurping_chinese_emperor
 					}
 					break = yes
 				}
@@ -277,7 +283,7 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 					
 					event_target:temple_name_title = { 
 						set_title_flag= temple_name_taizu
-						
+						clr_title_flag = founding_emperor
 					}
 					break = yes
 				}
@@ -296,6 +302,7 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 					
 					event_target:temple_name_title = { 
 						set_title_flag= temple_name_gaozu
+						clr_title_flag = founding_emperor
 					}
 					break = yes
 				}
@@ -345,6 +352,9 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 					event_target:temple_name_title = {
 						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
 						is_variable_equal = { which = "lostWars" value = 1}
+					}
+					
+					event_target:temple_name_title = {
 						check_variable = { which = "wonWars" value = 3}
 						check_variable = { which = "wonBattles" value = 11}
 					}
@@ -418,11 +428,18 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 			if = {
 				limit = {
 					event_target:temple_name_title = {
-						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
-						check_variable = { NOT = {which = "lostWars" value = 3}}
-						check_variable = {which = "numEmperorMax4" value = 1}
-						NOT = {
-							has_title_flag = temple_name_taizong
+						AND = {
+							check_variable = {which = "numEmperorMax4" value = 1}
+							NOT = {
+								has_title_flag = temple_name_taizong
+							}
+						}
+					}
+					
+					event_target:temple_name_title = {
+						AND = {
+							check_variable = { which = "currRealmSize" which = "tempRealmSize"}
+							NOT = {check_variable = { which = "lostWars" value = 3}}
 						}
 					}
 				}
@@ -432,7 +449,10 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 				}
 					
 				event_target:temple_name_title = { 
-					set_title_flag= temple_name_taizong
+					set_title_flag = taizong_name_set_for_some_reason
+					set_title_flag = temple_name_taizong
+					clr_title_flag = possible_taizong
+					set_variable = {which = "numEmperorMax4" value = 0}
 				}
 				break = yes
 				
@@ -466,7 +486,7 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 				limit = {
 					event_target:temple_name_title = {
 						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
-						check_variable = { NOT = {which = "lostWars" value = 3}}
+						NOT = {check_variable = { which = "lostWars" value = 3}}
 						NOT = {
 							has_title_flag = temple_name_shengzong
 						}
@@ -2081,14 +2101,14 @@ narrative_event = {	#choosing each temple name menu, for early death rulers
 	picture = GFX_evt_china_golden_age
 	
 	option = {
-		name = EVTOPTAGJ.9
+		name = EVTOPTAGJ.9_EARLYDEATH
 		narrative_event = {
 			id = GJ.29
 		}
 	}
 	
 	option = {
-		name = EVTOPTBGJ.9
+		name = EVTOPTBGJ.9_DIEDBATTLE
 		trigger = {
 			event_target:previous_title_holder = {
 				OR = {
@@ -2104,7 +2124,7 @@ narrative_event = {	#choosing each temple name menu, for early death rulers
 	}
 
 	option = {
-		name = EVTOPTCGJ.9 #RETURNUP"
+		name = "EVTOPTCGJ.9_RETURNUP" #RETURNUP
 		narrative_event = {id = GJ.3 tooltip = RETURNUPMENU}
 	}
 }
@@ -2723,7 +2743,7 @@ narrative_event = {	#choosing each temple name menu, for great and magnificent e
 	}
 	
 	option = {
-		name = "EVTOPTD_GJ.4_RETURNUP
+		name = "EVTOPTD_GJ.4_RETURNUP"
 		narrative_event = {id = GJ.4 tooltip = RETURNUPMENU}
 	}
 }
@@ -3148,6 +3168,10 @@ narrative_event = {	#choosing each temple name menu, for usurped not of same dyn
 			clr_title_flag = usurping_chinese_emperor
 			#event_target:temple_name_title = { set_title_flag= temple_name_yangdi}	removed for now, makes no sense to keep it after usurpation
 		}
+		event_target:temple_name_title = {
+			set_title_flag = temple_name_yangdi
+			clr_title_flag = usurping_chinese_emperor
+		}
 		narrative_event = {id = GJ.35}
 	}
 	
@@ -3165,6 +3189,10 @@ narrative_event = {	#choosing each temple name menu, for usurped not of same dyn
 			clr_title_flag = usurping_chinese_emperor
 			#event_target:temple_name_title = { set_title_flag= temple_name_zhidi}
 		}
+		event_target:temple_name_title = {
+			set_title_flag = temple_name_zhidi
+			clr_title_flag = usurping_chinese_emperor
+		}
 		narrative_event = {id = GJ.35}
 	}
 	
@@ -3179,6 +3207,10 @@ narrative_event = {	#choosing each temple name menu, for usurped not of same dyn
 		name = "EVTOPTC_GJ.8_CHONGDI"
 		event_target:previous_title_holder = {
 			give_nickname = nick_chongdi
+			clr_title_flag = usurping_chinese_emperor
+		}
+		event_target:temple_name_title = {
+			set_title_flag = temple_name_chongdi
 			clr_title_flag = usurping_chinese_emperor
 		}
 		narrative_event = {id = GJ.35}
@@ -3222,6 +3254,10 @@ narrative_event = {	#choosing each temple name menu, for usurped not of same dyn
 			give_nickname = nick_shaodi
 			clr_title_flag = usurping_chinese_emperor
 		}
+		event_target:temple_name_title = {
+			set_title_flag = temple_name_shaodi
+			clr_title_flag = usurping_chinese_emperor
+		}
 		narrative_event = {id = GJ.35}
 	}
 	
@@ -3244,6 +3280,11 @@ narrative_event = {	#choosing each temple name menu, for usurped not of same dyn
 		name = "EVTOPTB_GJ.8_GONGDI"
 		event_target:previous_title_holder = {
 			give_nickname = nick_gongdi
+			
+		}
+		
+		event_target:temple_name_title = {
+			set_title_flag = temple_name_gongdi
 			clr_title_flag = usurping_chinese_emperor
 		}
 		narrative_event = {id = GJ.35}
@@ -3258,7 +3299,7 @@ narrative_event = {	#choosing each temple name menu, for usurped not of same dyn
 narrative_event = {	#choosing each temple name menu, for early death, "the Desired" Emperors
 	id = GJ.29
 	is_triggered_only = yes
-	title = GIVETEMPLENAMENOTSAME
+	title = GIVETEMPLENAME
 	desc = EVT_DESC_GJ_9
 	picture = GFX_evt_china_golden_age
 	
@@ -3321,7 +3362,7 @@ narrative_event = {	#choosing each temple name menu, for death in battle
 	id = GJ.30
 	is_triggered_only = yes
 	title = GIVETEMPLENAMENOTSAME
-	desc = EVT_DESC_GJ_9
+	desc = EVT_DESC_GJ_9B
 	picture = GFX_evt_china_golden_age
 	
 	option = {
@@ -3384,7 +3425,7 @@ narrative_event = {	#choosing each temple name menu, for bad rulers
 	id = GJ.31
 	is_triggered_only = yes
 	title = GIVETEMPLENAMENOTSAME
-	desc = EVT_DESC_GJ_9
+	desc = EVT_DESC_GJ_9C
 	picture = GFX_evt_china_golden_age
 	
 	option = {
@@ -3447,7 +3488,7 @@ narrative_event = {	#choosing each temple name menu, for usurped same dynasty, c
 	id = GJ.33
 	is_triggered_only = yes
 	title = GIVETEMPLENAMENOTSAME
-	desc = EVT_DESC_GJ_8
+	desc = EVT_DESC_GJ_33
 	picture = GFX_evt_china_golden_age
 	
 	trigger = {
@@ -3536,15 +3577,32 @@ narrative_event = {
 	desc = EVT_DESC_GJ_35
 	picture = GFX_evt_china_golden_age
 	
-	option = {
-		name = EVTOPTAGJ.35
-		prestige = 100
-		piety = 50
+	immediate = {
 		event_target:temple_name_title = {
 			set_variable = {which = "tempRealmSize" which = "pastRealmSize"}
 			subtract_variable = {which = "tempRealmSize" which="currRealmSize" }
 			multiply_variable = {which = "tempRealmSize" value = -1}
 		}
+		
+		if = {
+			limit = {
+				has_game_rule = {
+					name = choose_temple_names
+					value = none
+				}
+			}
+			event_target:temple_name_title = {
+				change_variable = {which = "wonWars" value = -1}
+				change_variable = {which = "lostWars" value = -1}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTAGJ.35
+		prestige = 100
+		piety = 50
+		
 	}
 	
 	after = {
@@ -3555,6 +3613,8 @@ narrative_event = {
 			set_variable = {which = "wonBattles" value = 1}
 			set_variable = {which = "lostWars" value = 1}
 		}
+		
+		
 	}
 }
 

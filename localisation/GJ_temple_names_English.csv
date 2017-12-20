@@ -73,7 +73,8 @@ GIVETEMPLENAMENOTSAME;Remnants of the Previous Dynasty;;;;;;;;;x
 GIVETEMPLENAMEFINISHED;The Ritual of "Tiao";;;;;;;;;x
 
 #Initial Menu
-EVT_DESC_GJ_2;Since the Former Han Dynasty, Emperors' accomplishments were evaluated based on an intricate system of Temple and Posthumous names upon their death established by the "Rites of Zhou".\nChancellor [Root.job_chancellor.GetFullName] and other Ministers beseeches you to honour your predecessor appropriately, in order to bring about an auspicious reign.  With a [temple_name_title.tempRealmSize.GetValue] change in realm size, [temple_name_title.wonWars.GetValue] wars won and [temple_name_title.lostWars.GetValue] lost which title would you bestow upon them?;;;;;;;;;x
+EVTOPTA_GJ.1;"I shall ponder this carefully...";;;;;;;;;x
+EVT_DESC_GJ_2;Since the Former Han Dynasty, Emperors' accomplishments were evaluated based on an intricate system of Temple and Posthumous names upon their death established by the "Rites of Zhou".\nChancellor [Root.job_chancellor.GetFullName] and other Ministers beseeches you to honour your predecessor appropriately, in order to bring about an auspicious reign.;;;;;;;;;x
 EVTOPTA_GJ.2_GOODCOMPETENT;"The Late Emperor was a brilliant and competent Emperor, I shall honour them appropriately";;;;;;;;;x
 EVTOPTB_GJ.2_FOUNDER;"As the founder of this dynasty, they must be given the highest of honours";;;;;;;;;x
 EVTOPTC_GJ.2_MEH;"The Late Emperor was...relatively capabable";;;;;;;;;x
@@ -99,7 +100,7 @@ EVTOPTC_GJ.10_WUZONG;"Valiant and Pacifying, they will be known as Wuzong the Ma
 EVTOPTD_GJ.10_NEXTPAGE_TWOSEVEN;"The Late Emperor wasn't any of the above..." (page 2/7);;;;;;;;;x
 EVTOPTA_GJ.10_ZHAOZONG;"Prominent and Just, they will be known as Zhaozong";;;;;;;;;x
 EVTOPTB_GJ.10_XUANZONG2;"Well-known to the Four Lands, Xuanzong the Illustrious it is!";;;;;;;;;x
-EVTOPTC_GJ.10_HUANZONG;"Ambitious and Warlike, they will be known as Huanzong the Conquering";;;;;;;;;x
+EVTOPTC_GJ.10_HUANZONG;"Ambitious and Warlike, they are Huanzong the Conquering";;;;;;;;;x
 EVTOPTD_GJ.10_NEXTPAGE_THREEEIGHT;"The Late Emperor wasn't any of the above..." (page 3/7);;;;;;;;;x
 EVTOPTA_GJ.10_MINGZONG;"Wise and Illuminated, they will be known as Mingzong";;;;;;;;;x
 EVTOPTB_GJ.10_ZHANGZONG;"Principled and competent, Zhangzong the Law-giver it is!";;;;;;;;;x
@@ -165,23 +166,68 @@ EVTOPTA_GJ.5_TAIZU;"Originator of the dynasty's fortunes, Taizu - the Great Prog
 EVTOPTB_GJ.5_GAOZU;"No other ancestors matched them, Gaozu - the Supreme Progenitor";;;;;;;;;x
 
 #Bad Rulers
-EVT_DESC_GJ_7;Your predecessor was by all means...not the best of Emperors. Yet as your close relation, it is Your Majesty's duty to bestow upon them a name in the end. Despite their wicked deeds they still need offerings from their descendants in the Grand Mausoleum of the Imperial Family.;;;;;;;;;x
+EVT_DESC_GJ_7;Your predecessor was by all means...not the best of Emperors. Yet as your close relation, it is Your Majesty's duty to bestow upon them a name in the end. Despite their wicked deeds they still need offerings from their descendants in the Grand Mausoleum of the Imperial Family. \nYour predecessor's actions were certainly questionable, but how would you honour them? If you were to follow the "Rites of Zhou" and give them a bad name, you certainly would be accused of being unfilial by your pesky ministers. On the other hand, you would desecrate your dynasty's temple if you were more lenient...;;;;;;;;;x
 EVTOPTA_GJ.7_SARCASTIC;They were...my family after all;;;;;;;;;x
 EVTOPTB_GJ.7_BAD;It pains me to even call them Emperors...;;;;;;;;;x
 
 #Bad Rulers chose sarcastic names
-
+EVT_DESC_GJ_0032;Chancellor [Root.job_chancellor.GetFullName] says:\n"In Your Most Humblest Servant's opinion...it would be best to display your filial nature to the realm. It would bring about an auspicious beginning to Your Majesty's realm and set an example to the Empire. After all, they were your kin...";;;;;;;;;x
+EVTOPTA_GJ.7_GUANGZONG;"So they had a "good" reign?...Guangzong the Bright?";;;;;;;;;x
+EVTOPTB_GJ.7_HUIZONG;"They were... morally impeccable, Huizong the Honourable";;;;;;;;;x
+EVTOPTC_GJ.7_QINZONG;"Definetely diligent and careful, Qinzong the Diligent";;;;;;;;;x
+EVTOPTD_GJ.7_NEXTPAGE_TWOFIVE;"No no no, these don't do them justice."(page 2/5);;;;;;;;;x
+EVTOPTA_GJ.7_LIZONG;"Eccentric, but stil..."logical", Lizong the Logical";;;;;;;;;x
+EVTOPTB_GJ.7_DUZONG;"Timid, no, careful? Oh well, Duzong the Careful";;;;;;;;;x
+EVTOPTC_GJ.7_YIZONG;"Stubborn, no, perservering. Yizong the Perservering";;;;;;;;;x
+EVTOPTD_GJ.7_NEXTPAGE_THREEFIVE;"No no no, these don't do them justice."(page 3/5);;;;;;;;;x
+EVTOPTA_GJ.7_MUZONG;"Respectful to everyone? Yes, Muzong the Respectful";;;;;;;;;x
+EVTOPTB_GJ.7_CHONGZONG;"Admired, people for sure wanted to be like them, Chongzong";;;;;;;;;x
+EVTOPTC_GJ.7_DAOZONG;"They pursured the Way, Daozong of the Enlightened";;;;;;;;;x
+EVTOPTD_GJ.7_NEXTPAGE_FOURFIVE;"No no no, these don't do them justice."(page 4/5);;;;;;;;;x
+EVTOPTA_GJ.7_XIANZONG;"Wise, Generous, especially to our enemies. Xianzong the Generous";;;;;;;;;x
+EVTOPTB_GJ.7_DEZONG;"Morally upright, definitely...Dezong the Moral";;;;;;;;;x
+EVTOPTC_GJ.7_SHUNZONG;"Demure to our enemies, Shunzong the Submissive";;;;;;;;;x
+EVTOPTD_GJ.7_NEXTPAGE_FIVEFIVE;"No no no, these don't do them justice."(page 5/5);;;;;;;;;x
+EVTOPTA_GJ.7_JINGZONG;"Polite with a tint of cowardness, Jingzong the Courteous";;;;;;;;;x
 
 #Chose USURPATION_NOT_SAME_DYNASTY Menu
 EVT_DESC_GJ_8;Although you have toppled the corrupt former dynasty and release the people from the shackles of their wickedness, it is customary to give them an appropriate title to cement their historical influences to come. \nDepending on their actions in the preceding wars against you, you should give them an insulting or consolating title that suits them;;;;;;;;;x
 EVTOPTA_GJ.8_ADULTUSURPED;"Their wickedness surpassed the ancient tyrants Jie and Zhou!";;;;;;;;;x
 EVTOPTB_GJ.8_YOUNG;"They were just children burdened with their ancestor's folly";;;;;;;;;x
 
-#Chose 
+EVTOPTA_GJ.8_YANGDI;"The most corrupt and immoral of all, Yangdi the Wicked!";;;;;;;;;x
+EVTOPTB_GJ.8_ZHIDI;"Doomed to fail and have an early demise, Zhidi!";;;;;;;;;x
+EVTOPTC_GJ.8_CHONGDI;"Died a young death...Chongdi the Unfortunate";;;;;;;;;x
+EVTOPTA_GJ.8_SHAODI;"Young and didn't know better, Shaodi the Young!";;;;;;;;;x
+EVTOPTB_GJ.8_GONGDI;"They are subversive enough, Gongdi the Courteous";;;;;;;;;x
+RETURNUP_MENU_TO_USURPED;Return to previous layer of menu;;;;;;;;;
 
+#Early Death
+EVT_DESC_GJ_9;With great pain you bid away the Late Emperor, their qualities rival your accomplished ancestors, it was hoped that they would've bring the Empire to a new height. They were like a comet that briefly lit up the night...;;;;;;;;;x
+EVTOPTA_GJ.9_AIZONG;"They shall be mourned, for they are, Aizong the Mourned";;;;;;;;;x
+EVTOPTB_GJ.9_DAOZONG2;"The court had foretold of their greatness, Daozong the Desired";;;;;;;;;x
+EVTOPTC_GJ.9_sizong;"Their qualities shall be missed, Sizong the Longed";;;;;;;;;x
+EVTOPTD_GJ.4_RETURNUPMOURNFUL;"They deserve better!";;;;;;;;;x
+EVTOPTAGJ.9_EARLYDEATH;Far too young to have ascended the Heavens...;;;;;;;;;x
+EVTOPTBGJ.9_DIEDBATTLE;There will be a reckoning...;;;;;;;;;x
+
+#Fallen in Battle
+EVT_DESC_GJ_9B;Their fall at the hands of the enemy shall be remembered, we will etch the names of those who dare to anger the Dragon for eternity. But we must get set a Temple Name for the heroic Late Emperor for us to sacrifice those damned enemies' head to the Late Emperor!;;;;;;;;;x
+EVTOPTA_GJ.9_LIEZONG;"Courageous to the end, Liezong the Unyielding!";;;;;;;;;x
+
+#Just Bad Rulers
+EVT_DESC_GJ_9C;With the pain and suffering the Late Emperor had caused, it would be unthinkable to even pretend to be filial and give them a good Temple Name. We should bestow upon them a truthful name to remind future descendants of the horrendous examples the Late Emperor had been.;;;;;;;;;x
+EVTOPTA_GJ.9_XUANZONG;"Metaphysical beyond reason, Xuanzong the Superstitious";;;;;;;;;;x
+EVTOPTB_GJ.9_XIZONG;"Decadent beyond help, Xizong the Merrry-making";;;;;;;;;x
+EVTOPTC_GJ.9_SHANGZONG;"Despotic beyond hope, Shangzong the Tyrant";;;;;;;;;x
+EVTOPTD_GJ.4_RETURNUPMOURNFUL;"On second thought...";;;;;;;;;x
+
+#Same dynasty usurped
+EVT_DESC_GJ_33;The former Emperor was a worthless, ignorant being. You sneered in disgust at their quivering stance as they gave the throne to you. It's a wonder the two of you shared any degree of relation at all, they do not deserve the title of the scion of the Progenitor.;;;;;;;;;x
+EVTOPTB_GJ.8_FEIDI;"Simply deposed, Feidi the Deposed it is...";;;;;;;;;x
+EVTOPTF_GJ.3_USURPATION_NOT_SAME_DYNASTY;"I would give them a place in the Temple...";;;;;;;;;x
 
 GIVETEMPLENAMEBADORSAR;Ritualistic Dillema;;;;;;;;;x
-EVT_DESC_GJ_7;Your predecessor's actions were certainly questionable, but how would you honour them? If you were to follow the "Rites of Zhou" and give them a bad name, you certainly would be accused of being unfilial by your pesky ministers. On the other hand, you would desecrate your dynasty's temple if you were more lenient...;;;;;;;;;x
 EVTOPTA_GJ.7_SARCASTIC;They are my kin, I'll honour them as such;;;;;;;;;x
 EVTOPTB_GJ.7_BAD;Allowing their sprits to reside in the Temple is lenient already...;;;;;;;;;x
 
@@ -189,7 +235,7 @@ EVT_DESC_GJ_0034;The foundation of the dynasty was laiden by your ancestor, the 
 EVTOPTA_GJ.10_TAIZONG;They preserved the achievements of the Progenitor!;;;;;;;;;x
 
 
-EVT_DESC_GJ_35;And with that, the rank and dignity of the late Emperor has been decided.\nLooking at the retreating shadows of Chancellor [Root.job_chancellor.GetFullName] and the Minister of Rites [Root.job_spiritual.GetFullName], you wonder if you've made a fair judgement of the cold corpse. But regardless, with your decision, the uncertainty of the rituals around the Mausoleum have been laid to rest. By the morning of the next day, the corpse shall be taken care of and All Under Heaven shall bow to you.\nAs customary, you have declared the next year to be the first year of the [Root.GetFirstName] Era, you trust that it will be the beginning of a glorious reign. \nSo long, [previous_title_holder.GetDeadChineseEmperorWithTempleName] and All Hail [Root.GetMediumChineseEmperorName]!;;;;;;;;;x
+EVT_DESC_GJ_35;With a [temple_name_title.tempRealmSize.GetValue] change in realm size, [temple_name_title.wonWars.GetValue] wars won and [temple_name_title.lostWars.GetValue] lost, the rank and dignity of the late Emperor has been decided.\nLooking at the retreating shadows of Chancellor [Root.job_chancellor.GetFullName] and the Minister of Rites [Root.job_spiritual.GetFullName], you wonder if you've made a fair judgement of the cold corpse. But regardless, with your decision, the uncertainty of the rituals around the Mausoleum have been laid to rest. By the morning of the next day, the corpse shall be taken care of and All Under Heaven shall bow to you.\nAs customary, you have declared the next year to be the first year of the [Root.GetFirstName] Era, you trust that it will be the beginning of a glorious reign. \nSo long, [previous_title_holder.GetDeadChineseEmperorWithTempleName] and All Hail [Root.GetMediumChineseEmperorName]!;;;;;;;;;x
 EVTOPTAGJ.35;"May I reign for Ten Thousand Years!";;;;;;;;;x
 	
 #Game rules
@@ -219,6 +265,13 @@ PRINCEOFZHENG;Prince of Zheng;;;;;;;;;x
 #Connecting Great Wall
 connect_great_wall;Connect the Great Walls;;;;;;;;;x
 connect_great_wall_desc;Extend the Great Wall to the Circuit of Hexi and connect the existing fortifications together!;;;;;;;;;x
+
+#Job Titles (Han Emperor)
+job_chancellor_han_emperor;Chancellor;Ministre en chef;Hauptminister;;Ministro jefe;;;;;;;;;x
+job_marshal_han_emperor;Minister of War;Xingjun sima;Xingjun Sima;;Xingjun Sima;;;;;;;;;x
+job_treasurer_han_emperor;Minister of Revenue;Trésorier;Schatzmeister;;Tesorero;;;;;;;;;x
+job_spymaster_han_emperor;Minister of Legal Affairs;Maître-espion;Hofspitzel;;Jefe de espías;;;;;;;;;x
+job_spiritual_han_emperor;Minister of Rites;Libationneur;Libationer;;Libador;;;;;;;;;x
 
 #cultural titles and foa
 duchy_han;Prefecture;;;;;;;;;x
