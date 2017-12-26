@@ -621,13 +621,14 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 			event_target:temple_name_title = {
 					set_variable = {which = "tempRealmSize" which = pastRealmSize}
 					multiply_variable = {which = "tempRealmSize" value = 1.1}
+					
 			}
 			
 			if = {
 				limit = {
 					event_target:temple_name_title = {
 						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
-						check_variable = { NOT = {which = "lostWars" value = 4}}
+						NOT = {check_variable = {which = "lostWars" value = 4}}
 						
 					}
 					
@@ -721,7 +722,7 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 				limit = {
 					event_target:temple_name_title = {
 						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
-						check_variable = { NOT = {which = "lostWars" value = 3}}
+						NOT = {check_variable = { which = "lostWars" value = 3}}
 						
 					}
 					
@@ -882,7 +883,7 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 				limit = {
 					event_target:temple_name_title = {
 						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
-						check_variable = { NOT = {which = "lostWars" value = 3}}
+						NOT = {check_variable = {which = "lostWars" value = 3}}
 						event_target:previous_title_holder = {
 							OR = {
 								death_reason = death_battle
@@ -959,7 +960,7 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 				limit = {
 					event_target:temple_name_title = {
 						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
-						check_variable = { NOT = {which = "lostWars" value = 3}}		
+						NOT = {check_variable = {which = "lostWars" value = 3}}		
 					}
 				}
 				
@@ -1027,7 +1028,7 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 				limit = {
 					event_target:temple_name_title = {
 						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
-						check_variable = { NOT = {which = "lostWars" value = 4}}
+						NOT = {check_variable = {which = "lostWars" value = 4}}
 						
 					}
 				}
@@ -1102,7 +1103,7 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 				limit = {
 					event_target:temple_name_title = {
 						check_variable = { which = "currRealmSize" which = "tempRealmSize"}
-						check_variable = { NOT = {which = "lostWars" value = 3}}
+						NOT = {check_variable = {which = "lostWars" value = 3}}
 						
 					}
 					
@@ -1321,7 +1322,7 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 			if = {
 				limit = {
 					event_target:temple_name_title = {
-						check_variable = { NOT = {which = "currRealmSize" which = "tempRealmSize"}}
+						NOT = {check_variable = { which = "currRealmSize" which = "tempRealmSize"}}
 						check_variable = {which = "lostWars" value = 2}
 					}
 				}
@@ -1393,7 +1394,7 @@ character_event = {	#makes ai automatically give temple names based on traits #T
 			if = {
 				limit = {
 					event_target:temple_name_title = {
-						check_variable = { NOT = {which = "currRealmSize" which = "tempRealmSize"}}
+						NOT = {check_variable = { which = "currRealmSize" which = "tempRealmSize"}}
 						check_variable = {which = "lostWars" value = 2}
 						
 					}

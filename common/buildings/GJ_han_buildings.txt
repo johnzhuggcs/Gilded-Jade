@@ -275,6 +275,7 @@ castle = {
 		fertility = 0.025
 		fort_level = 0.1
 		garrison_size = 0.05
+		tax_income = 5
 		ai_creation_factor = 86
 
 		extra_tech_building_start = 100 #never

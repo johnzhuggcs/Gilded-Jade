@@ -1,4 +1,4 @@
-Crusader Kings Jade Dragon v0.01 for 2.8.1
+Crusader Kings Jade Dragon v0.02 for 2.8.1
 
 Jade Dragon and Legacy of Rome must be enabled (not too sure of other dlcs but I don't think it will matter too much)
 
@@ -7,6 +7,13 @@ An immersion-centered mod focused around the Eastern edge of the map and interac
 INSTALL GUIDE:
 Unzip and paste to 
 C:\Users\[your account]\Documents\Paradox Interactive\Crusader Kings II\mod
+
+What's new?
+- fixed bug where none of the offmap China's dynasty members return to China after "fixing" the vanilla bug. Currently only the unlanded children and sibilings of the Emperor return to China
+- fixed bug for automatic Temple Name assign where people repeatedly get assigned "Taizong" due to a faulty condition check
+- fixed localisation bug, should now display realm size change properly in the Temple Name/Ritual of Tiao event chain.
+
+
 
 Features:
 Bug fix for 2.8.1: As far as I know 2.8.1 introduced a huge bug for the Borjigin family, in an attempt to reduce loitering of Chinese Emperor's relatives in 769 and other starts
